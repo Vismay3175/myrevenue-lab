@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | My Revenue Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'], serif: ['"Cormorant Garamond"', 'serif'] },
+                    colors: { gold: { 500: '#C5A059', 600: '#B08D48' }, navy: { 900: '#0F172A', 800: '#1E293B' } },
+                    animation: { 'cloud-drift': 'cloudDrift 80s linear infinite' },
+                    keyframes: { cloudDrift: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } } }
+                }
+            }
+        }
+    </script>
+    <style>
+        html.lenis {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto;
+        }
+
+        body {
+            background-color: #0F172A;
+            color: #FAFAFA;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 0;
+            background-color: #C5A059;
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .sticky-col {
+            position: sticky;
+            top: 140px;
+            align-self: start;
+        }
+
+        .cloud-separator {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            z-index: 20;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .cloud-wrap {
+            display: flex;
+            width: 200%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .cloud-svg {
+            width: 50%;
+            height: 100%;
+            filter: drop-shadow(0 -5px 15px rgba(197, 160, 89, 0.2));
+        }
+
+        .cloud-main {
+            fill: #0F172A;
+        }
+
+        .cloud-rim {
+            fill: none;
+            stroke: #C5A059;
+            stroke-width: 1;
+            opacity: 0.3;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- COMMON HEADER (DARK) -->
+    <nav class="fixed w-full z-[999] transition-all duration-300 bg-navy-900/90 backdrop-blur-md border-b border-white/10"
+        id="navbar">
+        <div class="max-w-[1400px] mx-auto px-6 h-24 lg:h-28 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-4 group">
+                <div
+                    class="w-12 h-12 lg:w-14 lg:h-14 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gold-500 text-2xl font-serif italic group-hover:bg-gold-500 group-hover:text-navy-900 transition-all duration-500">
+                    M</div>
+                <div class="flex flex-col">
+                    <span
+                        class="font-serif text-xl lg:text-2xl font-bold tracking-tight text-white group-hover:text-gold-500 transition-colors">My
+                        Revenue Lab</span>
+                    <span
+                        class="text-[0.6rem] uppercase tracking-[0.3em] text-gray-400 group-hover:text-white transition-colors">Premium
+                        Hotel Solutions</span>
+                </div>
+            </a>
+
+            <div class="hidden lg:flex items-center gap-12">
+                <a href="index.html"
+                    class="nav-link text-xs font-semibold text-gray-300 hover:text-white uppercase tracking-widest relative transition-colors">Home</a>
+                <a href="about.html"
+                    class="nav-link text-xs font-bold text-white uppercase tracking-widest relative">About</a>
+                <a href="services.html"
+                    class="nav-link text-xs font-semibold text-gray-300 hover:text-white uppercase tracking-widest relative transition-colors">Services</a>
+                <a href="contact.html"
+                    class="nav-link text-xs font-semibold text-gray-300 hover:text-white uppercase tracking-widest relative transition-colors">Contact</a>
+                <a href="contact.html"
+                    class="px-8 py-3 border border-gold-500 text-gold-500 text-xs font-bold uppercase tracking-[0.2em] hover:bg-gold-500 hover:text-navy-900 transition-all duration-500">
+                    Get Audit
+                </a>
+            </div>
+
+            <button class="lg:hidden text-2xl text-white outline-none" id="mobile-toggle">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-navy-900 border-t border-white/10 p-8 space-y-6 flex flex-col items-center">
+            <a href="index.html" class="text-gray-300 font-medium uppercase tracking-widest">Home</a>
+            <a href="about.html" class="text-white font-bold uppercase tracking-widest pt-4">About</a>
+            <a href="services.html" class="text-gray-300 font-medium uppercase tracking-widest pt-4">Services</a>
+            <a href="contact.html" class="text-gray-300 font-medium uppercase tracking-widest pt-4">Contact</a>
+            <a href="contact.html"
+                class="w-full text-center px-10 py-5 bg-gold-500 text-navy-900 font-bold uppercase tracking-widest">Get
+                Audit</a>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="pt-48 pb-24 px-6 bg-navy-900 text-white relative overflow-hidden">
+        <div class="max-w-[1400px] mx-auto relative z-10 text-center">
+            <span class="text-gold-500 text-xs font-bold tracking-[0.2em] uppercase mb-4 block">Our Story</span>
+            <h1 class="font-serif text-6xl md:text-8xl mb-8 leading-tight">Precision Crafted <br> <span
+                    class="text-gold-500 italic">Hospitality.</span></h1>
+            <p class="text-gray-400 text-xl max-w-2xl mx-auto font-light">
+                We bridge the gap between complex data science and actionable hotel operations, transforming numbers
+                into net profit.
+            </p>
+        </div>
+        <video autoplay muted loop
+            class="absolute top-0 right-0 w-full h-full object-cover opacity-10 pointer-events-none">
+            <source src="https://cdn.pixabay.com/video/2016/09/21/5526-183824316_large.mp4" type="video/mp4">
+        </video>
+
+        <div class="cloud-separator">
+            <div class="cloud-wrap animate-cloud-drift">
+                <svg class="cloud-svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                    <path class="cloud-rim"
+                        d="M0 100 C 20 0 50 0 100 100 C 150 0 200 0 250 100 C 300 0 350 0 400 100 C 450 0 500 0 550 100 C 600 0 650 0 700 100 C 750 0 800 0 850 100 C 900 0 950 0 1000 100"
+                        transform="translate(0, -2)" />
+                    <path class="cloud-main"
+                        d="M0 100 C 20 0 50 0 100 100 C 150 0 200 0 250 100 C 300 0 350 0 400 100 C 450 0 500 0 550 100 C 600 0 650 0 700 100 C 750 0 800 0 850 100 C 900 0 950 0 1000 100 L 1000 100 L 0 100 Z" />
+                </svg>
+                <svg class="cloud-svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                    <path class="cloud-rim"
+                        d="M0 100 C 20 0 50 0 100 100 C 150 0 200 0 250 100 C 300 0 350 0 400 100 C 450 0 500 0 550 100 C 600 0 650 0 700 100 C 750 0 800 0 850 100 C 900 0 950 0 1000 100"
+                        transform="translate(0, -2)" />
+                    <path class="cloud-main"
+                        d="M0 100 C 20 0 50 0 100 100 C 150 0 200 0 250 100 C 300 0 350 0 400 100 C 450 0 500 0 550 100 C 600 0 650 0 700 100 C 750 0 800 0 850 100 C 900 0 950 0 1000 100 L 1000 100 L 0 100 Z" />
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTENT (DARK) -->
+    <section class="py-48 bg-navy-900 text-white">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-24">
+
+                <div class="lg:w-1/3 sticky-col reveal">
+                    <span
+                        class="text-gold-600 font-bold tracking-[0.2em] uppercase text-xs block mb-4">Philosophy</span>
+                    <h2 class="font-serif text-5xl lg:text-7xl mb-12 text-white leading-tight">The Lab <br> Approach.
+                    </h2>
+                    <p class="text-gray-400 text-lg leading-relaxed font-light mb-12">
+                        We don't believe in "one size fits all." Every hotel has a unique DNA, and our team is built to
+                        decode it through relentless analysis.
+                    </p>
+                    <div class="space-y-6 pt-12 border-t border-white/10">
+                        <div class="flex items-center gap-4">
+                            <span class="text-gold-500 text-3xl font-serif italic">10+</span>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gray-500">Years of
+                                Growth</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="text-gold-500 text-3xl font-serif italic">2.5k+</span>
+                            <span class="text-xs font-bold uppercase tracking-widest text-gray-500">Rooms Managed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-2/3 space-y-48">
+                    <div class="reveal">
+                        <div
+                            class="h-[600px] mb-12 rounded-[3rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl border border-white/5">
+                            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="font-serif text-5xl text-white mb-8 italic border-l-2 border-gold-500 pl-6">Data
+                            Without Context is Noise.</h3>
+                        <p class="text-gray-400 text-xl leading-relaxed mb-8">
+                            Founded a decade ago, My Revenue Lab was born out of a frustration with the status quo. Many
+                            hotels were using advanced tools but lacked the human expertise to turn that data into
+                            strategy.
+                        </p>
+                        <p class="text-gray-500 text-lg leading-relaxed font-light">
+                            We bridge that gap. We act as your off-site revenue director, your data analyst, and your
+                            distribution strategist all rolled into one powerful engine.
+                        </p>
+                    </div>
+
+                    <div class="reveal">
+                        <div
+                            class="h-[600px] mb-12 rounded-[3rem] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl border border-white/5">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="font-serif text-5xl text-white mb-8 italic border-l-2 border-gold-500 pl-6">Our
+                            Commitment.</h3>
+                        <p class="text-gray-400 text-xl leading-relaxed mb-8">
+                            We are not just a vendor; we are your partner. Your success is our reputation. That's why we
+                            maintain a limited client roster, ensuring that every property receives the high-level
+                            attention it deserves.
+                        </p>
+                        <p class="text-gray-500 text-lg leading-relaxed font-light mb-12">
+                            From independent boutique hotels to group-owned resorts, our methodology has consistently
+                            delivered double-digit growth in Net RevPAR across diverse markets.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER CLOUD -->
+    <section class="h-48 relative overflow-hidden bg-navy-900">
+        <div class="cloud-separator" style="bottom: 0;">
+            <div class="cloud-wrap animate-cloud-drift">
+                <svg class="cloud-svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                    <path class="cloud-rim"
+                        d="M0 100 C 20 0 50 0 100 100 C 150 0 200 0 250 100 C 300 0 350 0 400 100 C 450 0 500 0 550 100 C 600 0 650 0 700 100 C 750 0 800 0 850 100 C 900 0 950 0 1000 100"
+                        transform="translate(0, -2)" />
+                    <path class="cloud-main"
+                        d="M0 100 C 20 0 50 0 100 100 C 150 0 200 0 250 100 C 300 0 350 0 400 100 C 450 0 500 0 550 100 C 600 0 650 0 700 100 C 750 0 800 0 850 100 C 900 0 950 0 1000 100 L 1000 100 L 0 100 Z" />
+                </svg>
+                <svg class="cloud-svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                    <path class="cloud-rim"
+                        d="M0 100 C 20 0 50 0 100 100 C 150 0 200 0 250 100 C 300 0 350 0 400 100 C 450 0 500 0 550 100 C 600 0 650 0 700 100 C 750 0 800 0 850 100 C 900 0 950 0 1000 100"
+                        transform="translate(0, -2)" />
+                    <path class="cloud-main"
+                        d="M0 100 C 20 0 50 0 100 100 C 150 0 200 0 250 100 C 300 0 350 0 400 100 C 450 0 500 0 550 100 C 600 0 650 0 700 100 C 750 0 800 0 850 100 C 900 0 950 0 1000 100 L 1000 100 L 0 100 Z" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMON FOOTER (DARK) -->
+    <footer class="bg-navy-900 text-white pt-32 pb-16 relative overflow-hidden border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6 relative z-10 pt-20">
+            <div class="grid md:grid-cols-4 gap-16 mb-24">
+                <div class="col-span-2">
+                    <a href="index.html" class="flex items-center gap-4 mb-10">
+                        <div
+                            class="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center text-gold-500 text-xl font-serif italic">
+                            M</div>
+                        <span class="font-serif text-3xl font-bold tracking-tight">My Revenue Lab</span>
+                    </a>
+                    <p class="text-gray-400 text-lg leading-relaxed max-w-md font-light">
+                        Elevating hospitality through data. We provide the intelligence and strategy you need to
+                        outperform the market.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-gold-500 uppercase tracking-widest mb-10">Menu</h4>
+                    <ul class="space-y-6 text-sm text-gray-300">
+                        <li><a href="index.html"
+                                class="hover:text-gold-500 transition-colors uppercase tracking-wide">Home</a></li>
+                        <li><a href="about.html"
+                                class="hover:text-gold-500 transition-colors uppercase tracking-wide font-bold text-gold-500">About</a>
+                        </li>
+                        <li><a href="services.html"
+                                class="hover:text-gold-500 transition-colors uppercase tracking-wide">Services</a></li>
+                        <li><a href="contact.html"
+                                class="hover:text-gold-500 transition-colors uppercase tracking-wide">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-gold-500 uppercase tracking-widest mb-10">Contact</h4>
+                    <ul class="space-y-6 text-sm text-gray-300">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-gold-500"></i>
+                            <span>+1 (470) 288-2717</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-gold-500"></i>
+                            <span>info@myrevenuelab.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/10 text-xs text-gray-500">
+                <p>&copy; 2024 My Revenue Lab. All rights reserved.</p>
+                <div class="flex gap-8 mt-6 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="absolute -bottom-20 -right-20 font-serif text-[20rem] text-white/5 select-none pointer-events-none italic leading-none">
+            M</div>
+    </footer>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
+    <script>
+        const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), direction: 'vertical', smooth: true });
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => observer.observe(el));
+
+        document.getElementById('mobile-toggle').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

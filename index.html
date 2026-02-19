@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Revenue Lab | Premium Hotel Revenue Management</title>
+    <meta name="description" content="Unlock your hotel's full potential with data-driven revenue strategies.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                    },
+                    colors: {
+                        gold: {
+                            500: '#C5A059',
+                            600: '#B08D48',
+                        },
+                        navy: {
+                            900: '#0F172A',
+                            800: '#1E293B',
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                        'slow-zoom': 'zoomIn 20s infinite alternate',
+                        'cloud-drift': 'cloudDrift 80s linear infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        zoomIn: {
+                            '0%': { transform: 'scale(1)' },
+                            '100%': { transform: 'scale(1.1)' },
+                        },
+                        cloudDrift: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <style>
+        html.lenis {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto;
+        }
+
+        body {
+            background-color: #0F172A;
+            color: #FAFAFA;
+        }
+
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.1);
+        }
+
+        /* UNIFIED CLOUD DESIGN - LUXURY ENHANCEMENT */
+        .cloud-separator {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            z-index: 20;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .cloud-wrap {
+            display: flex;
+            width: 200%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        .cloud-svg {
+            width: 50%;
+            height: 100%;
+            filter: drop-shadow(0 -5px 15px rgba(197, 160, 89, 0.2));
+        }
+
+        .cloud-main {
+            fill: #0F172A;
+        }
+
+        .cloud-rim {
+            fill: none;
+            stroke: #C5A059;
+            stroke-width: 1;
+            opacity: 0.3;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #C5A059;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .sticky-col {
+            position: sticky;
+            top: 140px;
+            align-self: start;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="antialiased font-sans">
+
+    <!-- COMMON HEADER (DARK) -->
+    <nav class="fixed w-full z-[999] transition-all duration-300 bg-navy-900/90 backdrop-blur-md border-b border-white/10"
+        id="navbar">
+        <div class="max-w-[1400px] mx-auto px-6 h-24 lg:h-28 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-4 group">
+                <div
+                    class="w-12 h-12 lg:w-14 lg:h-14 bg-white/5 border border-white/10 rounded-full flex items-center justify-center text-gold-500 text-2xl font-serif italic group-hover:bg-gold-500 group-hover:text-navy-900 transition-all duration-500">
+                    M</div>
+                <div class="flex flex-col">
+                    <span
+                        class="font-serif text-xl lg:text-2xl font-bold tracking-tight text-white group-hover:text-gold-500 transition-colors">My
+                        Revenue Lab</span>
+                    <span
+                        class="text-[0.6rem] uppercase tracking-[0.3em] text-gray-400 group-hover:text-white transition-colors">Premium
+                        Hotel Solutions</span>
+                </div>
+            </a>
+
+            <div class="hidden lg:flex items-center gap-12">
+                <a href="index.html"
+                    class="nav-link text-xs font-bold text-white uppercase tracking-widest relative">Home</a>
+                <a href="about.html"
+                    class="nav-link text-xs font-semibold text-gray-300 hover:text-white uppercase tracking-widest transition-colors relative">About</a>
+                <a href="services.html"
+                    class="nav-link text-xs font-semibold text-gray-300 hover:text-white uppercase tracking-widest transition-colors relative">Services</a>
+                <a href="contact.html"
+                    class="nav-link text-xs font-semibold text-gray-300 hover:text-white uppercase tracking-widest transition-colors relative">Contact</a>
+                <a href="contact.html"
+                    class="px-8 py-3 border border-gold-500 text-gold-500 text-xs font-bold uppercase tracking-[0.2em] hover:bg-gold-500 hover:text-navy-900 transition-all duration-500">
+                    Get Audit
+                </a>
+            </div>
+
+            <button class="lg:hidden text-2xl text-white outline-none focus:outline-none" id="mobile-toggle">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu"
+            class="hidden lg:hidden bg-navy-900 border-t border-white/10 p-8 space-y-6 flex flex-col items-center">
+            <a href="index.html" class="text-white font-bold uppercase tracking-widest">Home</a>
+            <a href="about.html" class="text-gray-300 font-medium uppercase tracking-widest pt-4">About</a>
+            <a href="services.html" class="text-gray-300 font-medium uppercase tracking-widest pt-4">Services</a>
+            <a href="contact.html" class="text-gray-300 font-medium uppercase tracking-widest pt-4">Contact</a>
+            <a href="contact.html"
+                class="w-full text-center px-10 py-5 bg-gold-500 text-navy-900 font-bold uppercase tracking-widest">Get
+                Audit</a>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline class="hero-video animate-slow-zoom"
+                poster="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop">
+                <source src="https://cdn.pixabay.com/video/2016/09/21/5529-183824314_large.mp4" type="video/mp4">
+            </video>
+            <div class="absolute inset-0 bg-navy-900/60 mix-blend-multiply"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-transparent to-navy-900/50"></div>
+        </div>
+
+        <div class="relative z-20 text-center max-w-6xl mx-auto px-6 mt-20">
+            <div class="mb-10">
+                <span
+                    class="inline-block py-2.5 px-8 border border-white/20 rounded-full bg-white/5 backdrop-blur-md text-gold-500 text-xs font-bold tracking-[0.3em] uppercase animate-fade-in-up">
+                    Yield Management Experts
+                </span>
+            </div>
+
+            <div class="relative mb-12">
+                <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl text-white leading-[1.1] tracking-tight drop-shadow-2xl animate-fade-in-up"
+                    style="animation-delay: 0.2s;">
+                    <span class="inline-block px-6 py-2 backdrop-blur-md bg-navy-900/10 rounded-2xl">The Architecture
+                        of</span><br>
+                    <span
+                        class="inline-block px-6 py-2 backdrop-blur-md bg-navy-900/10 rounded-2xl text-gold-500 italic mt-2">Profitability.</span>
+                </h1>
+            </div>
+
+            <div class="max-w-4xl mx-auto mb-16">
+                <p class="text-gray-100 text-xl md:text-2xl leading-relaxed font-light animate-fade-in-up"
+                    style="animation-delay: 0.4s;">
+                    <span class="inline-block px-8 py-3 backdrop-blur-md bg-navy-900/10 rounded-xl">
+                        Strategic revenue management solutions that drive profitability. We blend AI-driven precision
+                        with human intuition to transform your hotel's revenue stream.
+                    </span>
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-center gap-6 animate-fade-in-up"
+                style="animation-delay: 0.6s;">
+                <a href="#solutions"
+                    class="px-12 py-5 bg-gold-500 text-navy-900 text-sm font-bold uppercase tracking-[0.2em] hover:bg-white transition-all duration-300 shadow-xl shadow-gold-500/20">
+                    Explore Solutions
+                </a>
+            </div>
+        </div>
+        </div>
+
+        <div class="cloud-separator">
+            <div class="cloud-wrap animate-cloud-drift">
+                <svg class="cloud-svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                    <path class="cloud-rim"
+                        d="M0 100 C 20 0 50 0 100 100 C 150 0 200 0 250 100 C 300 0 350 0 400 100 C 450 0 500 0 550 100 C 600 0 650 0 700 100 C 750 0 800 0 850 100 C 900 0 950 0 1000 100"
+                        transform="translate(0, -2)" />
+                    <path class="cloud-main"
+                        d="M0 100 C 20 0 50 0 100 100 C 150 0 200 0 250 100 C 300 0 350 0 400 100 C 450 0 500 0 550 100 C 600 0 650 0 700 100 C 750 0 800 0 850 100 C 900 0 950 0 1000 100 L 1000 100 L 0 100 Z" />
+                </svg>
+                <svg class="cloud-svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                    <path class="cloud-rim"
+                        d="M0 100 C 20 0 50 0 100 100 C 150 0 200 0 250 100 C 300 0 350 0 400 100 C 450 0 500 0 550 100 C 600 0 650 0 700 100 C 750 0 800 0 850 100 C 900 0 950 0 1000 100"
+                        transform="translate(0, -2)" />
+                    <path class="cloud-main"
+                        d="M0 100 C 20 0 50 0 100 100 C 150 0 200 0 250 100 C 300 0 350 0 400 100 C 450 0 500 0 550 100 C 600 0 650 0 700 100 C 750 0 800 0 850 100 C 900 0 950 0 1000 100 L 1000 100 L 0 100 Z" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. STICKY SOLUTIONS SECTION -->
+    <section id="solutions" class="bg-navy-900 text-white py-32 relative">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-20">
+                <div class="lg:w-1/3 sticky-col">
+                    <span class="text-gold-500 text-xs font-bold tracking-[0.2em] uppercase mb-4 block">Our
+                        Expertise</span>
+                    <h2 class="font-serif text-6xl lg:text-7xl mb-8 leading-tight">
+                        Precision Meets <br> <span class="italic text-gold-500">Performance.</span>
+                    </h2>
+                    <p class="text-gray-400 text-xl leading-relaxed mb-12 font-light">
+                        Our methodology covers every aspect of hotel revenue management, leaving no stone unturned in
+                        the pursuit of profit.
+                    </p>
+                    <a href="services.html"
+                        class="inline-flex items-center gap-4 text-gold-500 uppercase tracking-widest text-xs font-bold hover:text-white transition-colors group">
+                        <span>All Capabilities</span>
+                        <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                    </a>
+                </div>
+
+                <div class="lg:w-2/3 space-y-48">
+                    <div class="group relative reveal">
+                        <span
+                            class="text-[12rem] font-serif text-white/5 absolute -top-24 -left-12 select-none group-hover:text-gold-500/10 transition-colors duration-1000">01</span>
+                        <h3 class="text-4xl font-serif text-white mb-6 border-l-2 border-gold-500 pl-6">Dynamic Rate
+                            Management</h3>
+                        <p
+                            class="text-gray-400 text-xl leading-relaxed max-w-2xl group-hover:text-white transition-colors">
+                            Real-time tracking of comp-set rates ensuring you never underprice. We adjust your rates
+                            based on demand, pace, and competitor movement every minute.
+                        </p>
+                    </div>
+
+                    <div class="group relative reveal">
+                        <span
+                            class="text-[12rem] font-serif text-white/5 absolute -top-24 -left-12 select-none group-hover:text-gold-500/10 transition-colors duration-1000">02</span>
+                        <h3 class="text-4xl font-serif text-white mb-6 border-l-2 border-gold-500 pl-6">Market
+                            Segmentation</h3>
+                        <p
+                            class="text-gray-400 text-xl leading-relaxed max-w-2xl group-hover:text-white transition-colors">
+                            Identifying and targeting high-value guest segments to optimize mix. We break down your
+                            bookings to find the most profitable channels.
+                        </p>
+                    </div>
+
+                    <div class="group relative reveal">
+                        <span
+                            class="text-[12rem] font-serif text-white/5 absolute -top-24 -left-12 select-none group-hover:text-gold-500/10 transition-colors duration-1000">03</span>
+                        <h3 class="text-4xl font-serif text-white mb-6 border-l-2 border-gold-500 pl-6">Predictive
+                            Forecasting</h3>
+                        <p
+                            class="text-gray-400 text-xl leading-relaxed max-w-2xl group-hover:text-white transition-colors">
+                            Using advanced AI modeling, we predict demand cycles 90 days out, allowing you to optimize
+                            staffing, purchasing, and marketing spend.
+                        </p>
+                    </div>
+
+                    <div class="group relative reveal">
+                        <span
+                            class="text-[12rem] font-serif text-white/5 absolute -top-24 -left-12 select-none group-hover:text-gold-500/10 transition-colors duration-1000">04</span>
+                        <h3 class="text-4xl font-serif text-white mb-6 border-l-2 border-gold-500 pl-6">OTA Optimization
+                        </h3>
+                        <p
+                            class="text-gray-400 text-xl leading-relaxed max-w-2xl group-hover:text-white transition-colors">
+                            Reducing OTA commission dependency by boosting direct bookings while ensuring your listing
+                            ranking remains high.
+                        </p>
+                    </div>
+
+                    <div class="group relative reveal">
+                        <span
+                            class="text-[12rem] font-serif text-white/5 absolute -top-24 -left-12 select-none group-hover:text-gold-500/10 transition-colors duration-1000">05</span>
+                        <h3 class="text-4xl font-serif text-white mb-6 border-l-2 border-gold-500 pl-6">Inventory
+                            Management</h3>
+                        <p
+                            class="text-gray-400 text-xl leading-relaxed max-w-2xl group-hover:text-white transition-colors">
+                            Precise control over room types and availability across all channels to prevent overbooking
+                            and maximize high-demand night revenue.
+                        </p>
+                    </div>
+
+                    <div class="group relative reveal">
+                        <span
+                            class="text-[12rem] font-serif text-white/5 absolute -top-24 -left-12 select-none group-hover:text-gold-500/10 transition-colors duration-1000">06</span>
+                        <h3 class="text-4xl font-serif text-white mb-6 border-l-2 border-gold-500 pl-6">Technical Audit
+                        </h3>
+                        <p
+                            class="text-gray-400 text-xl leading-relaxed max-w-2xl group-hover:text-white transition-colors">
+                            Full review of your PMS, RMS, and CRS health. We ensure your data stack is optimized for
+                            seamless automation.
+                        </p>
+                    </div>
+
+                    <div class="group relative reveal">
+                        <span
+                            class="text-[12rem] font-serif text-white/5 absolute -top-24 -left-12 select-none group-hover:text-gold-500/10 transition-colors duration-1000">07</span>
+                        <h3 class="text-4xl font-serif text-white mb-6 border-l-2 border-gold-500 pl-6">Reputation
+                            Strategy</h3>
+                        <p
+                            class="text-gray-400 text-xl leading-relaxed max-w-2xl group-hover:text-white transition-colors">
+                            Leveraging guest sentiment data to justify rate increases. We turn high ratings into higher
+                            ADR through psychological pricing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cloud-separator">
+            <div class="cloud-wrap animate-cloud-drift">
+                <svg class="cloud-svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                    <path class="cloud-rim"
+                        d="M0 100 C 20 0 50 0 100 100 C 150 0 200 0 250 100 C 300 0 350 0 400 100 C 450 0 500 0 550 100 C 600 0 650 0 700 100 C 750 0 800 0 850 100 C 900 0 950 0 1000 100"
+                        transform="translate(0, -2)" />
+                    <path class="cloud-main"
+                        d="M0 100 C 20 0 50 0 100 100 C 150 0 200 0 250 100 C 300 0 350 0 400 100 C 450 0 500 0 550 100 C 600 0 650 0 700 100 C 750 0 800 0 850 100 C 900 0 950 0 1000 100 L 1000 100 L 0 100 Z" />
+                </svg>
+                <svg class="cloud-svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                    <path class="cloud-rim"
+                        d="M0 100 C 20 0 50 0 100 100 C 150 0 200 0 250 100 C 300 0 350 0 400 100 C 450 0 500 0 550 100 C 600 0 650 0 700 100 C 750 0 800 0 850 100 C 900 0 950 0 1000 100"
+                        transform="translate(0, -2)" />
+                    <path class="cloud-main"
+                        d="M0 100 C 20 0 50 0 100 100 C 150 0 200 0 250 100 C 300 0 350 0 400 100 C 450 0 500 0 550 100 C 600 0 650 0 700 100 C 750 0 800 0 850 100 C 900 0 950 0 1000 100 L 1000 100 L 0 100 Z" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. INNOVATION VIDEO (NOW DARK BG) -->
+    <section class="py-48 bg-navy-900 text-white relative">
+        <div class="max-w-[1400px] mx-auto px-6">
+            <div class="text-center mb-24 reveal">
+                <span class="text-gold-600 font-bold tracking-[0.2em] uppercase text-xs block mb-4">See Innovation in
+                    Action</span>
+                <h2 class="font-serif text-6xl md:text-7xl mb-8 leading-tight">Technology Built for <br> <span
+                        class="italic text-gold-500">Tomorrow.</span></h2>
+            </div>
+
+            <div
+                class="relative w-full aspect-video md:aspect-[21/9] rounded-[3rem] overflow-hidden shadow-2xl bg-navy-800 border border-white/10 mx-auto group">
+                <video
+                    class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700"
+                    autoplay muted loop playsinline
+                    poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop">
+                    <source src="https://cdn.pixabay.com/video/2021/08/13/84992-588439314_large.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div
+                    class="absolute inset-0 bg-navy-900/20 group-hover:bg-transparent transition-colors duration-700 pointer-events-none">
+                </div>
+            </div>
+
+            <div class="mt-40 text-center max-w-4xl mx-auto reveal">
+                <h2 class="font-serif text-6xl md:text-8xl mb-12">Ready to outperform?</h2>
+                <a href="contact.html"
+                    class="inline-block px-16 py-6 bg-gold-500 text-navy-900 text-sm font-bold uppercase tracking-[0.2em] hover:bg-white transition-all duration-500 shadow-2xl">
+                    Request Your Audit
+                </a>
+            </div>
+        </div>
+
+        <div class="cloud-separator" style="bottom: 0;">
+            <div class="cloud-wrap animate-cloud-drift">
+                <svg class="cloud-svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                    <path class="cloud-rim"
+                        d="M0 100 C 20 0 50 0 100 100 C 150 0 200 0 250 100 C 300 0 350 0 400 100 C 450 0 500 0 550 100 C 600 0 650 0 700 100 C 750 0 800 0 850 100 C 900 0 950 0 1000 100"
+                        transform="translate(0, -2)" />
+                    <path class="cloud-main"
+                        d="M0 100 C 20 0 50 0 100 100 C 150 0 200 0 250 100 C 300 0 350 0 400 100 C 450 0 500 0 550 100 C 600 0 650 0 700 100 C 750 0 800 0 850 100 C 900 0 950 0 1000 100 L 1000 100 L 0 100 Z" />
+                </svg>
+                <svg class="cloud-svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                    <path class="cloud-rim"
+                        d="M0 100 C 20 0 50 0 100 100 C 150 0 200 0 250 100 C 300 0 350 0 400 100 C 450 0 500 0 550 100 C 600 0 650 0 700 100 C 750 0 800 0 850 100 C 900 0 950 0 1000 100"
+                        transform="translate(0, -2)" />
+                    <path class="cloud-main"
+                        d="M0 100 C 20 0 50 0 100 100 C 150 0 200 0 250 100 C 300 0 350 0 400 100 C 450 0 500 0 550 100 C 600 0 650 0 700 100 C 750 0 800 0 850 100 C 900 0 950 0 1000 100 L 1000 100 L 0 100 Z" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMON FOOTER (DARK) -->
+    <footer class="bg-navy-900 text-white pt-32 pb-16 relative overflow-hidden border-t border-white/5">
+        <div class="max-w-[1400px] mx-auto px-6 relative z-10 pt-20">
+            <div class="grid md:grid-cols-4 gap-16 mb-24">
+                <div class="col-span-2">
+                    <a href="index.html" class="flex items-center gap-4 mb-10">
+                        <div
+                            class="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center text-gold-500 text-xl font-serif italic">
+                            M</div>
+                        <span class="font-serif text-3xl font-bold tracking-tight">My Revenue Lab</span>
+                    </a>
+                    <p class="text-gray-400 text-lg leading-relaxed max-w-md font-light">
+                        Elevating hospitality through data. We provide the intelligence and strategy you need to
+                        outperform the market.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-gold-500 uppercase tracking-widest mb-10">Menu</h4>
+                    <ul class="space-y-6 text-sm text-gray-300">
+                        <li><a href="index.html"
+                                class="hover:text-gold-500 transition-colors uppercase tracking-wide">Home</a></li>
+                        <li><a href="about.html"
+                                class="hover:text-gold-500 transition-colors uppercase tracking-wide">About</a></li>
+                        <li><a href="services.html"
+                                class="hover:text-gold-500 transition-colors uppercase tracking-wide">Services</a></li>
+                        <li><a href="contact.html"
+                                class="hover:text-gold-500 transition-colors uppercase tracking-wide">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-bold text-gold-500 uppercase tracking-widest mb-10">Contact</h4>
+                    <ul class="space-y-6 text-sm text-gray-300">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-gold-500"></i>
+                            <span>+1 (470) 288-2717</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-gold-500"></i>
+                            <span>info@myrevenuelab.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-white/10 text-xs text-gray-500">
+                <p>&copy; 2024 My Revenue Lab. All rights reserved.</p>
+                <div class="flex gap-8 mt-6 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="absolute -bottom-20 -right-20 font-serif text-[20rem] text-white/5 select-none pointer-events-none italic leading-none">
+            M</div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.39/dist/lenis.min.js"></script>
+    <script>
+        const lenis = new Lenis({ duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), direction: 'vertical', smooth: true });
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => observer.observe(el));
+
+        document.getElementById('mobile-toggle').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
