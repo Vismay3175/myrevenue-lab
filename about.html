@@ -19,6 +19,8 @@
     <!-- FontAwesome Icons & AOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- Lenis Smooth Scroll CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -49,25 +51,27 @@
 
 <body class="bg-white text-slate-900">
 
-    <!-- Top Announcement Bar -->
-    <div class="bg-slate-900 text-slate-300 py-2.5 px-4 text-xs font-semibold border-b border-slate-800">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <span class="inline-flex items-center gap-1.5 text-gold-400 bg-gold-500/10 px-2.5 py-0.5 rounded-full border border-gold-500/20">
-                    <i class="fa-solid fa-shield-halved text-xs"></i> 100% Performance Guarantee
-                </span>
-                <span class="hidden sm:inline text-slate-400">No Revenue Lift = Zero Consultancy Fee</span>
-            </div>
-            <div class="flex items-center gap-6 text-slate-400 text-xs">
-                <a href="tel:+14702882717" class="hover:text-gold-400"><i class="fa-solid fa-phone text-gold-500"></i> +1 (470) 288-2717</a>
-                <a href="mailto:info@myrevenuelab.com" class="hover:text-gold-400"><i class="fa-solid fa-envelope text-gold-500"></i> info@myrevenuelab.com</a>
+    <!-- Combined Sticky Header Container (Pins Both Top Bar & Nav on Scroll) -->
+    <header class="fixed top-0 left-0 right-0 z-50 w-full shadow-md transition-all duration-300 bg-white">
+        <!-- Top Announcement Bar -->
+        <div class="bg-slate-900 text-slate-300 py-2.5 px-4 text-xs font-semibold border-b border-slate-800">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <div class="flex items-center gap-4">
+                    <span class="inline-flex items-center gap-1.5 text-gold-400 bg-gold-500/10 px-2.5 py-0.5 rounded-full border border-gold-500/20">
+                        <i class="fa-solid fa-shield-halved text-xs"></i> 100% Performance Guarantee
+                    </span>
+                    <span class="hidden sm:inline text-slate-400">No Revenue Lift = Zero Consultancy Fee</span>
+                </div>
+                <div class="flex items-center gap-6 text-slate-400 text-xs">
+                    <a href="tel:+14702882717" class="hover:text-gold-400"><i class="fa-solid fa-phone text-gold-500"></i> +1 (470) 288-2717</a>
+                    <a href="mailto:info@myrevenuelab.com" class="hover:text-gold-400"><i class="fa-solid fa-envelope text-gold-500"></i> info@myrevenuelab.com</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <!-- Main Navigation Bar -->
+        <div class="bg-white/95 backdrop-blur-md border-b border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="index.html" class="flex items-center gap-3 group">
                 <img src="assets/images/logo-mark.png" alt="Revenue Lab Growth Arrow" class="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-110 duration-300">
                 <div>
@@ -79,17 +83,18 @@
                 <a href="index.html" class="hover:text-gold-600 py-1">Home</a>
                 <a href="about.html" class="text-gold-600 font-extrabold py-1">About Us</a>
                 <a href="services.html" class="hover:text-gold-600 py-1">Revenue Strategy</a>
-                <a href="portfolio.html" class="hover:text-gold-600 py-1">Case Studies</a>
+                <a href="portfolio.html" class="hover:text-gold-600 py-1">Portfolio</a>
                 <a href="contact.html" class="hover:text-gold-600 py-1">Contact</a>
             </nav>
             <a href="contact.html" class="hidden sm:inline-flex px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-slate-900 bg-gold-500 hover:bg-gold-400 shadow-md">
                 Free Audit <i class="fa-solid fa-arrow-right ml-2"></i>
             </a>
         </div>
+        </div>
     </header>
 
     <!-- About Hero Header (High Resolution Team Photo Background) -->
-    <section class="relative bg-slate-950 text-white py-28 overflow-hidden">
+    <section class="relative bg-slate-950 text-white py-28 overflow-hidden pt-[117px]">
         <img src="assets/images/revenue_consultant_team.jpg" alt="Executive Revenue Team" class="absolute inset-0 w-full h-full object-cover opacity-35">
         <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/40"></div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10" data-aos="fade-right">
@@ -302,7 +307,14 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 800, once: true });</script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script>
+        const lenis = new Lenis({ duration: 1.2, smoothWheel: true, smoothTouch: false });
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+        lenis.on('scroll', () => { if (typeof AOS !== 'undefined') AOS.refresh(); });
+        AOS.init({ duration: 800, once: true });
+    </script>
 </body>
 
 </html>

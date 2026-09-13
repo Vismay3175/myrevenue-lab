@@ -16,6 +16,8 @@
     <!-- FontAwesome & AOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <!-- Lenis Smooth Scroll CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -45,47 +47,50 @@
 
 <body class="bg-white text-slate-900">
 
-    <!-- Top Announcement Bar -->
-    <div class="bg-slate-900 text-slate-300 py-2.5 px-4 text-xs font-semibold border-b border-slate-800">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <span class="inline-flex items-center gap-1.5 text-gold-400 bg-gold-500/10 px-2.5 py-0.5 rounded-full border border-gold-500/20">
-                    <i class="fa-solid fa-clock text-xs"></i> Mon-Fri: 07:00 - 18:00 EST
-                </span>
-                <span class="hidden sm:inline text-slate-400">Founded by Hemal Mehta | Marietta, GA</span>
-            </div>
-            <div class="flex items-center gap-6 text-slate-400 text-xs">
-                <a href="tel:+14702882717" class="hover:text-gold-400"><i class="fa-solid fa-phone text-gold-500"></i> +1 (470) 288-2717</a>
-                <a href="mailto:sales@myrevenuelab.com" class="hover:text-gold-400"><i class="fa-solid fa-envelope text-gold-500"></i> sales@myrevenuelab.com</a>
+    <!-- Combined Sticky Header Container (Pins Both Top Bar & Nav on Scroll) -->
+    <header class="fixed top-0 left-0 right-0 z-50 w-full shadow-md transition-all duration-300 bg-white">
+        <!-- Top Announcement Bar -->
+        <div class="bg-slate-900 text-slate-300 py-2.5 px-4 text-xs font-semibold border-b border-slate-800">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <div class="flex items-center gap-4">
+                    <span class="inline-flex items-center gap-1.5 text-gold-400 bg-gold-500/10 px-2.5 py-0.5 rounded-full border border-gold-500/20">
+                        <i class="fa-solid fa-clock text-xs"></i> Mon-Fri: 07:00 - 18:00 EST
+                    </span>
+                    <span class="hidden sm:inline text-slate-400">Founded by Hemal Mehta | Marietta, GA</span>
+                </div>
+                <div class="flex items-center gap-6 text-slate-400 text-xs">
+                    <a href="tel:+14702882717" class="hover:text-gold-400"><i class="fa-solid fa-phone text-gold-500"></i> +1 (470) 288-2717</a>
+                    <a href="mailto:sales@myrevenuelab.com" class="hover:text-gold-400"><i class="fa-solid fa-envelope text-gold-500"></i> sales@myrevenuelab.com</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <!-- Navigation Bar -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="index.html" class="flex items-center gap-3">
-                <div class="w-11 h-11 rounded-xl bg-slate-900 flex items-center justify-center text-gold-400 font-extrabold text-xl">R</div>
-                <div>
-                    <span class="font-extrabold text-xl text-slate-900 block leading-tight">My Revenue Lab</span>
-                    <span class="text-[10px] font-bold tracking-widest uppercase text-gold-600 block">Hotel Yield Science</span>
-                </div>
-            </a>
-            <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-700">
-                <a href="index.html" class="hover:text-gold-600 py-1">Home</a>
-                <a href="about.html" class="hover:text-gold-600 py-1">About Us</a>
-                <a href="services.html" class="hover:text-gold-600 py-1">Revenue Strategy</a>
-                <a href="portfolio.html" class="hover:text-gold-600 py-1">Case Studies</a>
-                <a href="contact.html" class="text-gold-600 font-extrabold py-1">Contact</a>
-            </nav>
-            <a href="contact.html" class="hidden sm:inline-flex px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-slate-900 bg-gold-500 hover:bg-gold-400 shadow-md">
-                Growth Audit <i class="fa-solid fa-arrow-right ml-2"></i>
-            </a>
+        <!-- Main Navigation Bar -->
+        <div class="bg-white/95 backdrop-blur-md border-b border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+                <a href="index.html" class="flex items-center gap-3">
+                    <div class="w-11 h-11 rounded-xl bg-slate-900 flex items-center justify-center text-gold-400 font-extrabold text-xl">R</div>
+                    <div>
+                        <span class="font-extrabold text-xl text-slate-900 block leading-tight">My Revenue Lab</span>
+                        <span class="text-[10px] font-bold tracking-widest uppercase text-gold-600 block">Hotel Yield Science</span>
+                    </div>
+                </a>
+                <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-700">
+                    <a href="index.html" class="hover:text-gold-600 py-1">Home</a>
+                    <a href="about.html" class="hover:text-gold-600 py-1">About Us</a>
+                    <a href="services.html" class="hover:text-gold-600 py-1">Revenue Strategy</a>
+                    <a href="portfolio.html" class="hover:text-gold-600 py-1">Portfolio</a>
+                    <a href="contact.html" class="text-gold-600 font-extrabold py-1">Contact</a>
+                </nav>
+                <a href="contact.html" class="hidden sm:inline-flex px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-slate-900 bg-gold-500 hover:bg-gold-400 shadow-md">
+                    Growth Audit <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
         </div>
     </header>
 
     <!-- Contact Hero Banner -->
-    <section class="relative bg-slate-950 text-white py-28 overflow-hidden">
+    <section class="relative bg-slate-950 text-white py-28 overflow-hidden pt-[117px]">
         <img src="assets/images/atlanta_marietta_office.jpg" alt="Marietta Headquarters" class="absolute inset-0 w-full h-full object-cover opacity-35">
         <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/40"></div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10" data-aos="fade-right">
@@ -257,7 +262,14 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 800, once: true });</script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script>
+        const lenis = new Lenis({ duration: 1.2, smoothWheel: true, smoothTouch: false });
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+        requestAnimationFrame(raf);
+        lenis.on('scroll', () => { if (typeof AOS !== 'undefined') AOS.refresh(); });
+        AOS.init({ duration: 800, once: true });
+    </script>
 </body>
 
 </html>
