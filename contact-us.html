@@ -1,19 +1,21 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Schedule Growth Audit | My Revenue Lab</title>
+    <title>Contact Us | Schedule Growth Audit | RevenueLab</title>
     <meta name="description"
-        content="Contact My Revenue Lab in Marietta, GA for a free hotel revenue growth audit. Call +1 (470) 288-2717 or email sales@myrevenuelab.com. Founded by Hemal Mehta.">
+        content="Contact RevenueLab in Marietta, GA for a free hotel revenue growth audit. Call +1 (470) 288-2717 or email sales@myrevenuelab.com. Founded by Hemal Mehta.">
 
     <!-- Executive Google Fonts: Plus Jakarta Sans & Playfair Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
 
-    <!-- FontAwesome & AOS -->
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <!-- Lenis Smooth Scroll CSS -->
@@ -51,38 +53,54 @@
     <header class="fixed top-0 left-0 right-0 z-50 w-full shadow-md transition-all duration-300 bg-white">
         <!-- Top Announcement Bar -->
         <div class="bg-slate-900 text-slate-300 py-2.5 px-4 text-xs font-semibold border-b border-slate-800">
-            <div class="max-w-7xl mx-auto flex justify-between items-center">
-                <div class="flex items-center gap-4">
+            <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
+                <div class="flex items-center gap-3 sm:gap-4 flex-wrap">
                     <span class="inline-flex items-center gap-1.5 text-gold-400 bg-gold-500/10 px-2.5 py-0.5 rounded-full border border-gold-500/20">
                         <i class="fa-solid fa-clock text-xs"></i> Mon-Fri: 07:00 - 18:00 EST
                     </span>
                     <span class="hidden sm:inline text-slate-400">Founded by Hemal Mehta | Marietta, GA</span>
                 </div>
-                <div class="flex items-center gap-6 text-slate-400 text-xs">
+                <div class="flex items-center gap-4 sm:gap-6 text-slate-400 text-xs flex-wrap">
                     <a href="tel:+14702882717" class="hover:text-gold-400"><i class="fa-solid fa-phone text-gold-500"></i> +1 (470) 288-2717</a>
-                    <a href="mailto:sales@myrevenuelab.com" class="hover:text-gold-400"><i class="fa-solid fa-envelope text-gold-500"></i> sales@myrevenuelab.com</a>
+                    <a href="mailto:info@myrevenuelab.com" class="hover:text-gold-400"><i class="fa-solid fa-envelope text-gold-500"></i> info@myrevenuelab.com</a>
                 </div>
             </div>
         </div>
 
         <!-- Main Navigation Bar -->
-        <div class="bg-white/95 backdrop-blur-md border-b border-slate-100">
+        <div class="bg-white/95 backdrop-blur-md border-b border-slate-100 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-                <a href="index.html" class="flex items-center gap-3">
-                    <div class="w-11 h-11 rounded-xl bg-slate-900 flex items-center justify-center text-gold-400 font-extrabold text-xl">R</div>
+                <a href="index.html" class="flex items-center gap-3 group">
+                    <img src="assets/images/logo-mark.png" alt="Revenue Lab Growth Arrow" class="h-10 sm:h-12 w-auto object-contain transition-transform group-hover:scale-110 duration-300">
                     <div>
-                        <span class="font-extrabold text-xl text-slate-900 block leading-tight">My Revenue Lab</span>
-                        <span class="text-[10px] font-bold tracking-widest uppercase text-gold-600 block">Hotel Yield Science</span>
+                        <span class="font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 block leading-none">RevenueLab</span>
+                        <span class="text-[9px] sm:text-[10px] font-extrabold tracking-[0.22em] uppercase text-emerald-600 block mt-1">The Science of Revenue</span>
                     </div>
                 </a>
                 <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-700">
-                    <a href="index.html" class="hover:text-gold-600 py-1">Home</a>
+                    <a href="index.html" class="hover:text-gold-600 py-1">Services</a>
                     <a href="about.html" class="hover:text-gold-600 py-1">About Us</a>
-                    <a href="services.html" class="hover:text-gold-600 py-1">Revenue Strategy</a>
+                    <a href="services.html" class="hover:text-gold-600 py-1">Services</a>
                     <a href="portfolio.html" class="hover:text-gold-600 py-1">Portfolio</a>
                     <a href="contact.html" class="text-gold-600 font-extrabold py-1">Contact</a>
                 </nav>
-                <a href="contact.html" class="hidden sm:inline-flex px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-slate-900 bg-gold-500 hover:bg-gold-400 shadow-md">
+                <div class="flex items-center gap-4">
+                    <a href="contact.html" class="hidden sm:inline-flex px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-slate-900 bg-gold-500 hover:bg-gold-400 shadow-md">
+                        Growth Audit <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-6 shadow-xl space-y-3">
+                <a href="index.html" class="block py-2 text-base font-bold text-slate-800 hover:text-gold-600 border-b border-slate-100">Services</a>
+                <a href="about.html" class="block py-2 text-base font-bold text-slate-800 hover:text-gold-600 border-b border-slate-100">About Us</a>
+                <a href="services.html" class="block py-2 text-base font-bold text-slate-800 hover:text-gold-600 border-b border-slate-100">Services</a>
+                <a href="portfolio.html" class="block py-2 text-base font-bold text-slate-800 hover:text-gold-600 border-b border-slate-100">Portfolio</a>
+                <a href="contact.html" class="block py-2 text-base font-bold text-gold-600 border-b border-slate-100">Contact</a>
+                <a href="contact.html" class="inline-block w-full text-center px-6 py-3 mt-2 rounded-full text-xs font-bold uppercase tracking-wider text-slate-900 bg-gold-500 hover:bg-gold-400 shadow-md">
                     Growth Audit <i class="fa-solid fa-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -90,17 +108,17 @@
     </header>
 
     <!-- Contact Hero Banner -->
-    <section class="relative bg-slate-950 text-white py-28 overflow-hidden pt-[117px]">
+    <section class="relative bg-slate-950 text-white pt-40 sm:pt-44 lg:pt-48 pb-20 sm:pb-28 overflow-hidden">
         <img src="assets/images/atlanta_marietta_office.jpg" alt="Marietta Headquarters" class="absolute inset-0 w-full h-full object-cover opacity-35">
         <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/40"></div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10" data-aos="fade-right">
             <span class="text-xs font-extrabold tracking-widest uppercase text-gold-400 bg-gold-500/20 px-3.5 py-1.5 rounded-full border border-gold-500/30 inline-block mb-4">
                 Schedule Your Growth Audit
             </span>
-            <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight max-w-3xl mb-6">
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight max-w-3xl mb-6">
                 Strategic Hospitality Consulting & Growth Audit
             </h1>
-            <p class="text-slate-300 text-lg max-w-2xl leading-relaxed">
+            <p class="text-slate-300 text-base sm:text-lg max-w-2xl leading-relaxed">
                 Revenue Optimization, Sales Leadership & OTA Distribution Strategy across North America and global markets.
             </p>
         </div>
@@ -149,14 +167,14 @@
                         </div>
                     </div>
 
-                    <!-- Hours & Guarantee -->
+                    <!-- Hours & Risk-Free Model -->
                     <div class="bg-slate-900 text-white rounded-3xl p-6 shadow-xl border border-slate-800 flex items-center gap-4">
                         <div class="w-12 h-12 rounded-2xl bg-gold-500 text-slate-950 font-black flex items-center justify-center text-xl flex-shrink-0">
                             <i class="fa-solid fa-shield-halved"></i>
                         </div>
                         <div>
                             <h4 class="font-extrabold text-sm text-gold-400">Mon-Fri: 07:00 - 18:00 EST</h4>
-                            <p class="text-xs text-slate-300 mt-0.5">Performance Guarantee: No RevPAR Lift = Zero Consultancy Fee</p>
+                            <p class="text-xs text-slate-300 mt-0.5">Performance Commitment: No RevPAR Lift = Zero Consultancy Fee</p>
                         </div>
                     </div>
 
@@ -251,9 +269,9 @@
     <!-- Footer -->
     <footer class="bg-slate-950 text-slate-400 text-xs border-t border-slate-800 py-12">
         <div class="max-w-7xl mx-auto px-4 text-center sm:flex sm:justify-between items-center gap-4">
-            <div>&copy; 2026 My Revenue Lab | All Rights Reserved. 2170 Delk Rd SE, Marietta, GA 30067.</div>
+            <div>&copy; 2026 RevenueLab | All Rights Reserved. 2170 Delk Rd SE, Marietta, GA 30067.</div>
             <div class="flex justify-center gap-6 mt-4 sm:mt-0">
-                <a href="index.html" class="hover:text-gold-400">Home</a>
+                <a href="index.html" class="hover:text-gold-400">Services</a>
                 <a href="about.html" class="hover:text-gold-400">About Us</a>
                 <a href="services.html" class="hover:text-gold-400">Services</a>
                 <a href="portfolio.html" class="hover:text-gold-400">Portfolio</a>
@@ -269,6 +287,19 @@
         requestAnimationFrame(raf);
         lenis.on('scroll', () => { if (typeof AOS !== 'undefined') AOS.refresh(); });
         AOS.init({ duration: 800, once: true });
+
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                if (menuIcon) {
+                    menuIcon.classList.toggle('fa-bars');
+                    menuIcon.classList.toggle('fa-xmark');
+                }
+            });
+        }
     </script>
 </body>
 
