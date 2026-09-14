@@ -1,59 +1,66 @@
-﻿/**
+/**
  * RevenueLab - Hospitality Presence Map
- * Leaflet 1.9.4 must be loaded before this script (via js/leaflet.js)
+ * Direct Native Leaflet Integration with MarkerCluster grouping & fallbacks
  */
 
 (function () {
     'use strict';
 
-    var MAX_RETRIES = 20;
+    var MAX_RETRIES = 30;
     var retryCount  = 0;
 
-    function initMap() {
-        var mapContainer = document.getElementById('leaflet-presence-map');
-        if (!mapContainer) { return; }
+    function getLeafletGlobal() {
+        if (typeof window.L !== 'undefined' && typeof window.L.map === 'function') {
+            return window.L;
+        }
+        if (typeof window.leaflet !== 'undefined' && typeof window.leaflet.map === 'function') {
+            window.L = window.leaflet;
+            return window.L;
+        }
+        return null;
+    }
 
-        // Check if Leaflet global is ready
-        if (typeof window.L === 'undefined' || typeof window.L.map !== 'function') {
+    function initHospitalityMap() {
+        var container = document.getElementById('leaflet-presence-map');
+        if (!container) { return; }
+
+        var L = getLeafletGlobal();
+        if (!L) {
             retryCount++;
             if (retryCount <= MAX_RETRIES) {
-                setTimeout(initMap, 200);
+                setTimeout(initHospitalityMap, 100);
             } else {
-                console.error('[RevenueLab Map] Leaflet failed to load after ' + MAX_RETRIES + ' retries.');
+                console.error('[RevenueLab Map] Leaflet library failed to load after ' + MAX_RETRIES + ' retries.');
             }
             return;
         }
 
-        var L = window.L;
-
-        // Destroy previous Leaflet instance (supports Live-Server hot-reload)
-        if (window._hospitalityMap) {
-            try { window._hospitalityMap.remove(); } catch (e) {}
-            window._hospitalityMap = null;
+        // Clean up previous instance for hot-reloads
+        if (window._hospitalityMapInstance) {
+            try { window._hospitalityMapInstance.remove(); } catch (e) {}
+            window._hospitalityMapInstance = null;
         }
-        if (mapContainer._leaflet_id) {
-            try { delete mapContainer._leaflet_id; } catch (e) {}
+        if (container._leaflet_id) {
+            try { delete container._leaflet_id; } catch (e) {}
         }
 
-        // ── Create Map ──────────────────────────────────────────────────────────
+        // Create Map Instance
         var map = L.map('leaflet-presence-map', {
             scrollWheelZoom: false,
             zoomControl: true,
             trackResize: true
         }).setView([20.0, 10.0], 2);
 
-        window._hospitalityMap = map;
+        window._hospitalityMapInstance = map;
 
-        // ── Tile Layer: Esri (no referrer restriction, works on file:// & localhost) ─
-        L.tileLayer(
-            'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}',
-            {
-                maxZoom: 19,
-                attribution: 'Tiles &copy; Esri'
-            }
-        ).addTo(map);
+        // Tile Layer setup: Standard OpenStreetMap primary with subdomains
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            subdomains: ['a', 'b', 'c'],
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-        // ── Hotel Locations ──────────────────────────────────────────────────────
+        // Hotel Locations Data
         var locations = [
             { name: "RevenueLab Global HQ",                city: "Marietta, GA",      region: "USA",       coords: [33.9526, -84.5499],  keys: "Strategy HQ", type: "Global HQ" },
             { name: "Atlanta Marriott Perimeter Center",   city: "Atlanta, GA",       region: "USA",       coords: [33.9238, -84.3414],  keys: "396 Keys",    type: "Full Service Hotel" },
@@ -71,74 +78,115 @@
             { name: "Melbourne CBD Commercial Hotel",      city: "Melbourne, VIC",    region: "Australia", coords: [-37.8136, 144.9631], keys: "190 Keys",    type: "Franchised Business Hotel" }
         ];
 
-        // ── Custom Pin Icon ──────────────────────────────────────────────────────
-        var pin = L.divIcon({
+        // Custom Emerald Pin Icon
+        var pinIcon = L.divIcon({
             className: 'custom-map-pin',
-            html: '<div style="background:#059669;width:22px;height:22px;border-radius:50%;border:3px solid #fff;box-shadow:0 4px 12px rgba(5,150,105,.6);"></div>',
-            iconSize:   [22, 22],
-            iconAnchor: [11, 11]
+            html: '<div style="background-color:#059669; width:20px; height:20px; border-radius:50%; border:3px solid #FFFFFF; box-shadow:0 4px 10px rgba(5,150,105,0.5);"></div>',
+            iconSize: [20, 20],
+            iconAnchor: [10, 10]
         });
 
-        // ── Add Markers ──────────────────────────────────────────────────────────
-        var markers = [];
-        locations.forEach(function (loc) {
-            var m = L.marker(loc.coords, { icon: pin }).addTo(map);
-            m._region = loc.region;
-            m.bindPopup(
-                '<div style="padding:10px;font-family:sans-serif;">' +
-                '<span style="background:#ECFDF5;color:#059669;font-size:10px;font-weight:800;padding:2px 8px;border-radius:9999px;text-transform:uppercase;display:inline-block;margin-bottom:6px;">' + loc.region + ' Portfolio</span>' +
-                '<h4 style="font-size:13px;font-weight:800;color:#0F172A;margin:0 0 4px;">' + loc.name + '</h4>' +
-                '<p style="font-size:11px;color:#64748B;margin:0 0 6px;">' + loc.city + ' &bull; ' + loc.keys + '</p>' +
-                '<span style="font-size:10px;font-weight:700;color:#B08D48;">' + loc.type + '</span>' +
-                '</div>'
-            );
-            markers.push(m);
-        });
-
-        // ── Fix tile rendering after layout ─────────────────────────────────────
-        [200, 600, 1500, 3000].forEach(function (ms) {
-            setTimeout(function () { map.invalidateSize(); }, ms);
-        });
-
-        window.addEventListener('resize', function () { map.invalidateSize(); });
-        window.addEventListener('scroll', function () {
-            var r = mapContainer.getBoundingClientRect();
-            if (r.top < window.innerHeight && r.bottom > 0) { map.invalidateSize(); }
-        });
-        if ('IntersectionObserver' in window) {
-            new IntersectionObserver(function (entries) {
-                entries.forEach(function (e) { if (e.isIntersecting) { map.invalidateSize(); } });
-            }, { threshold: 0.05 }).observe(mapContainer);
+        // Initialize Marker Cluster Group if plugin is loaded, fallback to feature group
+        var clusterGroup;
+        if (typeof L.markerClusterGroup === 'function') {
+            clusterGroup = L.markerClusterGroup({
+                showCoverageOnHover: false,
+                maxClusterRadius: 50,
+                spiderfyOnMaxZoom: true,
+                zoomToBoundsOnClick: true,
+                iconCreateFunction: function (cluster) {
+                    var count = cluster.getChildCount();
+                    return L.divIcon({
+                        html: '<div style="background: linear-gradient(135deg, #059669, #047857); color: #ffffff; font-weight: 800; font-size: 13px; font-family: sans-serif; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid #ffffff; box-shadow: 0 4px 14px rgba(5,150,105,0.6);">' + count + '</div>',
+                        className: 'custom-cluster-icon',
+                        iconSize: L.point(36, 36)
+                    });
+                }
+            });
+        } else {
+            clusterGroup = L.featureGroup();
         }
 
-        // ── Region Filter ────────────────────────────────────────────────────────
-        document.querySelectorAll('.map-filter-btn').forEach(function (btn) {
+        // Add Markers & Popups to Cluster Group
+        var markers = [];
+        locations.forEach(function (loc) {
+            var marker = L.marker(loc.coords, { icon: pinIcon });
+            marker._region = loc.region;
+
+            var popupHtml =
+                '<div style="padding:10px; font-family:sans-serif; min-width:180px;">' +
+                    '<span style="background-color:#ECFDF5; color:#059669; font-size:10px; font-weight:800; padding:2px 8px; border-radius:9999px; text-transform:uppercase; display:inline-block; margin-bottom:6px;">' + loc.region + ' Portfolio</span>' +
+                    '<h4 style="font-size:13px; font-weight:800; color:#0F172A; margin:0 0 4px 0;">' + loc.name + '</h4>' +
+                    '<p style="font-size:11px; color:#64748B; margin:0 0 6px 0;">' + loc.city + ' &bull; ' + loc.keys + '</p>' +
+                    '<span style="font-size:10px; font-weight:700; color:#B08D48;">' + loc.type + '</span>' +
+                '</div>';
+
+            marker.bindPopup(popupHtml);
+            markers.push(marker);
+            clusterGroup.addLayer(marker);
+        });
+
+        map.addLayer(clusterGroup);
+
+        // Attach Filter Listeners with Cluster Group management
+        var filterBtns = document.querySelectorAll('.map-filter-btn, #map-region-filters .map-filter-btn');
+        filterBtns.forEach(function (btn) {
             btn.addEventListener('click', function () {
-                document.querySelectorAll('.map-filter-btn').forEach(function (b) { b.classList.remove('active'); });
-                btn.classList.add('active');
-                var region = btn.getAttribute('data-region');
-                markers.forEach(function (m) {
-                    region === 'all' || m._region === region ? map.addLayer(m) : map.removeLayer(m);
+                filterBtns.forEach(function (b) {
+                    b.classList.remove('active');
+                    if (b.classList.contains('bg-slate-900')) {
+                        b.classList.remove('bg-slate-900', 'text-white');
+                        b.classList.add('bg-slate-100', 'text-slate-700');
+                    }
                 });
-                if      (region === 'USA')       { map.setView([37.09, -95.71], 4); }
-                else if (region === 'India')     { map.setView([20.59,  78.96], 5); }
-                else if (region === 'Australia') { map.setView([-25.27, 133.78], 4); }
-                else                             { map.setView([20.0,   10.0],  2); }
+                this.classList.add('active');
+                if (this.classList.contains('bg-slate-100')) {
+                    this.classList.add('bg-slate-900', 'text-white');
+                    this.classList.remove('bg-slate-100', 'text-slate-700');
+                }
+
+                var region = this.getAttribute('data-region');
+                
+                clusterGroup.clearLayers();
+                markers.forEach(function (m) {
+                    if (region === 'all' || m._region === region) {
+                        clusterGroup.addLayer(m);
+                    }
+                });
+
+                if (region === 'USA') {
+                    map.setView([37.0902, -95.7129], 4);
+                } else if (region === 'India') {
+                    map.setView([20.5937, 78.9629], 5);
+                } else if (region === 'Australia') {
+                    map.setView([-25.2744, 133.7751], 4);
+                } else {
+                    map.setView([20.0, 10.0], 2);
+                }
+
                 setTimeout(function () { map.invalidateSize(); }, 100);
             });
         });
 
-        console.log('[RevenueLab Map] Initialized successfully with ' + locations.length + ' locations.');
+        // Ensure proper map sizing across viewport changes
+        [20, 100, 300, 700, 1500, 3000].forEach(function (ms) {
+            setTimeout(function () {
+                if (map) { map.invalidateSize(); }
+            }, ms);
+        });
+
+        window.addEventListener('resize', function () {
+            if (map) { map.invalidateSize(); }
+        });
+
+        console.log('[RevenueLab Map] MarkerCluster grouped presence map initialized successfully.');
     }
 
-    // ── Boot: try on DOMContentLoaded first, then again on window.load ──────────
-    document.addEventListener('DOMContentLoaded', function () {
-        setTimeout(initMap, 100);          // short delay lets leaflet.js finish parsing
-    });
-    window.addEventListener('load', function () {
-        if (!window._hospitalityMap) {     // don't double-init
-            initMap();
-        }
-    });
+    if (document.readyState === 'complete' || document.readyState === 'interactive') {
+        setTimeout(initHospitalityMap, 30);
+    } else {
+        document.addEventListener('DOMContentLoaded', initHospitalityMap);
+    }
+    window.addEventListener('load', initHospitalityMap);
 
 })();

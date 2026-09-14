@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RevenueLab Global Presence Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        html, body { width: 100%; height: 100%; background-color: #F8FAFC; overflow: hidden; }
+        
+        .map-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 12px;
+        }
+
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            z-index: 20;
+        }
+
+        .filter-btn {
+            padding: 7px 16px;
+            border-radius: 9999px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            border: 1px solid #E2E8F0;
+            background-color: #FFFFFF;
+            color: #334155;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(15, 23, 42, 0.05);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: #0F172A;
+            color: #FFFFFF;
+            border-color: #0F172A;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+        }
+
+        #map {
+            flex: 1;
+            width: 100%;
+            height: 100%;
+            min-height: 440px;
+            border-radius: 1.25rem;
+            box-shadow: inset 0 0 0 1px rgba(226, 232, 240, 0.8), 0 15px 35px -10px rgba(15, 23, 42, 0.1);
+            z-index: 10;
+        }
+
+        .custom-pin {
+            background-color: #059669;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 3px solid #FFFFFF;
+            box-shadow: 0 4px 12px rgba(5, 150, 105, 0.5);
+            transition: transform 0.2s ease;
+        }
+
+        .custom-pin:hover {
+            transform: scale(1.25);
+        }
+
+        .leaflet-popup-content-wrapper {
+            background: #FFFFFF !important;
+            color: #0F172A !important;
+            border-radius: 1rem !important;
+            padding: 2px !important;
+            box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(226, 232, 240, 0.8) !important;
+        }
+
+        .leaflet-popup-tip { background: #FFFFFF !important; }
+    </style>
+</head>
+<body>
+
+    <div class="map-wrapper">
+        <!-- Region Filter Bar -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-region="all">
+                <i class="fa-solid fa-globe" style="color: #E5C158;"></i> All Markets (13)
+            </button>
+            <button class="filter-btn" data-region="USA">
+                <i class="fa-solid fa-flag-usa" style="color: #2563EB;"></i> United States (9)
+            </button>
+            <button class="filter-btn" data-region="India">
+                <i class="fa-solid fa-location-dot" style="color: #EA580C;"></i> India (2)
+            </button>
+            <button class="filter-btn" data-region="Australia">
+                <i class="fa-solid fa-compass" style="color: #059669;"></i> Australia (2)
+            </button>
+        </div>
+
+        <!-- Leaflet Map Canvas -->
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var map = L.map('map', {
+                scrollWheelZoom: false,
+                zoomControl: true,
+                attributionControl: true
+            }).setView([20.0, 10.0], 2);
+
+            // High-reliability CartoDB Voyager Tiles
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                maxZoom: 19,
+                subdomains: 'abcd',
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>'
+            }).addTo(map);
+
+            var hotelLocations = [
+                { name: "RevenueLab Global HQ", city: "Marietta, GA", region: "USA", coords: [33.9526, -84.5499], keys: "Strategy HQ", type: "Global HQ" },
+                { name: "Atlanta Marriott Perimeter Center", city: "Atlanta, GA", region: "USA", coords: [33.9238, -84.3414], keys: "396 Keys", type: "Full Service Hotel" },
+                { name: "Hilton Garden Inn Marietta", city: "Marietta, GA", region: "USA", coords: [33.9426, -84.5599], keys: "140 Keys", type: "Select Service" },
+                { name: "Holiday Inn Express Atlanta Downtown", city: "Atlanta, GA", region: "USA", coords: [33.7590, -84.3880], keys: "170 Keys", type: "Select Service" },
+                { name: "Coastal Boutique Resort Savannah", city: "Savannah, GA", region: "USA", coords: [32.0809, -81.0912], keys: "65 Keys", type: "Boutique Resort" },
+                { name: "Hyatt Place Nashville Downtown", city: "Nashville, TN", region: "USA", coords: [36.1627, -86.7816], keys: "255 Keys", type: "Select Service" },
+                { name: "Courtyard by Marriott Orlando", city: "Orlando, FL", region: "USA", coords: [28.5383, -81.3792], keys: "210 Keys", type: "Franchised Hotel" },
+                { name: "Dallas Market Center Hotel", city: "Dallas, TX", region: "USA", coords: [32.7767, -96.7970], keys: "185 Keys", type: "Commercial Property" },
+                { name: "Denver Tech Center Inn", city: "Denver, CO", region: "USA", coords: [39.7392, -104.9903], keys: "130 Keys", type: "Select Service" },
+                { name: "California Coast Boutique Resort", city: "Santa Barbara, CA", region: "USA", coords: [34.4208, -119.6982], keys: "85 Keys", type: "Luxury Boutique" },
+
+                { name: "Mumbai Business Bay Hotel", city: "Mumbai, MH", region: "India", coords: [19.0760, 72.8777], keys: "220 Keys", type: "Commercial Business Hotel" },
+                { name: "Pune Tech Corridor Inn", city: "Pune, MH", region: "India", coords: [18.5204, 73.8567], keys: "110 Keys", type: "Select Service" },
+
+                { name: "Sydney Harbour View Suites", city: "Sydney, NSW", region: "Australia", coords: [-33.8688, 151.2093], keys: "145 Keys", type: "Boutique Luxury Suites" },
+                { name: "Melbourne CBD Commercial Hotel", city: "Melbourne, VIC", region: "Australia", coords: [-37.8136, 144.9631], keys: "190 Keys", type: "Franchised Business Hotel" }
+            ];
+
+            var emeraldPin = L.divIcon({
+                className: 'custom-pin-icon',
+                html: '<div class="custom-pin"></div>',
+                iconSize: [20, 20],
+                iconAnchor: [10, 10]
+            });
+
+            var markers = [];
+            hotelLocations.forEach(function (loc) {
+                var m = L.marker(loc.coords, { icon: emeraldPin }).addTo(map);
+                m._region = loc.region;
+
+                var popupHtml = `
+                    <div style="padding: 10px; font-family: 'Plus Jakarta Sans', sans-serif;">
+                        <span style="background-color: #ECFDF5; color: #059669; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block; margin-bottom: 6px;">${loc.region} Portfolio</span>
+                        <h4 style="font-size: 13px; font-weight: 800; color: #0F172A; margin: 0 0 4px 0;">${loc.name}</h4>
+                        <p style="font-size: 11px; color: #64748B; margin: 0 0 6px 0;">${loc.city} &bull; ${loc.keys}</p>
+                        <span style="font-size: 10px; font-weight: 700; color: #B08D48;">${loc.type}</span>
+                    </div>
+                `;
+                m.bindPopup(popupHtml);
+                markers.push(m);
+            });
+
+            // Region Filter Action
+            var filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    filterBtns.forEach(function (b) { b.classList.remove('active'); });
+                    this.classList.add('active');
+
+                    var selected = this.getAttribute('data-region');
+                    markers.forEach(function (m) {
+                        if (selected === 'all' || m._region === selected) {
+                            map.addLayer(m);
+                        } else {
+                            map.removeLayer(m);
+                        }
+                    });
+
+                    if (selected === 'USA') {
+                        map.setView([37.0902, -95.7129], 4);
+                    } else if (selected === 'India') {
+                        map.setView([20.5937, 78.9629], 5);
+                    } else if (selected === 'Australia') {
+                        map.setView([-25.2744, 133.7751], 4);
+                    } else {
+                        map.setView([20.0, 10.0], 2);
+                    }
+
+                    setTimeout(function () { map.invalidateSize(); }, 100);
+                });
+            });
+
+            // Layout size recalibrations
+            [100, 300, 700, 1500].forEach(function (ms) {
+                setTimeout(function () { map.invalidateSize(); }, ms);
+            });
+        });
+    </script>
+</body>
+</html>

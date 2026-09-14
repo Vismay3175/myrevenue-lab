@@ -10160,3 +10160,52 @@ body {
         font-size: 15px !important;
     }
 }
+
+/* ==========================================
+   LEAFLET INTERACTIVE MAP STYLES
+   ========================================== */
+.interactive-map-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.15);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    background-color: #f8fafc;
+}
+
+#leaflet-presence-map {
+    height: 520px !important;
+    width: 100% !important;
+    min-height: 480px !important;
+    border-radius: 1.5rem;
+    z-index: 10;
+}
+
+.map-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.map-filter-btn {
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid #e2e8f0;
+    background-color: #ffffff;
+    color: #475569;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.map-filter-btn:hover, .map-filter-btn.active {
+    background-color: #0f172a !important;
+    color: #ffffff !important;
+    border-color: #0f172a !important;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+}
