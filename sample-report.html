@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Friday Executive Report | RevenueLab Hotel Yield Analytics</title>
+  <meta name="description" content="Preview the exact 8:00 AM Friday Executive Briefing delivered to hotel owners weekly. Clear, concise, revenue intelligence with zero fluff.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Lenis CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#D4AF37',
+              'gold-hover': '#B89628',
+              dark: '#0F172A',
+              navy: '#1E293B',
+              slate: '#334155',
+              light: '#F8FAFC'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #0F172A;
+      background-color: #FFFFFF;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    .dropdown-wrapper:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .dropdown-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.2s ease-in-out;
+    }
+  
+        html, body {
+            overflow-x: hidden !important;
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+
+        #main-header {
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+    </style>
+</head>
+<body class="bg-white text-slate-900 antialiased selection:bg-amber-100 selection:text-amber-900">
+
+  <!-- Sticky Combined Header -->
+  <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <header class="fixed top-0 left-0 right-0 z-50 w-full shadow-md transition-all duration-300 bg-white" id="main-header">
+        <!-- Top Announcement Bar -->
+        <div class="bg-slate-900 text-slate-300 py-2 px-4 text-xs font-semibold tracking-wide border-b border-slate-800">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-1.5">
+                <div class="flex items-center gap-2 sm:gap-4 flex-wrap justify-center">
+                    <span class="inline-flex items-center gap-1.5 text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/20 text-[11px] sm:text-xs">
+                        <i class="fa-solid fa-shield-halved text-xs"></i> 100% Performance Commitment
+                    </span>
+                    <span class="hidden sm:inline text-slate-400 text-xs">No Revenue Lift = No Consultancy Fee</span>
+                </div>
+                <div class="hidden sm:flex items-center gap-4 lg:gap-6 text-slate-400 text-xs">
+                    <a href="tel:+18005550199" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-phone text-amber-400"></i> +1 (800) 555-0199
+                    </a>
+                    <a href="mailto:sales@myrevenuelab.com" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-envelope text-amber-400"></i> sales@myrevenuelab.com
+                    </a>
+                    <span class="hidden lg:inline text-slate-500">| Marietta, GA & Austin, TX</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation Bar -->
+        <div class="bg-white/95 backdrop-blur-md border-b border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+                <!-- Brand Logo (Solid Dark Slate RevenueLab Text + Green Subtitle) -->
+                <a href="index.html" class="flex items-center gap-3 group shrink-0">
+                    <img src="assets/images/logo-mark.png" alt="RevenueLab Growth Arrow" class="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105 duration-300">
+                    <div>
+                        <span class="font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 block leading-none">RevenueLab</span>
+                        <span class="text-[9px] sm:text-[10px] font-extrabold tracking-[0.22em] uppercase text-emerald-600 block mt-1">The Science of Revenue</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden lg:flex items-center gap-4 xl:gap-7 text-sm font-bold text-slate-700 whitespace-nowrap">
+                    <a href="index.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Home</a>
+                    <a href="revenue-strategy.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Revenue Strategy</a>
+                    <a href="services.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Services</a>
+                    <a href="pricing.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Pricing & Plans</a>
+                    
+                    <!-- Resources Dropdown -->
+                    <div class="relative dropdown-wrapper py-6">
+                        <a href="resources.html" class="nav-link py-1 whitespace-nowrap flex items-center gap-1 text-amber-600 font-extrabold">
+                            Resources <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                        </a>
+                        <div class="dropdown-menu absolute top-full left-0 w-80 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 z-50 text-left font-normal">
+                            <a href="resources.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-cubes"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">Resource Hub</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">All 12 free tools, playbooks & calculators</div>
+                                </div>
+                            </a>
+                            <a href="roi-calculator.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-calculator"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">ROI & RevPAR Calculator</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">Project potential revenue upside</div>
+                                </div>
+                            </a>
+                            <a href="sample-report.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-file-contract"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">Sample Friday Executive Briefing</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">Preview actual client weekly deliverable</div>
+                                </div>
+                            </a>
+                            <a href="how-it-works.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-route"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">How It Works</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">7-Day onboarding & operating model</div>
+                                </div>
+                            </a>
+                            <a href="glossary.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-book-bookmark"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">Hotel Yield Glossary</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">A–Z definitions of key revenue metrics</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="about.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">About Us</a>
+                    <a href="portfolio.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Portfolio</a>
+                    <a href="contact.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Action CTA Button & Mobile Toggle -->
+                <div class="flex items-center gap-4 shrink-0">
+                    <a href="contact.html" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-semibold text-sm text-slate-950 bg-amber-500 hover:bg-amber-600 shadow-md shadow-amber-500/20 transition-all whitespace-nowrap">
+                        Free Yield Audit
+                    </a>
+
+                    <button id="mobile-toggle-btn" class="lg:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation Menu">
+                        <i class="fa-solid fa-bars text-xl" id="mobile-toggle-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Drawer Navigation -->
+            <div id="mobile-drawer" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4 shadow-xl max-h-[85vh] overflow-y-auto">
+                <a href="index.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Home</a>
+                <a href="revenue-strategy.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Revenue Strategy</a>
+                <a href="services.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Services</a>
+                <a href="pricing.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Pricing & Plans</a>
+                
+                <div class="border-b border-slate-100 py-3">
+                    <div class="font-bold text-amber-600 text-sm mb-2 flex items-center justify-between">
+                        <span>Resources & Tools Ecosystem</span>
+                        <i class="fa-solid fa-angle-down text-xs"></i>
+                    </div>
+                    <div class="pl-3 space-y-2 text-sm font-medium text-slate-700">
+                        <a href="resources.html" class="block py-1 hover:text-amber-600">All Resources Hub</a>
+                        <a href="roi-calculator.html" class="block py-1 hover:text-amber-600">ROI & RevPAR Calculator</a>
+                        <a href="sample-report.html" class="block py-1 hover:text-amber-600">Sample Friday Executive Report</a>
+                        <a href="how-it-works.html" class="block py-1 hover:text-amber-600">How It Works (7-Day Onboarding)</a>
+                        <a href="glossary.html" class="block py-1 hover:text-amber-600">Hotel Revenue Glossary</a>
+                    </div>
+                </div>
+
+                <a href="about.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">About Us</a>
+                <a href="portfolio.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Portfolio & Case Studies</a>
+                <a href="contact.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Contact</a>
+                <a href="contact.html" class="block w-full text-center py-3 rounded-xl bg-amber-500 text-slate-950 font-bold text-sm mt-4 shadow-md">
+                    Free Yield Audit
+                </a>
+            </div>
+        </div>
+    </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-36 sm:pt-40 lg:pt-44 pb-16 bg-slate-50 border-b border-slate-200 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-100 border border-amber-300/60 text-amber-900 text-xs font-bold uppercase tracking-wider mb-6">
+        <i class="fa-solid fa-clock text-amber-600"></i> Delivered Every Friday at 8:00 AM EST
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 font-serif max-w-4xl mx-auto leading-tight">
+        Sample Executive Owner's <span class="text-amber-600">Weekly Briefing</span>
+      </h1>
+      <p class="mt-6 text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-normal leading-relaxed">
+        No 50-page clutter or raw CSV dumps. Just a 3-minute executive summary detailing last week's performance, competitive index positioning, and precise rate actions for the upcoming 60 days.
+      </p>
+      
+      <div class="mt-8 flex flex-wrap justify-center items-center gap-4">
+        <a href="#interactive-preview" class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition-all shadow-md flex items-center gap-2">
+          <i class="fa-solid fa-eye text-amber-400"></i> View Interactive Sample
+        </a>
+        <a href="contact.html" class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm transition-all shadow-md flex items-center gap-2">
+          <i class="fa-solid fa-paper-plane"></i> Get Free Report For Your Hotel
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Highlights Bar -->
+  <section class="py-8 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+          <div class="text-2xl font-bold text-slate-900 font-serif">3 Mins</div>
+          <div class="text-xs text-slate-500 font-medium mt-1">Read Time for Executive Owners</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+          <div class="text-2xl font-bold text-amber-600 font-serif">100% Actionable</div>
+          <div class="text-xs text-slate-500 font-medium mt-1">Specific Rate & Restriction Changes</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+          <div class="text-2xl font-bold text-slate-900 font-serif">Comp Set MPI/RGI</div>
+          <div class="text-xs text-slate-500 font-medium mt-1">Market Penetration & RevPAR Index</div>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-100">
+          <div class="text-2xl font-bold text-emerald-600 font-serif">Zero Effort</div>
+          <div class="text-xs text-slate-500 font-medium mt-1">Generated & Delivered Direct to Inbox</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Report Preview Section -->
+  <section id="interactive-preview" class="py-16 sm:py-20 bg-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-600">Simulated Executive Deliverable</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 font-serif mt-2">The Grand Palms Resort & Suites — Weekly Report</h2>
+        <p class="text-slate-600 text-sm mt-2">Week Ending: Sunday, Sept 10 | Prepared by RevenueLab Yield Science Team</p>
+      </div>
+
+      <!-- Report Paper Container -->
+      <div class="bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden max-w-5xl mx-auto">
+        <!-- Report Header Bar -->
+        <div class="bg-slate-900 text-white p-6 sm:p-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 border-b border-amber-500/40">
+          <div>
+            <div class="flex items-center gap-2 text-amber-400 font-bold text-xs uppercase tracking-wider">
+              <i class="fa-solid fa-crown"></i> Executive Yield Briefing #36
+            </div>
+            <h3 class="text-2xl font-bold font-serif text-white mt-1">The Grand Palms Resort & Suites (120 Keys)</h3>
+            <p class="text-slate-400 text-xs mt-0.5">Primary Market: Austin, TX Downtown / Convention Submarket</p>
+          </div>
+          <div class="sm:text-right bg-slate-800/80 p-3 rounded-xl border border-slate-700">
+            <div class="text-xs text-slate-400">Revenue Director: <span class="text-white font-semibold">David Vance</span></div>
+            <div class="text-xs text-slate-400 mt-1">Report Date: <span class="text-amber-400 font-semibold">Friday 8:00 AM EST</span></div>
+          </div>
+        </div>
+
+        <div class="p-6 sm:p-10 space-y-10">
+          <!-- 1. Executive Summary & Top KPIs -->
+          <div>
+            <div class="flex items-center gap-2 mb-4 pb-2 border-b border-slate-200">
+              <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 font-bold text-xs flex items-center justify-center">1</span>
+              <h4 class="text-lg font-bold text-slate-900 font-serif">Weekly Executive KPI Snapshot</h4>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-xs text-slate-500 font-medium">Occupancy (OCC)</div>
+                <div class="text-2xl font-bold text-slate-900 font-serif mt-1">78.4%</div>
+                <div class="text-xs text-emerald-600 font-semibold mt-1 flex items-center gap-1">
+                  <i class="fa-solid fa-arrow-up"></i> +4.2% vs Comp Set
+                </div>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-xs text-slate-500 font-medium">Average Daily Rate (ADR)</div>
+                <div class="text-2xl font-bold text-slate-900 font-serif mt-1">$218.50</div>
+                <div class="text-xs text-emerald-600 font-semibold mt-1 flex items-center gap-1">
+                  <i class="fa-solid fa-arrow-up"></i> +$14.20 vs Prior Wk
+                </div>
+              </div>
+              <div class="p-4 rounded-xl bg-amber-50/50 border border-amber-200">
+                <div class="text-xs text-amber-900 font-medium">RevPAR</div>
+                <div class="text-2xl font-bold text-slate-900 font-serif mt-1">$171.30</div>
+                <div class="text-xs text-emerald-600 font-semibold mt-1 flex items-center gap-1">
+                  <i class="fa-solid fa-arrow-up"></i> +11.8% YoY Growth
+                </div>
+              </div>
+              <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <div class="text-xs text-slate-500 font-medium">RevPAR Index (RGI)</div>
+                <div class="text-2xl font-bold text-amber-600 font-serif mt-1">114.2</div>
+                <div class="text-xs text-amber-700 font-semibold mt-1 flex items-center gap-1">
+                  <i class="fa-solid fa-trophy"></i> #1 in 5-Hotel Comp Set
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Strategic Narrative & Wins -->
+          <div>
+            <div class="flex items-center gap-2 mb-4 pb-2 border-b border-slate-200">
+              <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 font-bold text-xs flex items-center justify-center">2</span>
+              <h4 class="text-lg font-bold text-slate-900 font-serif">Weekly Revenue Director Commentary</h4>
+            </div>
+
+            <div class="bg-amber-50/40 rounded-xl p-5 border border-amber-200/80 text-slate-800 text-sm leading-relaxed space-y-3">
+              <p>
+                <strong>Key Takeaway:</strong> Excellent weekend pricing power driven by the tech conference in Austin. We successfully pushed BAR rate from $229 to $269 on Friday night while maintaining a 2-night minimum restriction, securing 42 high-ADR transient stays without diluting Sunday occupancy.
+              </p>
+              <p>
+                <strong>OTA Commission Control:</strong> Direct web bookings increased to 41.2% total share (up from 34% last month) following the launch of our mobile direct-booking incentive, saving approximately $1,840 in third-party commissions this week alone.
+              </p>
+            </div>
+          </div>
+
+          <!-- 3. Comp Set Rate Shopping Table -->
+          <div>
+            <div class="flex items-center justify-between mb-4 pb-2 border-b border-slate-200">
+              <div class="flex items-center gap-2">
+                <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 font-bold text-xs flex items-center justify-center">3</span>
+                <h4 class="text-lg font-bold text-slate-900 font-serif">Comp Set Rate Positioning (Upcoming 30 Days)</h4>
+              </div>
+              <span class="text-xs text-slate-500 font-medium hidden sm:inline">Updated Daily via Automated Rate Shopper</span>
+            </div>
+
+            <div class="overflow-x-auto">
+              <table class="w-full text-left text-xs text-slate-700 border-collapse">
+                <thead>
+                  <tr class="bg-slate-900 text-white font-semibold">
+                    <th class="p-3 rounded-tl-lg">Hotel Name</th>
+                    <th class="p-3">Keys</th>
+                    <th class="p-3">Fri BAR Rate</th>
+                    <th class="p-3">Sat BAR Rate</th>
+                    <th class="p-3">Restrictions</th>
+                    <th class="p-3 rounded-tr-lg">Market Position</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200">
+                  <tr class="bg-amber-100/60 font-semibold text-slate-900">
+                    <td class="p-3 flex items-center gap-2">
+                      <span class="w-2 h-2 rounded-full bg-amber-500"></span> <strong>Your Property (Grand Palms)</strong>
+                    </td>
+                    <td class="p-3">120</td>
+                    <td class="p-3 text-amber-700 font-bold">$269</td>
+                    <td class="p-3 text-amber-700 font-bold">$289</td>
+                    <td class="p-3">2-Night Min (CTA)</td>
+                    <td class="p-3"><span class="px-2 py-0.5 rounded bg-amber-200 text-amber-900 font-bold">Premium Lead</span></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="p-3">Competitor A (Boutique Suites)</td>
+                    <td class="p-3">105</td>
+                    <td class="p-3">$249</td>
+                    <td class="p-3">$265</td>
+                    <td class="p-3">None</td>
+                    <td class="p-3 text-slate-500">Follower (-$20)</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="p-3">Competitor B (Hilton Garden Inn)</td>
+                    <td class="p-3">145</td>
+                    <td class="p-3">$235</td>
+                    <td class="p-3">$249</td>
+                    <td class="p-3">None</td>
+                    <td class="p-3 text-slate-500">Brand Baseline</td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="p-3">Competitor C (Courtyard Marriott)</td>
+                    <td class="p-3">130</td>
+                    <td class="p-3">$229</td>
+                    <td class="p-3">$245</td>
+                    <td class="p-3">1-Night Min</td>
+                    <td class="p-3 text-slate-500">Discounting</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- 4. Next Week Action Items -->
+          <div>
+            <div class="flex items-center gap-2 mb-4 pb-2 border-b border-slate-200">
+              <span class="w-7 h-7 rounded-lg bg-amber-500 text-slate-950 font-bold text-xs flex items-center justify-center">4</span>
+              <h4 class="text-lg font-bold text-slate-900 font-serif">Recommended Rate & Restrictions Actions (Executing Oct 15–22)</h4>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-slate-900 text-xs">Action #1</span>
+                  <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">Rate Hike</span>
+                </div>
+                <div class="text-sm font-semibold text-slate-800">Raise Oct 24th BAR by +$25</div>
+                <p class="text-xs text-slate-600">Local concert announced. Booking pace is +40% ahead of last year's pace.</p>
+              </div>
+
+              <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-slate-900 text-xs">Action #2</span>
+                  <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800">Min Stay</span>
+                </div>
+                <div class="text-sm font-semibold text-slate-800">Apply 3-Night Minimum for Nov 3-5</div>
+                <p class="text-xs text-slate-600">Protect peak Formula 1 weekend dates against single-night low-rate displacement.</p>
+              </div>
+
+              <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-bold text-slate-900 text-xs">Action #3</span>
+                  <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800">Channel Shift</span>
+                </div>
+                <div class="text-sm font-semibold text-slate-800">Close Expedia Flash Sales</div>
+                <p class="text-xs text-slate-600">OTAs pacing fast; shift remaining 15 inventory keys to direct brand engine.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Report Footer -->
+        <div class="bg-slate-50 border-t border-slate-200 p-4 sm:p-6 text-center text-xs text-slate-500">
+          RevenueLab Yield Briefing &copy; 2026. Confidential property audit prepared for Executive Management.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Owners Love This Report -->
+  <section class="py-16 sm:py-24 bg-white border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 font-serif">Why Hotel Owners & General Managers Rely On It</h2>
+        <p class="mt-4 text-slate-600 text-base">Designed by veteran hoteliers who understand that owners want concise signals, not raw data dumps.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 font-bold flex items-center justify-center text-xl mb-6">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 font-serif mb-2">3-Minute Read</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Scan top KPIs, competitive positioning, and weekly net revenue growth over your morning coffee before staff stand-up meetings.</p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 font-bold flex items-center justify-center text-xl mb-6">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 font-serif mb-2">Clear Accountability</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Every recommendation includes the exact strategic rationale and projected revenue impact so you know why every dollar was generated.</p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-800 font-bold flex items-center justify-center text-xl mb-6">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 font-serif mb-2">Mobile & Tablet Formatted</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Delivered directly via email PDF & responsive web view. Perfectly optimized for reading on iPhone, iPad, or desktop on the go.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-16 bg-slate-900 text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <h2 class="text-3xl sm:text-4xl font-bold font-serif max-w-2xl mx-auto">Want to see what your hotel's Friday Briefing would look like?</h2>
+      <p class="mt-4 text-slate-300 text-base max-w-xl mx-auto">Request a free 30-minute historical yield audit. We'll analyze your PMS & comp set data and build your first executive report at no charge.</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="contact.html" class="px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-base transition-all shadow-xl shadow-amber-500/20">
+          Request Free Hotel Briefing Audit
+        </a>
+        <a href="roi-calculator.html" class="px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-base transition-all border border-slate-700">
+          Calculate RevPAR Lift
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="index.html" class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-bold flex items-center justify-center">R</div>
+            <span class="font-serif text-xl font-bold text-white">Revenue<span class="text-amber-500">Lab</span></span>
+          </a>
+          <p class="text-slate-400 text-xs leading-relaxed">Dedicated revenue management engineering for boutique, independent, and branded hotels worldwide.</p>
+        </div>
+        <div>
+          <div class="font-semibold text-white mb-3">Quick Links</div>
+          <ul class="space-y-2 text-xs">
+            <li><a href="index.html" class="hover:text-amber-400 transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-amber-400 transition-colors">About Us</a></li>
+            <li><a href="services.html" class="hover:text-amber-400 transition-colors">Services</a></li>
+            <li><a href="pricing.html" class="hover:text-amber-400 transition-colors">Pricing Plans</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-semibold text-white mb-3">Resources Ecosystem</div>
+          <ul class="space-y-2 text-xs">
+            <li><a href="resources.html" class="hover:text-amber-400 transition-colors">Free Resources Hub</a></li>
+            <li><a href="roi-calculator.html" class="hover:text-amber-400 transition-colors">RevPAR ROI Calculator</a></li>
+            <li><a href="sample-report.html" class="text-amber-400 font-semibold">Sample Executive Briefing</a></li>
+            <li><a href="how-it-works.html" class="hover:text-amber-400 transition-colors">How It Works</a></li>
+            <li><a href="glossary.html" class="hover:text-amber-400 transition-colors">Yield Glossary</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-semibold text-white mb-3">Contact</div>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><i class="fa-solid fa-phone text-amber-400 mr-1.5"></i> +1 (800) 555-0199</li>
+            <li><i class="fa-solid fa-envelope text-amber-400 mr-1.5"></i> hello@myrevenuelab.com</li>
+            <li><i class="fa-solid fa-location-dot text-amber-400 mr-1.5"></i> Miami, FL & Austin, TX</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
+        <div>&copy; 2026 RevenueLab Inc. All rights reserved.</div>
+        <div class="flex gap-4 mt-2 sm:mt-0">
+          <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-400">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Drawer Toggle Script & Lenis Init -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Lenis Smooth Scroll
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothTouch: false
+      });
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+
+      // Mobile Drawer Toggle
+      const mobileBtn = document.getElementById('mobile-toggle-btn');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      const mobileIcon = document.getElementById('mobile-toggle-icon');
+
+      if (mobileBtn && mobileDrawer) {
+        mobileBtn.addEventListener('click', () => {
+          const isOpen = !mobileDrawer.classList.contains('hidden');
+          if (isOpen) {
+            mobileDrawer.classList.add('hidden');
+            mobileIcon.classList.remove('fa-xmark');
+            mobileIcon.classList.add('fa-bars');
+          } else {
+            mobileDrawer.classList.remove('hidden');
+            mobileIcon.classList.remove('fa-bars');
+            mobileIcon.classList.add('fa-xmark');
+          }
+        });
+      }
+    });
+  </script>
+
+    <!-- Mobile Menu Drawer Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('mobile-toggle-btn') || document.getElementById('mobile-toggle') || document.getElementById('mobile-menu-btn');
+            const drawer = document.getElementById('mobile-drawer') || document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-toggle-icon') || document.getElementById('menu-icon');
+
+            if (btn && drawer) {
+                btn.onclick = function(e) {
+                    if (e) e.preventDefault();
+                    const isHidden = drawer.classList.contains('hidden');
+                    if (isHidden) {
+                        drawer.classList.remove('hidden');
+                        if (icon) {
+                            icon.classList.remove('fa-bars');
+                            icon.classList.add('fa-xmark');
+                        }
+                    } else {
+                        drawer.classList.add('hidden');
+                        if (icon) {
+                            icon.classList.remove('fa-xmark');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                };
+            }
+        });
+    </script>
+
+</body>
+</html>

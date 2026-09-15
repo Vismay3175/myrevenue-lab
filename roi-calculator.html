@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel RevPAR & Revenue ROI Calculator | RevenueLab</title>
+    <meta name="description"
+        content="Calculate your hotel's estimated annual RevPAR and ADR revenue growth potential based on room count, current ADR, and occupancy.">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: { 850: '#111c2e', 950: '#060c17' },
+                        gold: { 400: '#fbbf24', 500: '#d4af37', 600: '#b89228' }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body, p, a, span, li, button, input, select, textarea {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+        }
+        h1, h2, h3, h4, h5, h6, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #1e293b 0%, #b89228 50%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-bg-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #B89228 100%);
+        }
+
+        .dropdown-menu { display: none; }
+        .dropdown-wrapper:hover .dropdown-menu { display: block; }
+    
+        html, body {
+            overflow-x: hidden !important;
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+
+        #main-header {
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+    </style>
+</head>
+
+<body class="bg-white text-slate-900 font-sans antialiased overflow-x-hidden selection:bg-gold-500 selection:text-white">
+
+    <!-- STICKY HEADER -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <header class="fixed top-0 left-0 right-0 z-50 w-full shadow-md transition-all duration-300 bg-white" id="main-header">
+        <!-- Top Announcement Bar -->
+        <div class="bg-slate-900 text-slate-300 py-2 px-4 text-xs font-semibold tracking-wide border-b border-slate-800">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-1.5">
+                <div class="flex items-center gap-2 sm:gap-4 flex-wrap justify-center">
+                    <span class="inline-flex items-center gap-1.5 text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/20 text-[11px] sm:text-xs">
+                        <i class="fa-solid fa-shield-halved text-xs"></i> 100% Performance Commitment
+                    </span>
+                    <span class="hidden sm:inline text-slate-400 text-xs">No Revenue Lift = No Consultancy Fee</span>
+                </div>
+                <div class="hidden sm:flex items-center gap-4 lg:gap-6 text-slate-400 text-xs">
+                    <a href="tel:+18005550199" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-phone text-amber-400"></i> +1 (800) 555-0199
+                    </a>
+                    <a href="mailto:sales@myrevenuelab.com" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-envelope text-amber-400"></i> sales@myrevenuelab.com
+                    </a>
+                    <span class="hidden lg:inline text-slate-500">| Marietta, GA & Austin, TX</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation Bar -->
+        <div class="bg-white/95 backdrop-blur-md border-b border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+                <!-- Brand Logo (Solid Dark Slate RevenueLab Text + Green Subtitle) -->
+                <a href="index.html" class="flex items-center gap-3 group shrink-0">
+                    <img src="assets/images/logo-mark.png" alt="RevenueLab Growth Arrow" class="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105 duration-300">
+                    <div>
+                        <span class="font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 block leading-none">RevenueLab</span>
+                        <span class="text-[9px] sm:text-[10px] font-extrabold tracking-[0.22em] uppercase text-emerald-600 block mt-1">The Science of Revenue</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden lg:flex items-center gap-4 xl:gap-7 text-sm font-bold text-slate-700 whitespace-nowrap">
+                    <a href="index.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Home</a>
+                    <a href="revenue-strategy.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Revenue Strategy</a>
+                    <a href="services.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Services</a>
+                    <a href="pricing.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Pricing & Plans</a>
+                    
+                    <!-- Resources Dropdown -->
+                    <div class="relative dropdown-wrapper py-6">
+                        <a href="resources.html" class="nav-link py-1 whitespace-nowrap flex items-center gap-1 text-amber-600 font-extrabold">
+                            Resources <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                        </a>
+                        <div class="dropdown-menu absolute top-full left-0 w-80 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 z-50 text-left font-normal">
+                            <a href="resources.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-cubes"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">Resource Hub</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">All 12 free tools, playbooks & calculators</div>
+                                </div>
+                            </a>
+                            <a href="roi-calculator.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-calculator"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">ROI & RevPAR Calculator</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">Project potential revenue upside</div>
+                                </div>
+                            </a>
+                            <a href="sample-report.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-file-contract"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">Sample Friday Executive Briefing</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">Preview actual client weekly deliverable</div>
+                                </div>
+                            </a>
+                            <a href="how-it-works.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-route"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">How It Works</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">7-Day onboarding & operating model</div>
+                                </div>
+                            </a>
+                            <a href="glossary.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-book-bookmark"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">Hotel Yield Glossary</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">A–Z definitions of key revenue metrics</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="about.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">About Us</a>
+                    <a href="portfolio.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Portfolio</a>
+                    <a href="contact.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Action CTA Button & Mobile Toggle -->
+                <div class="flex items-center gap-4 shrink-0">
+                    <a href="contact.html" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-semibold text-sm text-slate-950 bg-amber-500 hover:bg-amber-600 shadow-md shadow-amber-500/20 transition-all whitespace-nowrap">
+                        Free Yield Audit
+                    </a>
+
+                    <button id="mobile-toggle-btn" class="lg:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation Menu">
+                        <i class="fa-solid fa-bars text-xl" id="mobile-toggle-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Drawer Navigation -->
+            <div id="mobile-drawer" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4 shadow-xl max-h-[85vh] overflow-y-auto">
+                <a href="index.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Home</a>
+                <a href="revenue-strategy.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Revenue Strategy</a>
+                <a href="services.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Services</a>
+                <a href="pricing.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Pricing & Plans</a>
+                
+                <div class="border-b border-slate-100 py-3">
+                    <div class="font-bold text-amber-600 text-sm mb-2 flex items-center justify-between">
+                        <span>Resources & Tools Ecosystem</span>
+                        <i class="fa-solid fa-angle-down text-xs"></i>
+                    </div>
+                    <div class="pl-3 space-y-2 text-sm font-medium text-slate-700">
+                        <a href="resources.html" class="block py-1 hover:text-amber-600">All Resources Hub</a>
+                        <a href="roi-calculator.html" class="block py-1 hover:text-amber-600">ROI & RevPAR Calculator</a>
+                        <a href="sample-report.html" class="block py-1 hover:text-amber-600">Sample Friday Executive Report</a>
+                        <a href="how-it-works.html" class="block py-1 hover:text-amber-600">How It Works (7-Day Onboarding)</a>
+                        <a href="glossary.html" class="block py-1 hover:text-amber-600">Hotel Revenue Glossary</a>
+                    </div>
+                </div>
+
+                <a href="about.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">About Us</a>
+                <a href="portfolio.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Portfolio & Case Studies</a>
+                <a href="contact.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Contact</a>
+                <a href="contact.html" class="block w-full text-center py-3 rounded-xl bg-amber-500 text-slate-950 font-bold text-sm mt-4 shadow-md">
+                    Free Yield Audit
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- CALCULATOR HERO & MAIN INTERACTIVE SECTION -->
+    <section class="relative pt-36 sm:pt-40 lg:pt-44 pb-24 bg-gradient-to-b from-slate-50 via-white to-slate-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="px-4 py-1.5 rounded-full bg-amber-50 border border-gold-500/30 text-gold-600 text-xs font-bold uppercase tracking-wider mb-4 inline-block">
+                    Interactive Revenue Estimator
+                </span>
+                <h1 class="font-serif text-4xl sm:text-5xl font-bold text-slate-900 mb-4">Calculate Your Hotel's Revenue Growth Potential</h1>
+                <p class="text-slate-600 text-base">Adjust your property’s room count, average daily rate (ADR), and current occupancy to project your annual RevPAR upside under daily RevenueLab yield management.</p>
+            </div>
+
+            <!-- Calculator Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start max-w-6xl mx-auto">
+                
+                <!-- Left Sliders Box -->
+                <div class="lg:col-span-7 bg-white border border-slate-200 rounded-3xl p-8 shadow-xl space-y-8">
+                    <h3 class="font-serif text-2xl font-bold text-slate-900 mb-6 border-b border-slate-100 pb-4">Property Inputs</h3>
+
+                    <!-- Slider 1: Rooms -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="font-bold text-slate-800 text-sm">Total Room Count (Keys)</label>
+                            <span class="text-gold-600 font-serif font-extrabold text-xl" id="val-rooms">75 Keys</span>
+                        </div>
+                        <input type="range" id="input-rooms" min="10" max="300" step="5" value="75" oninput="calculateROI()" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-amber-500">
+                        <div class="flex justify-between text-[11px] text-slate-400 mt-1 font-semibold"><span>10 Keys</span><span>150 Keys</span><span>300 Keys</span></div>
+                    </div>
+
+                    <!-- Slider 2: Current ADR -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="font-bold text-slate-800 text-sm">Average Daily Rate (ADR)</label>
+                            <span class="text-gold-600 font-serif font-extrabold text-xl" id="val-adr">$95.00</span>
+                        </div>
+                        <input type="range" id="input-adr" min="40" max="350" step="5" value="95" oninput="calculateROI()" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-amber-500">
+                        <div class="flex justify-between text-[11px] text-slate-400 mt-1 font-semibold"><span>$40</span><span>$180</span><span>$350</span></div>
+                    </div>
+
+                    <!-- Slider 3: Current Occupancy -->
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <label class="font-bold text-slate-800 text-sm">Current Annual Occupancy Rate</label>
+                            <span class="text-gold-600 font-serif font-extrabold text-xl" id="val-occ">62%</span>
+                        </div>
+                        <input type="range" id="input-occ" min="30" max="90" step="1" value="62" oninput="calculateROI()" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-amber-500">
+                        <div class="flex justify-between text-[11px] text-slate-400 mt-1 font-semibold"><span>30%</span><span>60%</span><span>90%</span></div>
+                    </div>
+
+                    <div class="p-4 bg-slate-50 border border-slate-200 rounded-2xl text-xs text-slate-500 leading-relaxed">
+                        <i class="fa-solid fa-circle-info text-gold-600 mr-1.5"></i> Projections assume an average 9% to 16% RevPAR improvement based on historical portfolio benchmarks across economy and midscale franchised portfolios.
+                    </div>
+                </div>
+
+                <!-- Right Output Card -->
+                <div class="lg:col-span-5 bg-slate-900 text-white rounded-3xl p-8 shadow-2xl space-y-6 relative overflow-hidden">
+                    <div class="absolute -top-20 -right-20 w-64 h-64 bg-gold-500/10 blur-[80px] rounded-full"></div>
+                    <div class="text-xs font-extrabold uppercase tracking-widest text-gold-400">Estimated Growth Result</div>
+                    
+                    <div>
+                        <div class="text-slate-400 text-xs font-semibold">Estimated Annual Revenue Lift</div>
+                        <div class="font-serif text-4xl sm:text-5xl font-extrabold text-gold-400 mt-1" id="res-lift">+$214,400</div>
+                        <div class="text-xs text-emerald-400 font-bold mt-1"><i class="fa-solid fa-arrow-trend-up mr-1"></i> ~+12.4% Annual RevPAR Growth</div>
+                    </div>
+
+                    <div class="space-y-4 pt-6 border-t border-slate-800 text-xs">
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400">Current Annual Room Revenue:</span>
+                            <span class="font-bold text-white text-sm" id="res-current">$1,617,862</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400">Projected Post-Optimization Revenue:</span>
+                            <span class="font-bold text-gold-400 text-sm" id="res-projected">$1,832,262</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-slate-400">Estimated RevPAR Improvement:</span>
+                            <span class="font-bold text-emerald-400 text-sm" id="res-revpar">+$7.83 / room / night</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-slate-800">
+                        <button onclick="openConsultationModal()" class="w-full gold-bg-gradient text-slate-950 font-extrabold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all text-sm text-center block">
+                            Claim Audit to Confirm Projections →
+                        </button>
+                        <p class="text-center text-[11px] text-slate-400 mt-3">Zero obligation · Pre-filled with your inputs</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs">
+            <p>© 2026 RevenueLab Advisory LLC. All rights reserved. RevPAR ROI Estimator.</p>
+        </div>
+    </footer>
+
+    <!-- CONSULTATION MODAL -->
+    <div id="consultation-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/70 backdrop-blur-md p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full p-6 relative text-white">
+            <button onclick="closeConsultationModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="font-serif text-2xl font-bold mb-2">Request Free Performance Audit</h3>
+            <p class="text-xs text-slate-400 mb-4">We will verify your calculated RevPAR upside with live comp set data.</p>
+            <form onsubmit="event.preventDefault(); alert('Audit request submitted!'); closeConsultationModal();" class="space-y-3">
+                <input type="text" required placeholder="Full Name *" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-white">
+                <input type="email" required placeholder="Work Email *" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-white">
+                <input type="tel" required placeholder="Phone Number *" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-white">
+                <input type="text" required placeholder="Property Name *" class="w-full bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-xs text-white">
+                <button type="submit" class="w-full py-3 gold-bg-gradient text-slate-950 font-bold text-xs rounded-lg">Submit Audit Request →</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        function calculateROI() {
+            const rooms = parseInt(document.getElementById('input-rooms').value);
+            const adr = parseFloat(document.getElementById('input-adr').value);
+            const occ = parseFloat(document.getElementById('input-occ').value) / 100;
+
+            document.getElementById('val-rooms').innerText = rooms + ' Keys';
+            document.getElementById('val-adr').innerText = '$' + adr.toFixed(2);
+            document.getElementById('val-occ').innerText = Math.round(occ * 100) + '%';
+
+            const currentRevPAR = adr * occ;
+            const currentAnnualRev = rooms * currentRevPAR * 365;
+
+            // Estimated RevPAR Lift (~12.4% benchmark)
+            const revparLift = currentRevPAR * 0.124;
+            const annualLift = rooms * revparLift * 365;
+            const projectedAnnualRev = currentAnnualRev + annualLift;
+
+            document.getElementById('res-lift').innerText = '+$' + Math.round(annualLift).toLocaleString();
+            document.getElementById('res-current').innerText = '$' + Math.round(currentAnnualRev).toLocaleString();
+            document.getElementById('res-projected').innerText = '$' + Math.round(projectedAnnualRev).toLocaleString();
+            document.getElementById('res-revpar').innerText = '+$' + revparLift.toFixed(2) + ' / room / night';
+        }
+
+        function openConsultationModal() { document.getElementById('consultation-modal').classList.remove('hidden'); document.getElementById('consultation-modal').classList.add('flex'); }
+        function closeConsultationModal() { document.getElementById('consultation-modal').classList.add('hidden'); document.getElementById('consultation-modal').classList.remove('flex'); }
+
+        // Initial Calc
+        calculateROI();
+    </script>
+
+    <!-- Mobile Menu Drawer Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('mobile-toggle-btn') || document.getElementById('mobile-toggle') || document.getElementById('mobile-menu-btn');
+            const drawer = document.getElementById('mobile-drawer') || document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-toggle-icon') || document.getElementById('menu-icon');
+
+            if (btn && drawer) {
+                btn.onclick = function(e) {
+                    if (e) e.preventDefault();
+                    const isHidden = drawer.classList.contains('hidden');
+                    if (isHidden) {
+                        drawer.classList.remove('hidden');
+                        if (icon) {
+                            icon.classList.remove('fa-bars');
+                            icon.classList.add('fa-xmark');
+                        }
+                    } else {
+                        drawer.classList.add('hidden');
+                        if (icon) {
+                            icon.classList.remove('fa-xmark');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                };
+            }
+        });
+    </script>
+
+</body>
+
+</html>

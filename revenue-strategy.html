@@ -4,34 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | RevenueLab — Global Hotel Revenue Engineering & Yield Science</title>
+    <title>Revenue Strategy & Yield Science | RevenueLab</title>
     <meta name="description"
-        content="Explore RevenueLab's hotel revenue strategy services: dynamic pricing algorithms, OTA channel yield, CompSet intelligence, RMS PMS audits, and risk-free commercial models.">
+        content="Hospitality Revenue Optimization, Sales Transformation & Distribution Strategy Consulting by RevenueLab. Unconstrained demand forecasting and real-time market rate adjustments.">
 
     <!-- Executive Google Fonts: Plus Jakarta Sans & Playfair Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
-        rel="stylesheet">
-
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
-    <!-- Leaflet Interactive Map CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-
-    <!-- Swiper CSS for Sliders -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- AOS (Animate on Scroll) CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
     <!-- Lenis Smooth Scroll CSS -->
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
-
-    <!-- AOS (Animate on Scroll) CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -59,37 +51,28 @@
                     boxShadow: {
                         'soft-2xl': '0 25px 60px -15px rgba(15, 23, 42, 0.08)',
                         'gold-glow': '0 10px 30px -5px rgba(197, 160, 89, 0.35)',
-                    },
-                    animation: {
-                        'float-slow': 'float 6s ease-in-out infinite',
-                        'marquee': 'marquee 30s linear infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        },
-                        marquee: {
-                            '0%': { transform: 'translateX(0%)' },
-                            '100%': { transform: 'translateX(-100%)' },
-                        }
                     }
                 }
             }
         }
     </script>
-
     <style>
         html {
-            overflow-x: clip;
+            overflow-x: hidden;
             scroll-behavior: smooth;
+        }
+
+        body, p, a, span, li, button, input, select, textarea {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-serif {
+            font-family: 'Playfair Display', serif;
         }
 
         body {
             background-color: #FFFFFF;
             color: #0F172A;
-            overflow-x: clip;
-            font-family: 'Plus Jakarta Sans', sans-serif;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -97,10 +80,6 @@
             background: linear-gradient(135deg, #B48811 0%, #D4AF37 50%, #9A7209 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-
-        .bg-gradient-gold {
-            background: linear-gradient(135deg, #C5A059 0%, #B08D48 100%);
         }
 
         .nav-link::after {
@@ -119,120 +98,70 @@
             width: 100%;
         }
 
-        /* Swiper custom styles */
-        .swiper-pagination-bullet {
-            background: #CBD5E1;
+        .dropdown-wrapper:hover .dropdown-menu {
             opacity: 1;
-            width: 10px;
-            height: 10px;
-            transition: all 0.3s ease;
+            visibility: visible;
+            transform: translateY(0);
         }
 
-        .swiper-pagination-bullet-active {
-            background: #C5A059;
-            width: 32px;
-            border-radius: 9999px;
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.2s ease-in-out;
+        }
+    
+        html, body {
+            overflow-x: hidden !important;
+            max-width: 100% !important;
+            width: 100% !important;
         }
 
-        /* Range Slider Styling */
-        input[type=range] {
-            -webkit-appearance: none;
-            width: 100%;
-            background: transparent;
+        #main-header {
+            max-width: 100% !important;
+            box-sizing: border-box !important;
         }
 
-        input[type=range]:focus {
-            outline: none;
-        }
-
-        input[type=range]::-webkit-slider-runnable-track {
-            width: 100%;
-            height: 8px;
-            cursor: pointer;
-            background: #E2E8F0;
-            border-radius: 9999px;
-        }
-
-        input[type=range]::-webkit-slider-thumb {
-            height: 22px;
-            width: 22px;
-            border-radius: 50%;
-            background: #C5A059;
-            cursor: pointer;
-            -webkit-appearance: none;
-            margin-top: -7px;
-            box-shadow: 0 4px 10px rgba(197, 160, 89, 0.4);
-            border: 2px solid #FFFFFF;
-        }
-
-        /* Leaflet Map Custom Container */
-        #leaflet-presence-map {
-            height: 520px;
-            width: 100%;
-            border-radius: 1.5rem;
-            z-index: 10;
-        }
-
-        .leaflet-popup-content-wrapper {
-            background: #FFFFFF !important;
-            color: #0F172A !important;
-            border-radius: 1rem !important;
-            padding: 4px !important;
-            box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.15), 0 0 0 1px rgba(226, 232, 240, 0.8) !important;
-        }
-
-        .leaflet-popup-tip {
-            background: #FFFFFF !important;
-        }
-
-        /* Custom Service Reference Box */
-        .service-reference-card {
-            background: #FFFFFF;
-            border: 1px solid #E2E8F0;
-            border-radius: 1.5rem;
-            padding: 2rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .service-reference-card:hover {
-            transform: translateY(-6px);
-            border-color: #C5A059;
-            box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
-        }
     </style>
 </head>
 
 <body class="bg-white text-slate-900 selection:bg-gold-500 selection:text-white">
 
-    <!-- Combined Sticky Header Container (Pins Both Top Bar & Nav on Scroll) -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
     <header class="fixed top-0 left-0 right-0 z-50 w-full shadow-md transition-all duration-300 bg-white" id="main-header">
         <!-- Top Announcement Bar -->
-        <div class="bg-slate-900 text-slate-300 py-2.5 px-4 text-xs font-semibold tracking-wide border-b border-slate-800">
-            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
-                <div class="flex items-center gap-4">
-                    <span class="inline-flex items-center gap-1.5 text-gold-400 bg-gold-500/10 px-2.5 py-0.5 rounded-full border border-gold-500/20">
-                        <i class="fa-solid fa-shield-halved text-xs"></i> 100% Risk-Free Commercial Model
+        <div class="bg-slate-900 text-slate-300 py-2 px-4 text-xs font-semibold tracking-wide border-b border-slate-800">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-1.5">
+                <div class="flex items-center gap-2 sm:gap-4 flex-wrap justify-center">
+                    <span class="inline-flex items-center gap-1.5 text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/20 text-[11px] sm:text-xs">
+                        <i class="fa-solid fa-shield-halved text-xs"></i> 100% Performance Commitment
                     </span>
-                    <span class="hidden sm:inline text-slate-400">No Revenue Lift = No Consultancy Fee</span>
+                    <span class="hidden sm:inline text-slate-400 text-xs">No Revenue Lift = No Consultancy Fee</span>
                 </div>
-                <div class="flex items-center gap-6 text-slate-400">
-                    <a href="tel:+14702882717" class="hover:text-gold-400 transition-colors flex items-center gap-1.5">
-                        <i class="fa-solid fa-phone text-gold-500"></i> +1 (470) 288-2717
+                <div class="hidden sm:flex items-center gap-4 lg:gap-6 text-slate-400 text-xs">
+                    <a href="tel:+18005550199" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-phone text-amber-400"></i> +1 (800) 555-0199
                     </a>
-                    <a href="mailto:sales@myrevenuelab.com" class="hover:text-gold-400 transition-colors flex items-center gap-1.5">
-                        <i class="fa-solid fa-envelope text-gold-500"></i> sales@myrevenuelab.com
+                    <a href="mailto:sales@myrevenuelab.com" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-envelope text-amber-400"></i> sales@myrevenuelab.com
                     </a>
-                    <span class="hidden lg:inline text-slate-500">| 2170 Delk Rd SE, Marietta, GA 30067</span>
+                    <span class="hidden lg:inline text-slate-500">| Marietta, GA & Austin, TX</span>
                 </div>
             </div>
         </div>
 
         <!-- Main Navigation Bar -->
         <div class="bg-white/95 backdrop-blur-md border-b border-slate-100">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-                <!-- Official Green Growth Arrow Brand Logo -->
-                <a href="index.html" class="flex items-center gap-3 group">
-                    <img src="assets/images/logo-mark.png" alt="RevenueLab Growth Arrow" class="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-110 duration-300">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+                <!-- Brand Logo (Solid Dark Slate RevenueLab Text + Green Subtitle) -->
+                <a href="index.html" class="flex items-center gap-3 group shrink-0">
+                    <img src="assets/images/logo-mark.png" alt="RevenueLab Growth Arrow" class="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105 duration-300">
                     <div>
                         <span class="font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 block leading-none">RevenueLab</span>
                         <span class="text-[9px] sm:text-[10px] font-extrabold tracking-[0.22em] uppercase text-emerald-600 block mt-1">The Science of Revenue</span>
@@ -240,508 +169,314 @@
                 </a>
 
                 <!-- Desktop Nav Links -->
-                <nav class="hidden md:flex items-center gap-8 text-sm font-bold text-slate-700">
-                    <a href="index.html" class="nav-link hover:text-slate-900 relative py-1">Home</a>
-                    <a href="about.html" class="nav-link hover:text-slate-900 relative py-1">About Us</a>
-                    <a href="services.html" class="nav-link active text-slate-900 relative py-1">Services</a>
-                    <a href="portfolio.html" class="nav-link hover:text-slate-900 relative py-1">Portfolio</a>
-                    <a href="contact.html" class="nav-link hover:text-slate-900 relative py-1">Contact</a>
+                <nav class="hidden lg:flex items-center gap-4 xl:gap-7 text-sm font-bold text-slate-700 whitespace-nowrap">
+                    <a href="index.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Home</a>
+                    <a href="revenue-strategy.html" class="nav-link py-1 whitespace-nowrap text-amber-600 font-extrabold">Revenue Strategy</a>
+                    <a href="services.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Services</a>
+                    <a href="pricing.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Pricing & Plans</a>
+                    
+                    <!-- Resources Dropdown -->
+                    <div class="relative dropdown-wrapper py-6">
+                        <a href="resources.html" class="nav-link py-1 whitespace-nowrap flex items-center gap-1 hover:text-amber-600 transition-colors">
+                            Resources <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                        </a>
+                        <div class="dropdown-menu absolute top-full left-0 w-80 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 z-50 text-left font-normal">
+                            <a href="resources.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-cubes"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">Resource Hub</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">All 12 free tools, playbooks & calculators</div>
+                                </div>
+                            </a>
+                            <a href="roi-calculator.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-calculator"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">ROI & RevPAR Calculator</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">Project potential revenue upside</div>
+                                </div>
+                            </a>
+                            <a href="sample-report.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-file-contract"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">Sample Friday Executive Briefing</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">Preview actual client weekly deliverable</div>
+                                </div>
+                            </a>
+                            <a href="how-it-works.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-route"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">How It Works</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">7-Day onboarding & operating model</div>
+                                </div>
+                            </a>
+                            <a href="glossary.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-book-bookmark"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">Hotel Yield Glossary</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">A–Z definitions of key revenue metrics</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="about.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">About Us</a>
+                    <a href="portfolio.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Portfolio</a>
+                    <a href="contact.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Contact</a>
                 </nav>
 
                 <!-- Action CTA Button & Mobile Toggle -->
-                <div class="flex items-center gap-4">
-                    <a href="contact.html" class="hidden sm:inline-flex items-center justify-center px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-slate-900 bg-gold-500 hover:bg-gold-400 shadow-gold-glow hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
-                        Free Revenue Audit <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                <div class="flex items-center gap-4 shrink-0">
+                    <a href="contact.html" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-semibold text-sm text-slate-950 bg-amber-500 hover:bg-amber-600 shadow-md shadow-amber-500/20 transition-all whitespace-nowrap">
+                        Free Yield Audit
                     </a>
 
-                    <button id="mobile-toggle" class="md:hidden p-2 text-slate-900 hover:text-gold-600 focus:outline-none" aria-label="Toggle Navigation">
-                        <i class="fa-solid fa-bars text-2xl"></i>
+                    <button id="mobile-toggle-btn" class="lg:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation Menu">
+                        <i class="fa-solid fa-bars text-xl" id="mobile-toggle-icon"></i>
                     </button>
                 </div>
             </div>
 
             <!-- Mobile Drawer Navigation -->
-            <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4 shadow-xl">
-                <a href="index.html" class="block font-semibold text-slate-600 hover:text-gold-600 text-lg py-2 border-b border-slate-100">Home</a>
-                <a href="about.html" class="block font-semibold text-slate-600 hover:text-gold-600 text-lg py-2 border-b border-slate-100">About Us</a>
-                <a href="services.html" class="block font-bold text-slate-900 text-lg py-2 border-b border-slate-100">Services</a>
-                <a href="portfolio.html" class="block font-semibold text-slate-600 hover:text-gold-600 text-lg py-2 border-b border-slate-100">Portfolio & Case Studies</a>
-                <a href="contact.html" class="block font-semibold text-slate-600 hover:text-gold-600 text-lg py-2 border-b border-slate-100">Contact</a>
-                <a href="contact.html" class="inline-flex w-full items-center justify-center px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider text-slate-900 bg-gold-500 shadow-md">
-                    Claim Free Audit
+            <div id="mobile-drawer" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4 shadow-xl max-h-[85vh] overflow-y-auto">
+                <a href="index.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Home</a>
+                <a href="revenue-strategy.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Revenue Strategy</a>
+                <a href="services.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Services</a>
+                <a href="pricing.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Pricing & Plans</a>
+                
+                <div class="border-b border-slate-100 py-3">
+                    <div class="font-bold text-amber-600 text-sm mb-2 flex items-center justify-between">
+                        <span>Resources & Tools Ecosystem</span>
+                        <i class="fa-solid fa-angle-down text-xs"></i>
+                    </div>
+                    <div class="pl-3 space-y-2 text-sm font-medium text-slate-700">
+                        <a href="resources.html" class="block py-1 hover:text-amber-600">All Resources Hub</a>
+                        <a href="roi-calculator.html" class="block py-1 hover:text-amber-600">ROI & RevPAR Calculator</a>
+                        <a href="sample-report.html" class="block py-1 hover:text-amber-600">Sample Friday Executive Report</a>
+                        <a href="how-it-works.html" class="block py-1 hover:text-amber-600">How It Works (7-Day Onboarding)</a>
+                        <a href="glossary.html" class="block py-1 hover:text-amber-600">Hotel Revenue Glossary</a>
+                    </div>
+                </div>
+
+                <a href="about.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">About Us</a>
+                <a href="portfolio.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Portfolio & Case Studies</a>
+                <a href="contact.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Contact</a>
+                <a href="contact.html" class="block w-full text-center py-3 rounded-xl bg-amber-500 text-slate-950 font-bold text-sm mt-4 shadow-md">
+                    Free Yield Audit
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- Services Hero Banner (High Res Photo Overlay & Swiper Slider) -->
-    <section class="relative bg-slate-950 text-white overflow-hidden pt-36 sm:pt-40 lg:pt-44">
-        <div class="swiper hero-swiper w-full h-[620px] sm:h-[680px]">
-            <div class="swiper-wrapper">
-                
-                <!-- Slide 1: Primary Yield Strategy -->
-                <div class="swiper-slide relative flex items-center">
-                    <img src="assets/images/executive_analytics_dashboard.jpg" alt="Analytics Dashboard" class="absolute inset-0 w-full h-full object-cover opacity-40">
-                    <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-transparent"></div>
-                    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full z-10">
-                        <div class="max-w-2xl">
-                            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-gold-500/20 text-gold-400 border border-gold-500/30 mb-6">
-                                <i class="fa-solid fa-chart-line"></i> Performance-Driven Yield Engine
-                            </span>
-                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
-                                Transforming Hotel Data Into <span class="text-gradient-gold">Peak Bank Deposits</span>
-                            </h1>
-                            <p class="text-lg text-slate-300 font-normal leading-relaxed mb-8">
-                                Data-driven pricing algorithms, OTA channel optimization, and hands-on commercial leadership focused on RevPAR market share expansion.
-                            </p>
-                            <div class="flex flex-wrap gap-4 items-center">
-                                <button type="button" onclick="document.getElementById('consultation-modal').classList.remove('hidden'); document.getElementById('consultation-modal').classList.add('flex');" class="px-8 py-4 rounded-full bg-gold-500 text-slate-950 font-extrabold text-sm uppercase tracking-wider hover:bg-gold-400 shadow-gold-glow transition-all">
-                                    Claim Free Growth Audit <i class="fa-solid fa-bolt ml-2"></i>
-                                </button>
-                                <a href="portfolio.html" class="px-8 py-4 rounded-full bg-slate-800/80 text-white border border-slate-700 font-bold text-sm uppercase tracking-wider hover:bg-slate-700 transition-all">
-                                    View Track Record
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 2: Independent & Branded Portfolio -->
-                <div class="swiper-slide relative flex items-center">
-                    <img src="assets/images/luxury_boutique_hotel.jpg" alt="Luxury Hotel Interior" class="absolute inset-0 w-full h-full object-cover object-center opacity-40">
-                    <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-transparent"></div>
-                    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full z-10">
-                        <div class="max-w-2xl">
-                            <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-gold-500/20 text-gold-400 border border-gold-500/30 mb-6">
-                                <i class="fa-solid fa-hotel"></i> Independent & Branded Hotels
-                            </span>
-                            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight mb-6">
-                                Over +38.4% Average RevPAR Growth Delivered
-                            </h1>
-                            <p class="text-lg text-slate-300 font-normal leading-relaxed mb-8">
-                                Tailored revenue management for luxury resorts, boutique inns, and branded hotel portfolios across Marriott, Hilton, Hyatt, and IHG ecosystems.
-                            </p>
-                            <div class="flex flex-wrap gap-4 items-center">
-                                <a href="#services-grid" class="px-8 py-4 rounded-full bg-gold-500 text-slate-950 font-extrabold text-sm uppercase tracking-wider hover:bg-gold-400 shadow-gold-glow transition-all">
-                                    Explore Services <i class="fa-solid fa-arrow-right ml-2"></i>
-                                </a>
-                                <a href="about.html" class="px-8 py-4 rounded-full bg-slate-800/80 text-white border border-slate-700 font-bold text-sm uppercase tracking-wider hover:bg-slate-700 transition-all">
-                                    Why Choose Us
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+    <!-- HERO HEADER -->
+    <section class="relative bg-slate-950 text-white pt-40 sm:pt-44 lg:pt-48 pb-20 sm:pb-28 overflow-hidden">
+        <img src="images/bread.jpg" alt="Revenue Strategy & Yield Science" class="absolute inset-0 w-full h-full object-cover opacity-30">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/85 to-slate-950/50"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10" data-aos="fade-up">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-gold-500/20 text-gold-400 border border-gold-500/30 mb-6">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <span class="text-gold-500/60">/</span>
+                <span>Revenue Strategy</span>
             </div>
-            <div class="swiper-pagination"></div>
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight max-w-4xl mx-auto mb-6">
+                The Science of <span class="text-gradient-gold">Revenue Optimization</span>
+            </h1>
+            <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                Hospitality Revenue Optimization, Sales Transformation & Distribution Strategy Consulting.
+            </p>
         </div>
     </section>
 
-    <!-- Global Presence Strip -->
-    <section class="py-12 bg-slate-950 text-white border-y border-slate-800">
+    <!-- STRATEGY OVERVIEW -->
+    <section class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <div class="text-4xl sm:text-5xl font-extrabold text-gold-400 font-serif">27+</div>
-                    <p class="text-xs sm:text-sm font-semibold text-slate-300 mt-2 uppercase tracking-wider">Clients Served</p>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Left Image -->
+                <div class="lg:col-span-6" data-aos="fade-right">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200">
+                        <img src="images/about-imag1.webp" alt="Revenue Science Strategy" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700">
+                    </div>
                 </div>
-                <div>
-                    <div class="text-4xl sm:text-5xl font-extrabold text-gold-400 font-serif">$18M+</div>
-                    <p class="text-xs sm:text-sm font-semibold text-slate-300 mt-2 uppercase tracking-wider">Revenue Growth Driven</p>
-                </div>
-                <div>
-                    <div class="text-4xl sm:text-5xl font-extrabold text-gold-400 font-serif">81 Days</div>
-                    <p class="text-xs sm:text-sm font-semibold text-slate-300 mt-2 uppercase tracking-wider">Turnaround Duration</p>
-                </div>
-                <div>
-                    <div class="text-4xl sm:text-5xl font-extrabold text-gold-400 font-serif">20x</div>
-                    <p class="text-xs sm:text-sm font-semibold text-slate-300 mt-2 uppercase tracking-wider">Delivering High ROI</p>
+                <!-- Right Content -->
+                <div class="lg:col-span-6" data-aos="fade-left">
+                    <span class="text-xs font-extrabold tracking-widest uppercase text-emerald-600 bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200 inline-block mb-4">
+                        Analytical Excellence
+                    </span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
+                        How Data Outperforms Competitor Rate Sets
+                    </h2>
+                    <p class="text-slate-600 text-base leading-relaxed mb-6">
+                        At <strong class="text-slate-900 font-extrabold">My Revenue Lab</strong>, our methodology centers on unconstrained demand forecasting and real-time market rate adjustments. Rather than relying on static seasonal tables, our team evaluates over 10,000 daily market data points to continuously balance occupancy velocity against Average Daily Rate (ADR).
+                    </p>
+                    <p class="text-slate-600 text-base leading-relaxed mb-8">
+                        By integrating automated Revenue Management Systems (RMS), direct channel booking incentives, and OTA parity monitoring, we ensure hotel properties maximize Gross Operating Profit (GOP) and bank deposit returns.
+                    </p>
+                    <button type="button" onclick="document.getElementById('consultation-modal').classList.remove('hidden'); document.getElementById('consultation-modal').classList.add('flex');" class="px-8 py-4 rounded-full bg-gold-500 text-slate-950 font-extrabold text-xs uppercase tracking-wider hover:bg-gold-400 shadow-gold-glow inline-flex items-center gap-2 transform hover:-translate-y-0.5 transition-all">
+                        Request Growth Audit <i class="fa-solid fa-arrow-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How Our Revenue Services Drive Growth (Refreshed Reference 6-Card Grid) -->
-    <section id="services-grid" class="py-24 bg-slate-50/70 border-b border-slate-200/80">
+    <!-- 5 PILLARS GRID -->
+    <section class="py-24 bg-slate-50 border-y border-slate-200/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-                <span class="text-xs font-extrabold tracking-widest uppercase text-emerald-600 bg-emerald-500/10 px-3.5 py-1.5 rounded-full border border-emerald-500/20 inline-block mb-3">
-                    Tailored Hotel Solutions
+                <span class="text-xs font-extrabold tracking-widest uppercase text-emerald-600 bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200 inline-block mb-3">
+                    Commercial Pillars
                 </span>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-tight">
-                    How Our Revenue Services Drive Growth
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                    Our 5 Core Yield Modules
                 </h2>
                 <p class="text-slate-600 text-base mt-4">
-                    End-to-end commercial revenue optimization algorithms, yield engineering, and distribution management tailored for independent and franchised hotels.
+                    Data-driven yield engineering frameworks designed to outpace competitive rate sets and drive net RevPAR gains.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Service Card 1 -->
-                <div class="service-reference-card group" data-aos="fade-up" data-aos-delay="0">
+                <!-- Module 1 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:border-gold-500 hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="0">
                     <div class="w-14 h-14 rounded-2xl bg-gold-500/10 text-gold-600 flex items-center justify-center font-bold text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-slate-950 transition-all duration-300">
                         <i class="fa-solid fa-chart-line"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Dynamic Pricing Algorithms</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                        Adjust room rates in real-time based on local demand spikes, booking velocity, seasonal compression events, and competitor rate changes.
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">1. Dynamic Rate Optimization</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Automated price fluctuations calculated every hour based on pick-up pace, competitor pricing, and length-of-stay restrictions.
                     </p>
-                    <a href="contact.html" class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-gold-600 group-hover:text-slate-900 transition-colors">
-                        Learn More <i class="fa-solid fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
-                    </a>
                 </div>
 
-                <!-- Service Card 2 -->
-                <div class="service-reference-card group" data-aos="fade-up" data-aos-delay="100">
+                <!-- Module 2 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:border-gold-500 hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
                     <div class="w-14 h-14 rounded-2xl bg-gold-500/10 text-gold-600 flex items-center justify-center font-bold text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-slate-950 transition-all duration-300">
                         <i class="fa-solid fa-network-wired"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">OTA Channel Yield Management</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                        Seamless optimization across Expedia, Booking.com, Agoda, and GDS channels to maximize net RevPAR while suppressing commission bleed.
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">2. Channel Distribution Control</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Full synchronization across Booking.com, Expedia, Agoda, GDS, and direct engines to prevent rate leaks and penalty commissions.
                     </p>
-                    <a href="contact.html" class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-gold-600 group-hover:text-slate-900 transition-colors">
-                        Learn More <i class="fa-solid fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
-                    </a>
                 </div>
 
-                <!-- Service Card 3 -->
-                <div class="service-reference-card group" data-aos="fade-up" data-aos-delay="200">
+                <!-- Module 3 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:border-gold-500 hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
                     <div class="w-14 h-14 rounded-2xl bg-gold-500/10 text-gold-600 flex items-center justify-center font-bold text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-slate-950 transition-all duration-300">
-                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        <i class="fa-solid fa-bullseye"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">CompSet Market Intelligence</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                        In-depth STR report benchmarking, market penetration index (MPI), average rate index (ARI), and RevPAR index (RGI) positioning.
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">3. Market Share Capture</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Strategic positioning relative to competitive sets to expand RevPAR Index (RGI) above 100% fair market share.
                     </p>
-                    <a href="contact.html" class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-gold-600 group-hover:text-slate-900 transition-colors">
-                        Learn More <i class="fa-solid fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
-                    </a>
                 </div>
 
-                <!-- Service Card 4 -->
-                <div class="service-reference-card group" data-aos="fade-up" data-aos-delay="300">
+                <!-- Module 4 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:border-gold-500 hover:shadow-2xl transition-all duration-300 group lg:col-span-1 md:col-span-1" data-aos="fade-up" data-aos-delay="300">
                     <div class="w-14 h-14 rounded-2xl bg-gold-500/10 text-gold-600 flex items-center justify-center font-bold text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-slate-950 transition-all duration-300">
                         <i class="fa-solid fa-laptop-code"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">RMS & PMS Tech Stack Audits</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                        Evaluation and configuration of Opera, SynXis, Cloudbeds, Ideas, and Duetto systems to eliminate friction and enable dynamic pricing.
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">4. Direct Booking Conversion Engine</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Website optimization, rate parity alignment, and direct guest loyalty perks to reduce overall OTA acquisition cost.
                     </p>
-                    <a href="contact.html" class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-gold-600 group-hover:text-slate-900 transition-colors">
-                        Learn More <i class="fa-solid fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
-                    </a>
                 </div>
 
-                <!-- Service Card 5 -->
-                <div class="service-reference-card group" data-aos="fade-up" data-aos-delay="400">
+                <!-- Module 5 -->
+                <div class="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm hover:border-gold-500 hover:shadow-2xl transition-all duration-300 group lg:col-span-2 md:col-span-1" data-aos="fade-up" data-aos-delay="400">
                     <div class="w-14 h-14 rounded-2xl bg-gold-500/10 text-gold-600 flex items-center justify-center font-bold text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-slate-950 transition-all duration-300">
-                        <i class="fa-solid fa-users-gear"></i>
+                        <i class="fa-solid fa-handshake"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Group & Corporate Rate Strategy</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                        Structured group displacement analysis, RFP pricing, and corporate negotiated rate thresholds to protect peak transient dates.
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">5. Group & Corporate Contracting</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Displacement analysis to evaluate corporate tenders, sports teams, and MICE groups against transient revenue replacement.
                     </p>
-                    <a href="contact.html" class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-gold-600 group-hover:text-slate-900 transition-colors">
-                        Learn More <i class="fa-solid fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
-                    </a>
                 </div>
-
-                <!-- Service Card 6 -->
-                <div class="service-reference-card group" data-aos="fade-up" data-aos-delay="500">
-                    <div class="w-14 h-14 rounded-2xl bg-gold-500/10 text-gold-600 flex items-center justify-center font-bold text-2xl mb-6 group-hover:bg-gold-500 group-hover:text-slate-950 transition-all duration-300">
-                        <i class="fa-solid fa-handshake-angle"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Risk-Free Commercial Partnership</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed mb-6">
-                        Performance-based fee structures aligned with your asset's bottom-line bank deposits. Zero financial risk for owners.
-                    </p>
-                    <a href="contact.html" class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-gold-600 group-hover:text-slate-900 transition-colors">
-                        Learn More <i class="fa-solid fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
-                    </a>
-                </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Hotel Brand Logos Marquee -->
-    <section class="py-12 bg-white border-b border-slate-200 overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 text-center">
-            <p class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Trusted By Franchised Brands & Independent Portfolios</p>
-        </div>
-        <div class="relative w-full overflow-hidden flex items-center">
-            <div class="flex items-center gap-12 sm:gap-16 whitespace-nowrap animate-marquee">
-                <img src="assets/images/logos/MARRIOTT.png" alt="Marriott" class="h-10 sm:h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 inline-block">
-                <img src="assets/images/logos/HILTON.jpg" alt="Hilton" class="h-10 sm:h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 inline-block">
-                <img src="assets/images/logos/IHG.png" alt="IHG" class="h-10 sm:h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 inline-block">
-                <img src="assets/images/logos/WYNDHAM.png" alt="Wyndham" class="h-10 sm:h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 inline-block">
-                <img src="assets/images/logos/CHOICE.png" alt="Choice Hotels" class="h-10 sm:h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 inline-block">
-                <img src="assets/images/logos/BEST WESTERN.png" alt="Best Western" class="h-10 sm:h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 inline-block">
-                <img src="assets/images/logos/HYATT.png" alt="Hyatt" class="h-10 sm:h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 inline-block">
-                <img src="assets/images/logos/INDEPENDENT.jpg" alt="Independent Hotels" class="h-10 sm:h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 inline-block">
-            </div>
-            <!-- Duplicate Marquee Set for Loop -->
-            <div class="flex items-center gap-12 sm:gap-16 whitespace-nowrap animate-marquee ml-12 sm:ml-16" aria-hidden="true">
-                <img src="assets/images/logos/MARRIOTT.png" alt="Marriott" class="h-10 sm:h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 inline-block">
-                <img src="assets/images/logos/HILTON.jpg" alt="Hilton" class="h-10 sm:h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 inline-block">
-                <img src="assets/images/logos/IHG.png" alt="IHG" class="h-10 sm:h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 inline-block">
-                <img src="assets/images/logos/WYNDHAM.png" alt="Wyndham" class="h-10 sm:h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 inline-block">
-                <img src="assets/images/logos/CHOICE.png" alt="Choice Hotels" class="h-10 sm:h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 inline-block">
-                <img src="assets/images/logos/BEST WESTERN.png" alt="Best Western" class="h-10 sm:h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 inline-block">
-                <img src="assets/images/logos/HYATT.png" alt="Hyatt" class="h-10 sm:h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 inline-block">
-                <img src="assets/images/logos/INDEPENDENT.jpg" alt="Independent Hotels" class="h-10 sm:h-12 w-auto grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300 inline-block">
-            </div>
-        </div>
-    </section>
-
-    <!-- Leadership & Domain Expertise Section -->
-    <section class="py-24 bg-white relative border-b border-slate-200">
+    <!-- METHODOLOGY STEP-BY-STEP -->
+    <section class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-                
-                <!-- Left Image Card -->
-                <div class="lg:col-span-5 relative" data-aos="fade-right">
-                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 group">
-                        <img src="assets/images/galley2.jpg" alt="Hemal Mehta - Founder & Commercial Revenue Strategist" class="w-full h-[480px] object-cover group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 right-6 p-5 rounded-2xl glass-dark text-white border border-slate-700/60 shadow-xl">
-                            <span class="text-[11px] font-extrabold uppercase tracking-widest text-gold-400 block mb-1">Founder & Commercial Revenue Strategist</span>
-                            <h4 class="font-extrabold text-xl text-white">Hemal Mehta</h4>
-                            <p class="text-xs text-slate-300 mt-1">20+ Years Strategic Commercial Hospitality Experience</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Content -->
-                <div class="lg:col-span-7" data-aos="fade-left">
-                    <span class="text-xs font-extrabold tracking-widest uppercase text-emerald-600 bg-emerald-500/10 px-3.5 py-1.5 rounded-full border border-emerald-500/20 inline-block mb-4">
-                        Leadership & Domain Expertise
-                    </span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-2">
-                        Hemal Mehta
-                    </h2>
-                    <h5 class="text-lg font-extrabold text-gold-600 mb-6">Founder & Commercial Revenue Strategist</h5>
-                    <p class="text-slate-600 text-base leading-relaxed mb-4">
-                        With over 20 years of commercial hospitality experience, Hemal Mehta leads strategic hotel sales, revenue yield optimization, marketing, and distribution growth across North America and global markets.
-                    </p>
-                    <p class="text-slate-600 text-base leading-relaxed mb-8">
-                        RevenueLab empowers independent and branded hotels with data-driven decision frameworks, pricing algorithms, and dedicated yield management experts focused on bank deposit growth.
-                    </p>
-
-                    <!-- Risk-Free Model Block -->
-                    <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-slate-900 via-slate-900 to-slate-800 text-white border border-slate-700/60 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
-                        <div class="space-y-2">
-                            <div class="flex items-center gap-2.5 text-gold-400 font-black text-base sm:text-lg">
-                                <i class="fa-solid fa-shield-halved text-emerald-400 text-xl"></i> Performance Commitment: No Success, No Fee
-                            </div>
-                            <p class="text-xs text-slate-300 leading-relaxed">
-                                We operate on a risk-free commercial partnership. Our proven methodology has consistently driven significant revenue growth and RevPAR market share expansion.
-                            </p>
-                        </div>
-                        <button type="button" onclick="document.getElementById('consultation-modal').classList.remove('hidden'); document.getElementById('consultation-modal').classList.add('flex');" class="shrink-0 px-7 py-3.5 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white font-extrabold text-xs uppercase tracking-wider shadow-md transition-all">
-                            Claim Growth Audit
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Global Hospitality Presence (Interactive Leaflet Map) -->
-    <section class="py-24 bg-white text-slate-900 relative overflow-hidden border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center max-w-3xl mx-auto mb-12" data-aos="fade-up">
-                <span class="text-xs font-bold tracking-widest uppercase text-emerald-600 mb-3 block">
-                    RevenueLab
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs font-extrabold tracking-widest uppercase text-emerald-600 bg-emerald-50 px-3.5 py-1.5 rounded-full border border-emerald-200 inline-block mb-3">
+                    Execution Roadmap
                 </span>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight leading-tight">
-                    Our Global Hospitality Presence
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                    Our 4-Step Onboarding Process
                 </h2>
                 <p class="text-slate-600 text-base mt-4">
-                    Interactive map of active hotel client portfolios and revenue operations across North America, Australia, and India.
+                    A structured, seamless deployment model designed for rapid turnaround and immediate yield performance.
                 </p>
             </div>
 
-            <!-- Region Filter Buttons -->
-            <div class="flex flex-wrap justify-center gap-3 mb-8" id="map-region-filters">
-                <button class="map-filter-btn px-5 py-2.5 rounded-full text-xs font-extrabold uppercase tracking-wider bg-slate-900 text-white shadow-md border border-slate-800 transition-all active" data-region="all">
-                    <i class="fa-solid fa-globe mr-1.5 text-gold-400"></i> All Markets (13)
-                </button>
-                <button class="map-filter-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 transition-all" data-region="USA">
-                    <i class="fa-solid fa-flag-usa mr-1.5 text-blue-600"></i> United States (9)
-                </button>
-                <button class="map-filter-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 transition-all" data-region="India">
-                    <i class="fa-solid fa-location-dot mr-1.5 text-orange-600"></i> India (2)
-                </button>
-                <button class="map-filter-btn px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 transition-all" data-region="Australia">
-                    <i class="fa-solid fa-compass mr-1.5 text-emerald-600"></i> Australia (2)
-                </button>
-            </div>
-
-            <!-- Leaflet Map Container -->
-            <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-100 p-2">
-                <div id="leaflet-presence-map"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="py-24 bg-slate-50 border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-                <span class="text-xs font-extrabold tracking-widest uppercase text-emerald-600 bg-emerald-500/10 px-3.5 py-1.5 rounded-full border border-emerald-500/20 inline-block mb-3">
-                    RevenueLab
-                </span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
-                    Gallery
-                </h2>
-                <p class="text-slate-600 text-sm mt-3">Visual showcase of select hotel assets under our revenue engineering oversight.</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Gallery Image 1 -->
-                <div class="relative rounded-3xl overflow-hidden shadow-lg group border border-slate-200 h-72 cursor-pointer" data-aos="fade-up" data-aos-delay="0">
-                    <img src="assets/images/gallery-new1.jpg" alt="Luxury Hotel Suite" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div class="w-12 h-12 rounded-full bg-gold-500 text-slate-950 flex items-center justify-center font-bold text-lg shadow-lg">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gallery Image 2 -->
-                <div class="relative rounded-3xl overflow-hidden shadow-lg group border border-slate-200 h-72 cursor-pointer" data-aos="fade-up" data-aos-delay="100">
-                    <img src="assets/images/gallery-new2.webp" alt="Resort Pool & Amenities" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div class="w-12 h-12 rounded-full bg-gold-500 text-slate-950 flex items-center justify-center font-bold text-lg shadow-lg">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gallery Image 3 -->
-                <div class="relative rounded-3xl overflow-hidden shadow-lg group border border-slate-200 h-72 cursor-pointer" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/images/gallery-new3.jpg" alt="Boutique Property Design" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div class="w-12 h-12 rounded-full bg-gold-500 text-slate-950 flex items-center justify-center font-bold text-lg shadow-lg">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gallery Image 4 -->
-                <div class="relative rounded-3xl overflow-hidden shadow-lg group border border-slate-200 h-72 cursor-pointer" data-aos="fade-up" data-aos-delay="300">
-                    <img src="assets/images/gallery-new4.jpg" alt="Commercial Hotel Architecture" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <div class="w-12 h-12 rounded-full bg-gold-500 text-slate-950 flex items-center justify-center font-bold text-lg shadow-lg">
-                            <i class="fa-solid fa-magnifying-glass-plus"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive RevPAR Lift Calculator -->
-    <section class="py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <div class="lg:col-span-6" data-aos="fade-right">
-                    <span class="text-xs font-extrabold tracking-widest uppercase text-gold-600 bg-gold-500/10 px-3.5 py-1.5 rounded-full border border-gold-500/20 inline-block mb-4">
-                        Interactive Yield Calculator
-                    </span>
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight mb-6">
-                        Calculate Your Hotel's RevPAR Lift Potential
-                    </h2>
-                    <p class="text-slate-600 text-sm mb-8">
-                        Adjust the sliders below to estimate your potential annual gross revenue increase with RevenueLab.
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Step 01 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 text-center relative group hover:bg-slate-950 hover:text-white transition-all duration-300" data-aos="fade-up" data-aos-delay="0">
+                    <div class="text-5xl font-extrabold text-gold-500 font-serif mb-4 group-hover:text-gold-400">01</div>
+                    <h3 class="text-lg font-extrabold text-slate-900 group-hover:text-white mb-2">Revenue Audit</h3>
+                    <p class="text-slate-600 group-hover:text-slate-300 text-xs leading-relaxed">
+                        Deep audit of historical PMS data, rate codes, and OTA commissions.
                     </p>
-
-                    <div class="space-y-8">
-                        <!-- Rooms Slider -->
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <label class="text-xs font-bold uppercase tracking-wider text-slate-700">Total Room Count</label>
-                                <span id="rooms-value" class="text-lg font-extrabold text-slate-900">120 Keys</span>
-                            </div>
-                            <input type="range" id="rooms-range" min="20" max="400" value="120" step="5">
-                        </div>
-
-                        <!-- Current ADR Slider -->
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <label class="text-xs font-bold uppercase tracking-wider text-slate-700">Current Average Daily Rate (ADR)</label>
-                                <span id="adr-value" class="text-lg font-extrabold text-slate-900">$140</span>
-                            </div>
-                            <input type="range" id="adr-range" min="60" max="500" value="140" step="5">
-                        </div>
-
-                        <!-- Occupancy Slider -->
-                        <div>
-                            <div class="flex justify-between items-center mb-2">
-                                <label class="text-xs font-bold uppercase tracking-wider text-slate-700">Current Occupancy Rate</label>
-                                <span id="occ-value" class="text-lg font-extrabold text-slate-900">65%</span>
-                            </div>
-                            <input type="range" id="occ-range" min="30" max="95" value="65" step="1">
-                        </div>
-                    </div>
                 </div>
 
-                <!-- Calculator Output Card -->
-                <div class="lg:col-span-6" data-aos="fade-left">
-                    <div class="p-8 sm:p-10 rounded-3xl bg-slate-950 text-white shadow-2xl border border-slate-800 relative overflow-hidden">
-                        <div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-gold-500/10 blur-3xl pointer-events-none"></div>
-                        
-                        <span class="text-xs font-extrabold uppercase tracking-widest text-gold-400 block mb-2">Estimated Annual Impact</span>
-                        <div id="calc-result" class="text-4xl sm:text-6xl font-extrabold text-gold-400 font-serif mb-6">+ $284,700</div>
-                        
-                        <div class="grid grid-cols-2 gap-4 pt-6 border-t border-slate-800 mb-8">
-                            <div>
-                                <span class="text-xs text-slate-400 block">Projected RevPAR Lift</span>
-                                <span class="text-lg font-bold text-white">+18.5%</span>
-                            </div>
-                            <div>
-                                <span class="text-xs text-slate-400 block">Typical ROI Multiplier</span>
-                                <span class="text-lg font-bold text-white">12x - 20x</span>
-                            </div>
-                        </div>
-
-                        <button type="button" onclick="document.getElementById('consultation-modal').classList.remove('hidden'); document.getElementById('consultation-modal').classList.add('flex');" class="w-full py-4 rounded-full bg-gold-500 hover:bg-gold-400 text-slate-950 font-extrabold text-xs uppercase tracking-wider shadow-gold-glow transition-all">
-                            Unlock Custom Revenue Audit
-                        </button>
-                    </div>
+                <!-- Step 02 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 text-center relative group hover:bg-slate-950 hover:text-white transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-5xl font-extrabold text-gold-500 font-serif mb-4 group-hover:text-gold-400">02</div>
+                    <h3 class="text-lg font-extrabold text-slate-900 group-hover:text-white mb-2">Rate Architecture</h3>
+                    <p class="text-slate-600 group-hover:text-slate-300 text-xs leading-relaxed">
+                        Restructuring room categories, BAR tiers, and promotional rules.
+                    </p>
                 </div>
 
+                <!-- Step 03 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 text-center relative group hover:bg-slate-950 hover:text-white transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-5xl font-extrabold text-gold-500 font-serif mb-4 group-hover:text-gold-400">03</div>
+                    <h3 class="text-lg font-extrabold text-slate-900 group-hover:text-white mb-2">RMS Integration</h3>
+                    <p class="text-slate-600 group-hover:text-slate-300 text-xs leading-relaxed">
+                        Deploying automated yield algorithms and daily rate sync.
+                    </p>
+                </div>
+
+                <!-- Step 04 -->
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-200 text-center relative group hover:bg-slate-950 hover:text-white transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-5xl font-extrabold text-gold-500 font-serif mb-4 group-hover:text-gold-400">04</div>
+                    <h3 class="text-lg font-extrabold text-slate-900 group-hover:text-white mb-2">Daily Yield Management</h3>
+                    <p class="text-slate-600 group-hover:text-slate-300 text-xs leading-relaxed">
+                        24/7 monitoring, weekly strategy calls, and monthly performance reporting.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Full-Width High-Resolution Call-To-Action Banner -->
-    <section class="relative py-24 bg-slate-950 text-white overflow-hidden">
-        <img src="assets/images/coastal_resort_pool.jpg" alt="Luxury Oceanfront Hotel Resort" class="absolute inset-0 w-full h-full object-cover object-center opacity-30">
-        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/70"></div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10" data-aos="zoom-in">
-            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-extrabold tracking-widest uppercase bg-gold-500/20 text-gold-400 border border-gold-500/30 mb-6">
-                <i class="fa-solid fa-shield-halved"></i> 100% Risk-Free Commercial Model
-            </span>
-            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight max-w-3xl mx-auto mb-6">
-                Ready to Unlock Your Hotel's Full Revenue Potential?
-            </h2>
-            <p class="text-slate-300 text-base max-w-2xl mx-auto mb-8 leading-relaxed">
-                Contact our Marietta, GA revenue experts today for a comprehensive, zero-cost RevPAR audit of your property.
-            </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="contact.html" class="px-9 py-4 rounded-full bg-gold-500 text-slate-950 font-extrabold text-sm uppercase tracking-wider hover:bg-gold-400 shadow-gold-glow transition-all">
-                    Claim Free Revenue Audit <i class="fa-solid fa-arrow-right ml-2"></i>
-                </a>
-                <a href="tel:+14702882717" class="px-9 py-4 rounded-full bg-slate-900/90 text-white border border-slate-700 font-extrabold text-sm uppercase tracking-wider hover:bg-slate-800 transition-all flex items-center gap-2">
-                    <i class="fa-solid fa-phone text-gold-400"></i> Call +1 (470) 288-2717
-                </a>
+    <!-- GUARANTEE BLOCK -->
+    <section class="py-20 bg-slate-950 text-white border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 border border-slate-800 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8" data-aos="zoom-in">
+                <div class="max-w-2xl">
+                    <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase bg-gold-500/20 text-gold-400 border border-gold-500/30 mb-4">
+                        <i class="fa-solid fa-shield-halved"></i> Performance Commitment
+                    </span>
+                    <h3 class="text-2xl sm:text-4xl font-extrabold text-white mb-4">
+                        Performance Commitment: No Success, No Fee
+                    </h3>
+                    <p class="text-slate-300 text-base leading-relaxed">
+                        We operate on a risk-free commercial partnership. Our proven methodology has consistently driven significant revenue growth and RevPAR market share expansion.
+                    </p>
+                </div>
+                <div class="flex-shrink-0">
+                    <button type="button" onclick="document.getElementById('consultation-modal').classList.remove('hidden'); document.getElementById('consultation-modal').classList.add('flex');" class="px-8 py-4 rounded-full bg-gold-500 hover:bg-gold-400 text-slate-950 font-extrabold text-xs uppercase tracking-wider shadow-gold-glow transition-all">
+                        Claim Growth Audit <i class="fa-solid fa-bolt ml-2"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -770,8 +505,9 @@
                     <h4 class="font-extrabold text-white uppercase tracking-wider text-xs mb-4">Quick Navigation</h4>
                     <ul class="space-y-2.5 font-medium">
                         <li><a href="index.html" class="hover:text-gold-400 transition-colors">Home</a></li>
+                        <li><a href="revenue-strategy.html" class="text-gold-400 font-extrabold transition-colors">Revenue Strategy</a></li>
+                        <li><a href="services.html" class="hover:text-gold-400 transition-colors">Services</a></li>
                         <li><a href="about.html" class="hover:text-gold-400 transition-colors">About Us</a></li>
-                        <li><a href="services.html" class="text-gold-400 font-extrabold transition-colors">Services</a></li>
                         <li><a href="portfolio.html" class="hover:text-gold-400 transition-colors">Case Studies</a></li>
                         <li><a href="contact.html" class="hover:text-gold-400 transition-colors">Contact Us</a></li>
                     </ul>
@@ -895,63 +631,21 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
     <script>
-        // Safely Initialize AOS
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof AOS !== 'undefined') {
-                AOS.init({
-                    duration: 800,
-                    easing: 'ease-out-cubic',
-                    once: true,
-                    offset: 50
-                });
-            }
-        });
-
-        // Initialize Lenis Smooth Scrolling
-        const lenis = new Lenis({
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-            smoothWheel: true,
-            touchMultiplier: 2
-        });
-
-        function raf(time) {
-            lenis.raf(time);
-            requestAnimationFrame(raf);
-        }
+        const lenis = new Lenis({ duration: 1.2, smoothWheel: true, smoothTouch: false });
+        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
         requestAnimationFrame(raf);
+        lenis.on('scroll', () => { if (typeof AOS !== 'undefined') AOS.refresh(); });
+        AOS.init({ duration: 800, once: true });
 
         // Mobile Menu Drawer Toggle
-        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileToggle = document.getElementById('mobile-toggle') || document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         if (mobileToggle && mobileMenu) {
             mobileToggle.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
-            });
-        }
-
-        // Swiper Hero Banner Slider
-        if (document.querySelector('.hero-swiper')) {
-            new Swiper('.hero-swiper', {
-                loop: true,
-                autoplay: {
-                    delay: 5000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-                effect: 'fade',
-                fadeEffect: {
-                    crossFade: true
-                }
             });
         }
 
@@ -982,133 +676,37 @@
                 }
             });
         }
+    </script>
 
-        // Interactive RevPAR Calculator
-        const roomsRange = document.getElementById('rooms-range');
-        const adrRange = document.getElementById('adr-range');
-        const occRange = document.getElementById('occ-range');
-        const roomsValue = document.getElementById('rooms-value');
-        const adrValue = document.getElementById('adr-value');
-        const occValue = document.getElementById('occ-value');
-        const calcResult = document.getElementById('calc-result');
-
-        function updateCalculator() {
-            if (!roomsRange || !adrRange || !occRange) return;
-            const rooms = parseInt(roomsRange.value);
-            const adr = parseInt(adrRange.value);
-            const occ = parseInt(occRange.value) / 100;
-
-            roomsValue.textContent = `${rooms} Keys`;
-            adrValue.textContent = `$${adr}`;
-            occValue.textContent = `${Math.round(occ * 100)}%`;
-
-            // Calculate annual revenue lift (estimated 18.5% average RevPAR lift)
-            const annualRev = rooms * adr * occ * 365;
-            const projectedLift = annualRev * 0.185;
-
-            calcResult.textContent = `+ $${Math.round(projectedLift).toLocaleString()}`;
-        }
-
-        if (roomsRange) roomsRange.addEventListener('input', updateCalculator);
-        if (adrRange) adrRange.addEventListener('input', updateCalculator);
-        if (occRange) occRange.addEventListener('input', updateCalculator);
-
-        // Leaflet Interactive Map Initialization
+    <!-- Mobile Menu Drawer Toggle Script -->
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const mapContainer = document.getElementById('leaflet-presence-map');
-            if (!mapContainer || typeof L === 'undefined' || typeof L.map !== 'function') return;
+            const btn = document.getElementById('mobile-toggle-btn') || document.getElementById('mobile-toggle') || document.getElementById('mobile-menu-btn');
+            const drawer = document.getElementById('mobile-drawer') || document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-toggle-icon') || document.getElementById('menu-icon');
 
-            const map = L.map('leaflet-presence-map', {
-                scrollWheelZoom: false,
-                zoomControl: true
-            }).setView([20.0, 10.0], 2);
-
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-                maxZoom: 19,
-                subdomains: 'abcd',
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-            }).addTo(map);
-
-            const hotelLocations = [
-                // USA (9 properties)
-                { name: "Atlanta Marriott Perimeter Center", city: "Atlanta, GA", region: "USA", coords: [33.9238, -84.3414], keys: "396 Keys", type: "Full Service Hotel" },
-                { name: "Hilton Garden Inn Marietta", city: "Marietta, GA", region: "USA", coords: [33.9526, -84.5499], keys: "140 Keys", type: "Select Service" },
-                { name: "Holiday Inn Express Atlanta Downtown", city: "Atlanta, GA", region: "USA", coords: [33.7590, -84.3880], keys: "170 Keys", type: "Select Service" },
-                { name: "Coastal Boutique Resort Savannah", city: "Savannah, GA", region: "USA", coords: [32.0809, -81.0912], keys: "65 Keys", type: "Boutique Resort" },
-                { name: "Hyatt Place Nashville Downtown", city: "Nashville, TN", region: "USA", coords: [36.1627, -86.7816], keys: "255 Keys", type: "Select Service" },
-                { name: "Courtyard by Marriott Orlando", city: "Orlando, FL", region: "USA", coords: [28.5383, -81.3792], keys: "210 Keys", type: "Franchised Hotel" },
-                { name: "Dallas Market Center Hotel", city: "Dallas, TX", region: "USA", coords: [32.7767, -96.7970], keys: "185 Keys", type: "Commercial Property" },
-                { name: "Denver Tech Center Inn", city: "Denver, CO", region: "USA", coords: [39.7392, -104.9903], keys: "130 Keys", type: "Select Service" },
-                { name: "California Coast Boutique Resort", city: "Santa Barbara, CA", region: "USA", coords: [34.4208, -119.6982], keys: "85 Keys", type: "Luxury Boutique" },
-
-                // India (2 properties)
-                { name: "Mumbai Business Bay Hotel", city: "Mumbai, MH", region: "India", coords: [19.0760, 72.8777], keys: "220 Keys", type: "Commercial Business Hotel" },
-                { name: "Pune Tech Corridor Inn", city: "Pune, MH", region: "India", coords: [18.5204, 73.8567], keys: "110 Keys", type: "Select Service" },
-
-                // Australia (2 properties)
-                { name: "Sydney Harbour View Suites", city: "Sydney, NSW", region: "Australia", coords: [-33.8688, 151.2093], keys: "145 Keys", type: "Boutique Luxury Suites" },
-                { name: "Melbourne CBD Commercial Hotel", city: "Melbourne, VIC", region: "Australia", coords: [-37.8136, 144.9631], keys: "190 Keys", type: "Franchised Business Hotel" }
-            ];
-
-            const markers = [];
-
-            const emeraldIcon = L.divIcon({
-                className: 'custom-map-pin',
-                html: `<div style="background-color: #059669; width: 18px; height: 18px; border-radius: 50%; border: 3px solid #FFFFFF; box-shadow: 0 4px 10px rgba(5,150,105,0.4);"></div>`,
-                iconSize: [18, 18],
-                iconAnchor: [9, 9]
-            });
-
-            hotelLocations.forEach(loc => {
-                const marker = L.marker(loc.coords, { icon: emeraldIcon }).addTo(map);
-                marker.region = loc.region;
-
-                const popupHtml = `
-                    <div style="padding: 12px; font-family: 'Plus Jakarta Sans', sans-serif;">
-                        <span style="background-color: #ECFDF5; color: #059669; font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.05em; display: inline-block; margin-bottom: 6px;">${loc.region} Portfolio</span>
-                        <h4 style="font-size: 14px; font-weight: 800; color: #0F172A; margin: 0 0 4px 0;">${loc.name}</h4>
-                        <p style="font-size: 11px; color: #64748B; margin: 0 0 8px 0;">${loc.city} &bull; ${loc.keys}</p>
-                        <span style="font-size: 10px; font-weight: 700; color: #B08D48;">${loc.type}</span>
-                    </div>
-                `;
-                marker.bindPopup(popupHtml);
-                markers.push(marker);
-            });
-
-            // Filter functionality
-            const filterBtns = document.querySelectorAll('#map-region-filters .map-filter-btn');
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function() {
-                    filterBtns.forEach(b => {
-                        b.classList.remove('active', 'bg-slate-900', 'text-white');
-                        b.classList.add('bg-slate-100', 'text-slate-700');
-                    });
-                    this.classList.add('active', 'bg-slate-900', 'text-white');
-                    this.classList.remove('bg-slate-100', 'text-slate-700');
-
-                    const selectedRegion = this.getAttribute('data-region');
-                    markers.forEach(marker => {
-                        if (selectedRegion === 'all' || marker.region === selectedRegion) {
-                            map.addLayer(marker);
-                        } else {
-                            map.removeLayer(marker);
+            if (btn && drawer) {
+                btn.onclick = function(e) {
+                    if (e) e.preventDefault();
+                    const isHidden = drawer.classList.contains('hidden');
+                    if (isHidden) {
+                        drawer.classList.remove('hidden');
+                        if (icon) {
+                            icon.classList.remove('fa-bars');
+                            icon.classList.add('fa-xmark');
                         }
-                    });
-
-                    // Auto zoom to filtered bounds
-                    if (selectedRegion === 'USA') {
-                        map.setView([37.0902, -95.7129], 4);
-                    } else if (selectedRegion === 'India') {
-                        map.setView([20.5937, 78.9629], 5);
-                    } else if (selectedRegion === 'Australia') {
-                        map.setView([-25.2744, 133.7751], 4);
                     } else {
-                        map.setView([20.0, 10.0], 2);
+                        drawer.classList.add('hidden');
+                        if (icon) {
+                            icon.classList.remove('fa-xmark');
+                            icon.classList.add('fa-bars');
+                        }
                     }
-                });
-            });
+                };
+            }
         });
     </script>
+
 </body>
 
 </html>

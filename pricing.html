@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Revenue Management Pricing & Plans | RevenueLab</title>
+    <meta name="description"
+        content="Transparent, month-to-month pricing for hotel revenue management, commercial sales outreach, OTA optimization, and online review management. No setup fees. No long-term contracts.">
+    <meta name="keywords"
+        content="hotel revenue management pricing, hotel yield management cost, remote revenue manager price, hotel sales outreach cost, OTA parity monitoring fee, hotel review management price">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            850: '#111c2e',
+                            950: '#060c17',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#d4af37',
+                            600: '#b89228',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Site-Wide Unified Typography */
+        body, p, a, span, li, button, input, select, textarea {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+        }
+        h1, h2, h3, h4, h5, h6, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #1e293b 0%, #b89228 50%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-bg-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #B89228 100%);
+        }
+
+        .gold-shadow {
+            box-shadow: 0 10px 30px -5px rgba(212, 175, 55, 0.25);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+    
+        .dropdown-wrapper:hover .dropdown-menu {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+        }
+
+        .dropdown-menu {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(10px) !important;
+            transition: all 0.2s ease-in-out !important;
+        }
+
+    
+        html, body {
+            overflow-x: hidden !important;
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+
+        #main-header {
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+    </style>
+</head>
+
+<body class="bg-white text-slate-900 font-sans antialiased overflow-x-hidden selection:bg-gold-500 selection:text-white">
+
+    <!-- Combined Sticky Header Container (Pins Both Top Bar & Nav on Scroll) -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <header class="fixed top-0 left-0 right-0 z-50 w-full shadow-md transition-all duration-300 bg-white" id="main-header">
+        <!-- Top Announcement Bar -->
+        <div class="bg-slate-900 text-slate-300 py-2 px-4 text-xs font-semibold tracking-wide border-b border-slate-800">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-1.5">
+                <div class="flex items-center gap-2 sm:gap-4 flex-wrap justify-center">
+                    <span class="inline-flex items-center gap-1.5 text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/20 text-[11px] sm:text-xs">
+                        <i class="fa-solid fa-shield-halved text-xs"></i> 100% Performance Commitment
+                    </span>
+                    <span class="hidden sm:inline text-slate-400 text-xs">No Revenue Lift = No Consultancy Fee</span>
+                </div>
+                <div class="hidden sm:flex items-center gap-4 lg:gap-6 text-slate-400 text-xs">
+                    <a href="tel:+18005550199" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-phone text-amber-400"></i> +1 (800) 555-0199
+                    </a>
+                    <a href="mailto:sales@myrevenuelab.com" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-envelope text-amber-400"></i> sales@myrevenuelab.com
+                    </a>
+                    <span class="hidden lg:inline text-slate-500">| Marietta, GA & Austin, TX</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation Bar -->
+        <div class="bg-white/95 backdrop-blur-md border-b border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+                <!-- Brand Logo (Solid Dark Slate RevenueLab Text + Green Subtitle) -->
+                <a href="index.html" class="flex items-center gap-3 group shrink-0">
+                    <img src="assets/images/logo-mark.png" alt="RevenueLab Growth Arrow" class="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105 duration-300">
+                    <div>
+                        <span class="font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 block leading-none">RevenueLab</span>
+                        <span class="text-[9px] sm:text-[10px] font-extrabold tracking-[0.22em] uppercase text-emerald-600 block mt-1">The Science of Revenue</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden lg:flex items-center gap-4 xl:gap-7 text-sm font-bold text-slate-700 whitespace-nowrap">
+                    <a href="index.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Home</a>
+                    <a href="revenue-strategy.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Revenue Strategy</a>
+                    <a href="services.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Services</a>
+                    <a href="pricing.html" class="nav-link py-1 whitespace-nowrap text-amber-600 font-extrabold">Pricing & Plans</a>
+                    
+                    <!-- Resources Dropdown -->
+                    <div class="relative dropdown-wrapper py-6">
+                        <a href="resources.html" class="nav-link py-1 whitespace-nowrap flex items-center gap-1 hover:text-amber-600 transition-colors">
+                            Resources <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                        </a>
+                        <div class="dropdown-menu absolute top-full left-0 w-80 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 z-50 text-left font-normal">
+                            <a href="resources.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-cubes"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">Resource Hub</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">All 12 free tools, playbooks & calculators</div>
+                                </div>
+                            </a>
+                            <a href="roi-calculator.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-calculator"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">ROI & RevPAR Calculator</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">Project potential revenue upside</div>
+                                </div>
+                            </a>
+                            <a href="sample-report.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-file-contract"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">Sample Friday Executive Briefing</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">Preview actual client weekly deliverable</div>
+                                </div>
+                            </a>
+                            <a href="how-it-works.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-route"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">How It Works</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">7-Day onboarding & operating model</div>
+                                </div>
+                            </a>
+                            <a href="glossary.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-book-bookmark"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">Hotel Yield Glossary</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">A–Z definitions of key revenue metrics</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="about.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">About Us</a>
+                    <a href="portfolio.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Portfolio</a>
+                    <a href="contact.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Action CTA Button & Mobile Toggle -->
+                <div class="flex items-center gap-4 shrink-0">
+                    <a href="contact.html" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-semibold text-sm text-slate-950 bg-amber-500 hover:bg-amber-600 shadow-md shadow-amber-500/20 transition-all whitespace-nowrap">
+                        Free Yield Audit
+                    </a>
+
+                    <button id="mobile-toggle-btn" class="lg:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation Menu">
+                        <i class="fa-solid fa-bars text-xl" id="mobile-toggle-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Drawer Navigation -->
+            <div id="mobile-drawer" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4 shadow-xl max-h-[85vh] overflow-y-auto">
+                <a href="index.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Home</a>
+                <a href="revenue-strategy.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Revenue Strategy</a>
+                <a href="services.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Services</a>
+                <a href="pricing.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Pricing & Plans</a>
+                
+                <div class="border-b border-slate-100 py-3">
+                    <div class="font-bold text-amber-600 text-sm mb-2 flex items-center justify-between">
+                        <span>Resources & Tools Ecosystem</span>
+                        <i class="fa-solid fa-angle-down text-xs"></i>
+                    </div>
+                    <div class="pl-3 space-y-2 text-sm font-medium text-slate-700">
+                        <a href="resources.html" class="block py-1 hover:text-amber-600">All Resources Hub</a>
+                        <a href="roi-calculator.html" class="block py-1 hover:text-amber-600">ROI & RevPAR Calculator</a>
+                        <a href="sample-report.html" class="block py-1 hover:text-amber-600">Sample Friday Executive Report</a>
+                        <a href="how-it-works.html" class="block py-1 hover:text-amber-600">How It Works (7-Day Onboarding)</a>
+                        <a href="glossary.html" class="block py-1 hover:text-amber-600">Hotel Revenue Glossary</a>
+                    </div>
+                </div>
+
+                <a href="about.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">About Us</a>
+                <a href="portfolio.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Portfolio & Case Studies</a>
+                <a href="contact.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Contact</a>
+                <a href="contact.html" class="block w-full text-center py-3 rounded-xl bg-amber-500 text-slate-950 font-bold text-sm mt-4 shadow-md">
+                    Free Yield Audit
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION (Light Clean Palette) -->
+    <section class="relative pt-36 sm:pt-40 lg:pt-44 pb-20 lg:pb-28 bg-gradient-to-b from-slate-50 via-white to-slate-50 overflow-hidden border-b border-slate-200">
+        <!-- Ambient Subtle Background Shape -->
+        <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-amber-100/40 blur-[130px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <!-- Eyebrow Pill -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-gold-500/30 text-gold-600 text-xs font-bold uppercase tracking-wider mb-6 shadow-sm" data-aos="fade-down">
+                <i class="fa-solid fa-tag"></i>
+                <span>Transparent Month-to-Month Pricing</span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-tight max-w-4xl mx-auto" data-aos="fade-up">
+                Straightforward Hotel Support. <br class="hidden sm:inline">
+                <span class="gold-gradient-text">No Long-Term Contracts.</span>
+            </h1>
+
+            <!-- Subheading -->
+            <p class="text-slate-600 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto mb-10 leading-relaxed font-normal" data-aos="fade-up" data-aos-delay="100">
+                Review Management is <strong class="text-slate-900 font-bold">$99 per hotel / month</strong>. Revenue Management, Commercial Sales, and OTA Support receive a custom monthly proposal after a complimentary property review — calibrated to your room count, service mix, and market complexity.
+            </p>
+
+            <!-- Value Pills Grid -->
+            <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-6 mb-12" data-aos="fade-up" data-aos-delay="150">
+                <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-xs sm:text-sm font-semibold shadow-sm">
+                    <i class="fa-solid fa-calendar-check text-gold-600"></i>
+                    <span>Month-to-Month Terms</span>
+                </div>
+                <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-xs sm:text-sm font-semibold shadow-sm">
+                    <i class="fa-solid fa-ban text-gold-600"></i>
+                    <span>Zero Setup & Onboarding Fees</span>
+                </div>
+                <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-xs sm:text-sm font-semibold shadow-sm">
+                    <i class="fa-solid fa-bolt text-gold-600"></i>
+                    <span>Live in ~7 Business Days</span>
+                </div>
+                <div class="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 text-slate-700 text-xs sm:text-sm font-semibold shadow-sm">
+                    <i class="fa-solid fa-hotel text-gold-600"></i>
+                    <span>Room-Count Scoped Work</span>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-16" data-aos="fade-up" data-aos-delay="200">
+                <button onclick="openConsultationModal()" class="w-full sm:w-auto gold-bg-gradient text-slate-950 font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-base flex items-center justify-center gap-3">
+                    <span>Get a Free Hotel Performance Audit</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <a href="#plans" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white hover:bg-slate-100 border border-slate-300 text-slate-800 font-semibold text-base transition-colors flex items-center justify-center gap-2 shadow-sm">
+                    <span>Explore Plans & Features</span>
+                    <i class="fa-solid fa-arrow-down text-xs text-gold-600"></i>
+                </a>
+            </div>
+
+            <!-- Top Stat Badges Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-5xl mx-auto" data-aos="fade-up" data-aos-delay="250">
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-gold-600 font-serif">$99</div>
+                    <div class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Review Response</div>
+                    <div class="text-[11px] text-slate-400 mt-0.5">Per hotel / month</div>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-serif">Custom</div>
+                    <div class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Revenue + Sales</div>
+                    <div class="text-[11px] text-slate-400 mt-0.5">Room-count calibrated</div>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-gold-600 font-serif">4</div>
+                    <div class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Room-Count Bands</div>
+                    <div class="text-[11px] text-slate-400 mt-0.5">1-49 to 150+ Keys</div>
+                </div>
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 text-center shadow-sm hover:shadow-md transition-shadow">
+                    <div class="text-3xl sm:text-4xl font-extrabold text-slate-900 font-serif">$0</div>
+                    <div class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Setup Fees</div>
+                    <div class="text-[11px] text-slate-400 mt-0.5">No onboarding lock-in</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING TIERS SECTION (#plans) -->
+    <section id="plans" class="py-24 bg-white relative border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs font-extrabold tracking-widest uppercase text-gold-600 bg-gold-500/10 px-3.5 py-1.5 rounded-full border border-gold-500/20 inline-block mb-3">
+                    Flexible Commercial Tiers
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Choose the Right Level of Commercial Support</h2>
+                <p class="text-slate-600 text-base">
+                    All plans operate on a simple month-to-month agreement per hotel. Multi-property portfolio discounts are available for owners with 3 or more properties.
+                </p>
+            </div>
+
+            <!-- 3-Column Plan Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch mb-12">
+
+                <!-- Tier 1: REVIEW RESPONSE -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-8 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 relative group hover:border-slate-300" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <div class="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-full mb-4">
+                            Reputation Management
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-slate-900 mb-2">Review Response</h3>
+                        <p class="text-slate-600 text-sm mb-6 min-h-[40px]">
+                            Professional review management across all major guest platforms. Your hotel’s brand voice, updated within 24 hours.
+                        </p>
+
+                        <!-- Price Tag -->
+                        <div class="mb-6 pb-6 border-b border-slate-100">
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-4xl font-extrabold text-slate-900 font-serif">$99</span>
+                                <span class="text-slate-500 text-sm font-semibold">/ hotel / month</span>
+                            </div>
+                            <span class="text-xs text-gold-600 font-semibold block mt-1"><i class="fa-solid fa-clock text-[10px] mr-1"></i> Responses posted within 24 hours</span>
+                        </div>
+
+                        <!-- Core Feature List -->
+                        <div class="space-y-3.5 mb-8 text-sm">
+                            <div class="font-bold text-slate-400 text-xs uppercase tracking-wider mb-2">Core Inclusions:</div>
+                            <div class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
+                                <span>Google, Booking.com, Expedia, TripAdvisor & Hotels.com coverage</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
+                                <span>Tailored responses written in your hotel's exact voice</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
+                                <span>Immediate escalation alerts for critical guest complaints</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
+                                <span>Monthly reputation score summary & sentiment report</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button onclick="openConsultationModal()" class="w-full py-3.5 px-6 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm transition-colors text-center block shadow-md">
+                            Start Review Support
+                        </button>
+                        <p class="text-center text-[11px] text-slate-400 mt-3 font-medium">Month-to-month · No setup fees</p>
+                    </div>
+                </div>
+
+                <!-- Tier 2: REVENUE ESSENTIAL (Highlighted) -->
+                <div class="bg-gradient-to-b from-amber-50/60 via-white to-white border-2 border-gold-500 rounded-2xl p-8 flex flex-col justify-between shadow-xl shadow-gold-500/10 relative transform lg:-translate-y-2 group" data-aos="fade-up" data-aos-delay="200">
+                    
+                    <!-- Popular Badge -->
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 gold-bg-gradient text-slate-950 text-xs font-extrabold uppercase tracking-widest px-4 py-1 rounded-full shadow-md">
+                        ★ Most Popular Choice
+                    </div>
+
+                    <div>
+                        <div class="inline-block px-3 py-1 bg-gold-500/20 text-gold-600 text-xs font-extrabold rounded-full mb-4 border border-gold-500/30">
+                            Daily Yield Optimization
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-slate-900 mb-2">Revenue Essential</h3>
+                        <p class="text-slate-600 text-sm mb-6 min-h-[40px]">
+                            Daily rate oversight and yield management by a dedicated strategist. Comp set tracking, pickup review, and weekly owner reports.
+                        </p>
+
+                        <!-- Price Tag -->
+                        <div class="mb-6 pb-6 border-b border-amber-200/60">
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-4xl font-extrabold text-gold-600 font-serif">Custom Proposal</span>
+                            </div>
+                            <span class="text-xs text-slate-600 font-semibold block mt-1"><i class="fa-solid fa-chart-line text-[10px] text-gold-600 mr-1"></i> Calibrated by room count & market scope</span>
+                        </div>
+
+                        <!-- Core Feature List -->
+                        <div class="space-y-3.5 mb-8 text-sm">
+                            <div class="font-extrabold text-gold-600 text-xs uppercase tracking-wider mb-2">Includes Review Response + :</div>
+                            <div class="flex items-start gap-3 text-slate-900 font-semibold">
+                                <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
+                                <span>Dedicated revenue strategist — daily oversight</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
+                                <span>Daily rate updates across PMS & all OTA channels</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
+                                <span>30 / 60 / 90-day demand forecasting & inventory control</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
+                                <span>Comp set rate monitoring (4 local competitors)</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
+                                <span>Weekly Executive Owner Report every Friday by 8 AM</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button onclick="openConsultationModal()" class="w-full py-3.5 px-6 rounded-xl gold-bg-gradient hover:shadow-lg text-slate-950 font-extrabold text-sm transition-all text-center block">
+                            Get Custom Revenue Proposal
+                        </button>
+                        <p class="text-center text-[11px] text-slate-500 mt-3 font-medium">Month-to-month · No setup fees</p>
+                    </div>
+                </div>
+
+                <!-- Tier 3: REVENUE + COMMERCIAL SALES -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-8 flex flex-col justify-between shadow-sm hover:shadow-xl transition-all duration-300 relative group hover:border-slate-300" data-aos="fade-up" data-aos-delay="300">
+                    <div>
+                        <div class="inline-block px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-full mb-4">
+                            Full Commercial Support
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-slate-900 mb-2">Revenue + Sales</h3>
+                        <p class="text-slate-600 text-sm mb-6 min-h-[40px]">
+                            Complete revenue management combined with active corporate sales outreach. Build base business while rates are optimized daily.
+                        </p>
+
+                        <!-- Price Tag -->
+                        <div class="mb-6 pb-6 border-b border-slate-100">
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-4xl font-extrabold text-slate-900 font-serif">Custom Proposal</span>
+                            </div>
+                            <span class="text-xs text-gold-600 font-semibold block mt-1"><i class="fa-solid fa-briefcase text-[10px] mr-1"></i> Daily revenue + active sales manager</span>
+                        </div>
+
+                        <!-- Core Feature List -->
+                        <div class="space-y-3.5 mb-8 text-sm">
+                            <div class="font-bold text-slate-400 text-xs uppercase tracking-wider mb-2">Includes Revenue Essential + :</div>
+                            <div class="flex items-start gap-3 text-slate-900 font-semibold">
+                                <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
+                                <span>Dedicated commercial sales manager</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
+                                <span>15 – 20 outbound corporate sales touches per week</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
+                                <span>Corporate, project crew, government & group targeting</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
+                                <span>Consortia & Corporate RFP preparation & submission</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-slate-700">
+                                <i class="fa-solid fa-circle-check text-gold-600 mt-1"></i>
+                                <span>Weekly sales pipeline & lead tracking report</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button onclick="openConsultationModal()" class="w-full py-3.5 px-6 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm transition-colors text-center block shadow-md">
+                            Get Full Service Quote
+                        </button>
+                        <p class="text-center text-[11px] text-slate-400 mt-3 font-medium">Month-to-month · No setup fees</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- OTA ADD-ON BANNER -->
+            <div class="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl" data-aos="fade-up">
+                <div class="flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-gold-500/20 border border-gold-500/30 flex items-center justify-center text-gold-400 text-xl shrink-0">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs font-bold uppercase tracking-wider text-gold-400 mb-1">Optional Add-On Module</div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-1">OTA & Channel Optimization Add-On</h3>
+                        <p class="text-slate-300 text-sm max-w-2xl">
+                            Daily rate parity checks across Booking.com, Expedia, and brand sites, OTA promotion setup, listing audit optimization, and monthly channel mix reporting.
+                        </p>
+                    </div>
+                </div>
+                <button onclick="openConsultationModal()" class="w-full md:w-auto shrink-0 px-6 py-3 rounded-xl gold-bg-gradient text-slate-950 font-bold text-sm hover:shadow-lg transition-all">
+                    Discuss OTA Add-On →
+                </button>
+            </div>
+
+            <!-- Disclaimer Footnote -->
+            <p class="text-center text-xs text-slate-500 mt-8 max-w-4xl mx-auto">
+                * Note: Revenue Essential, Commercial Sales, and OTA proposals are calibrated following a complimentary property review. Room count, brand requirements, market complexity, service mix, and coverage frequency determine final scope. Multi-property portfolios (3+ hotels) receive dedicated portfolio pricing.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- ROOM COUNT SCOPING FRAMEWORK (Slate-50 Palette) -->
+    <section class="py-24 bg-slate-50 relative border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs font-extrabold tracking-widest uppercase text-gold-600 bg-gold-500/10 px-3.5 py-1.5 rounded-full border border-gold-500/20 inline-block mb-3">
+                    Tailored To Your Operation
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-4">How We Scope Your Monthly Proposal</h2>
+                <p class="text-slate-600 text-base">
+                    Room count changes the volume of distribution channels, rate grids, pickup velocity, and sales targets. We scope work across four distinct property size bands:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="100">
+                
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-gold-500/40 transition-all">
+                    <div class="text-gold-600 text-xs font-extrabold uppercase tracking-wider mb-2">Band 1</div>
+                    <div class="font-serif text-2xl font-bold text-slate-900 mb-2">1 – 49 Keys</div>
+                    <div class="text-slate-700 font-bold text-xs mb-3">Focused Operating Scope</div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Streamlined daily rate management and distribution oversight for boutique and smaller select-service properties.
+                    </p>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-gold-500/40 transition-all">
+                    <div class="text-gold-600 text-xs font-extrabold uppercase tracking-wider mb-2">Band 2</div>
+                    <div class="font-serif text-2xl font-bold text-slate-900 mb-2">50 – 99 Keys</div>
+                    <div class="text-slate-700 font-bold text-xs mb-3">Core Daily Coverage</div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Calibrated for core economy & midscale franchised hotels requiring daily yield tweaks and comp set monitoring.
+                    </p>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-gold-500/40 transition-all">
+                    <div class="text-gold-600 text-xs font-extrabold uppercase tracking-wider mb-2">Band 3</div>
+                    <div class="font-serif text-2xl font-bold text-slate-900 mb-2">100 – 149 Keys</div>
+                    <div class="text-slate-700 font-bold text-xs mb-3">Expanded Coordination</div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Comprehensive forecasting, multi-segment rate structuring, and corporate sales outreach for medium-to-large properties.
+                    </p>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-gold-500/40 transition-all">
+                    <div class="text-gold-600 text-xs font-extrabold uppercase tracking-wider mb-2">Band 4</div>
+                    <div class="font-serif text-2xl font-bold text-slate-900 mb-2">150+ Keys / Multi</div>
+                    <div class="text-slate-700 font-bold text-xs mb-3">Complex Portfolio Scope</div>
+                    <p class="text-slate-600 text-xs leading-relaxed">
+                        Full-scale commercial team strategy, corporate group sales, RFP filing, and executive portfolio reporting across properties.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DETAILED FEATURE COMPARISON TABLE (Light Theme) -->
+    <section class="py-24 bg-white relative border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs font-extrabold tracking-widest uppercase text-gold-600 bg-gold-500/10 px-3.5 py-1.5 rounded-full border border-gold-500/20 inline-block mb-3">
+                    Feature Breakdown
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Plan Matrix Comparison</h2>
+                <p class="text-slate-600 text-base">
+                    See exactly what features and deliverables are included in each tier:
+                </p>
+            </div>
+
+            <!-- Table Container -->
+            <div class="overflow-x-auto shadow-lg rounded-2xl border border-slate-200" data-aos="fade-up">
+                <table class="w-full text-left border-collapse min-w-[700px]">
+                    <thead>
+                        <tr class="bg-slate-900 text-white font-serif text-sm">
+                            <th class="p-4 sm:p-5 w-2/5 font-bold">Feature / Deliverable</th>
+                            <th class="p-4 sm:p-5 w-1/5 text-center font-bold text-slate-300">Review Response<br><span class="text-xs font-sans text-gold-400">$99/mo</span></th>
+                            <th class="p-4 sm:p-5 w-1/5 text-center font-bold text-gold-400 bg-slate-800">Revenue Essential<br><span class="text-xs font-sans text-slate-300">Custom Proposal</span></th>
+                            <th class="p-4 sm:p-5 w-1/5 text-center font-bold text-slate-300">Revenue + Sales<br><span class="text-xs font-sans text-gold-400">Custom Proposal</span></th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-sm text-slate-700 bg-white">
+                        <!-- Row 1 -->
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-bold text-slate-900">24-Hour Review Response (Google, OTA, TripAdvisor)</td>
+                            <td class="p-4 text-center text-gold-600 font-bold"><i class="fa-solid fa-circle-check text-base"></i></td>
+                            <td class="p-4 text-center text-gold-600 font-bold bg-amber-50/50"><i class="fa-solid fa-circle-check text-base"></i></td>
+                            <td class="p-4 text-center text-gold-600 font-bold"><i class="fa-solid fa-circle-check text-base"></i></td>
+                        </tr>
+                        <!-- Row 2 -->
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-bold text-slate-900">Critical Review Escalation Alerts</td>
+                            <td class="p-4 text-center text-gold-600 font-bold"><i class="fa-solid fa-circle-check text-base"></i></td>
+                            <td class="p-4 text-center text-gold-600 font-bold bg-amber-50/50"><i class="fa-solid fa-circle-check text-base"></i></td>
+                            <td class="p-4 text-center text-gold-600 font-bold"><i class="fa-solid fa-circle-check text-base"></i></td>
+                        </tr>
+                        <!-- Row 3 -->
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-bold text-slate-900">Daily Rate Optimization & Inventory Control</td>
+                            <td class="p-4 text-center text-slate-300">—</td>
+                            <td class="p-4 text-center text-gold-600 font-bold bg-amber-50/50"><i class="fa-solid fa-circle-check text-base"></i></td>
+                            <td class="p-4 text-center text-gold-600 font-bold"><i class="fa-solid fa-circle-check text-base"></i></td>
+                        </tr>
+                        <!-- Row 4 -->
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-bold text-slate-900">Daily Rate Parity Monitoring across OTAs</td>
+                            <td class="p-4 text-center text-slate-300">—</td>
+                            <td class="p-4 text-center text-gold-600 font-bold bg-amber-50/50"><i class="fa-solid fa-circle-check text-base"></i></td>
+                            <td class="p-4 text-center text-gold-600 font-bold"><i class="fa-solid fa-circle-check text-base"></i></td>
+                        </tr>
+                        <!-- Row 5 -->
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-bold text-slate-900">Weekly Executive Owner Report (Every Friday by 8 AM)</td>
+                            <td class="p-4 text-center text-slate-500 text-xs">Review Summary</td>
+                            <td class="p-4 text-center text-gold-600 font-bold bg-amber-50/50"><i class="fa-solid fa-circle-check text-base"></i> Full Report</td>
+                            <td class="p-4 text-center text-gold-600 font-bold"><i class="fa-solid fa-circle-check text-base"></i> Full Report</td>
+                        </tr>
+                        <!-- Row 6 -->
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-bold text-slate-900">30 / 60 / 90-Day Demand Forecasting</td>
+                            <td class="p-4 text-center text-slate-300">—</td>
+                            <td class="p-4 text-center text-gold-600 font-bold bg-amber-50/50"><i class="fa-solid fa-circle-check text-base"></i></td>
+                            <td class="p-4 text-center text-gold-600 font-bold"><i class="fa-solid fa-circle-check text-base"></i></td>
+                        </tr>
+                        <!-- Row 7 -->
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-bold text-slate-900">Outbound Commercial Sales Outreach (Corporate & Crew)</td>
+                            <td class="p-4 text-center text-slate-300">—</td>
+                            <td class="p-4 text-center text-slate-300 bg-amber-50/50">—</td>
+                            <td class="p-4 text-center text-gold-600 font-bold">15–20 Touches/Wk</td>
+                        </tr>
+                        <!-- Row 8 -->
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-bold text-slate-900">RFP Filing & Consortia Submissions</td>
+                            <td class="p-4 text-center text-slate-300">—</td>
+                            <td class="p-4 text-center text-slate-300 bg-amber-50/50">—</td>
+                            <td class="p-4 text-center text-gold-600 font-bold"><i class="fa-solid fa-circle-check text-base"></i></td>
+                        </tr>
+                        <!-- Row 9 -->
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-4 font-bold text-slate-900">Multi-Property Discount Program</td>
+                            <td class="p-4 text-center text-slate-600 text-xs font-semibold">3+ Hotels</td>
+                            <td class="p-4 text-center text-slate-600 text-xs font-semibold bg-amber-50/50">3+ Hotels</td>
+                            <td class="p-4 text-center text-slate-600 text-xs font-semibold">3+ Hotels</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- VALUE COMPARISON MATRIX ("ONE TEAM VS ALTERNATIVES") -->
+    <section class="py-24 bg-slate-50 relative border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs font-extrabold tracking-widest uppercase text-gold-600 bg-gold-500/10 px-3.5 py-1.5 rounded-full border border-gold-500/20 inline-block mb-3">
+                    Context & ROI
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-4">What You Get — Compared to the Alternatives</h2>
+                <p class="text-slate-600 text-base">
+                    Compare RevenueLab’s unified commercial model against typical alternatives:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="100">
+
+                <!-- Option 1: DIY -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                    <div>
+                        <div class="text-xs font-bold uppercase text-slate-400 mb-2">Option A</div>
+                        <h3 class="font-serif text-xl font-bold text-slate-900 mb-3">Do It Yourself</h3>
+                        <div class="text-xs text-slate-600 space-y-2 mb-4">
+                            <p><strong>What You Get:</strong> Rates updated 2–3× a week. Reviews answered late. Zero outbound sales.</p>
+                            <p><strong>True Cost:</strong> 10–15 hours/week of owner time + lost RevPAR revenue.</p>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-xs text-red-600 font-semibold">
+                        <i class="fa-solid fa-triangle-exclamation mr-1"></i> Missing daily yield discipline & sales outreach.
+                    </div>
+                </div>
+
+                <!-- Option 2: Hire In-House -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                    <div>
+                        <div class="text-xs font-bold uppercase text-slate-400 mb-2">Option B</div>
+                        <h3 class="font-serif text-xl font-bold text-slate-900 mb-3">Hire In-House Staff</h3>
+                        <div class="text-xs text-slate-600 space-y-2 mb-4">
+                            <p><strong>What You Get:</strong> One revenue manager — if you can find one with sales & review skills.</p>
+                            <p><strong>True Cost:</strong> $35k–$45k/yr base + taxes + benefits + 60 days to recruit.</p>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-xs text-red-600 font-semibold">
+                        <i class="fa-solid fa-triangle-exclamation mr-1"></i> Single point of failure; hard to cover all 4 roles.
+                    </div>
+                </div>
+
+                <!-- Option 3: Patchwork Vendors -->
+                <div class="bg-white border border-slate-200 rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                    <div>
+                        <div class="text-xs font-bold uppercase text-slate-400 mb-2">Option C</div>
+                        <h3 class="font-serif text-xl font-bold text-slate-900 mb-3">Patchwork Vendors</h3>
+                        <div class="text-xs text-slate-600 space-y-2 mb-4">
+                            <p><strong>What You Get:</strong> Review service + rate consultant + nobody doing corporate sales.</p>
+                            <p><strong>True Cost:</strong> $600–$1,700/mo across 2–3 uncoordinated vendors.</p>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-slate-100 text-xs text-red-600 font-semibold">
+                        <i class="fa-solid fa-triangle-exclamation mr-1"></i> Disconnected reporting & multiple invoices.
+                    </div>
+                </div>
+
+                <!-- Option 4: RevenueLab (Winner) -->
+                <div class="bg-gradient-to-b from-amber-50/80 via-white to-white border-2 border-gold-500 rounded-2xl p-6 flex flex-col justify-between shadow-lg relative">
+                    <div class="absolute -top-3 right-4 gold-bg-gradient text-slate-950 text-[10px] font-extrabold uppercase px-3 py-0.5 rounded-full shadow-sm">
+                        ★ Best Value
+                    </div>
+                    <div>
+                        <div class="text-xs font-extrabold uppercase text-gold-600 mb-2">Option D</div>
+                        <h3 class="font-serif text-xl font-bold text-slate-900 mb-3">RevenueLab Unified</h3>
+                        <div class="text-xs text-slate-700 space-y-2 mb-4">
+                            <p><strong>What You Get:</strong> Revenue + Commercial Sales + Review Management — one team, one Friday report.</p>
+                            <p><strong>True Cost:</strong> Custom proposal, room-count scoped, month-to-month.</p>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-amber-200/60 text-xs text-slate-900 font-bold">
+                        <i class="fa-solid fa-circle-check text-gold-600 mr-1"></i> Complete alignment, zero setup fees, live in ~7 days.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SCOPE CLARITY: INCLUDED VS SEPARATE COSTS -->
+    <section class="py-24 bg-white relative border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs font-extrabold tracking-widest uppercase text-gold-600 bg-gold-500/10 px-3.5 py-1.5 rounded-full border border-gold-500/20 inline-block mb-3">
+                    Absolute Transparency
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Clear Scope. No Surprise Charges.</h2>
+                <p class="text-slate-600 text-base">
+                    We believe in complete transparency about what our services include and what is paid directly to third parties:
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" data-aos="fade-up" data-aos-delay="100">
+
+                <!-- Always Included -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg font-bold">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-slate-900">Always Included in Service</h3>
+                    </div>
+                    <ul class="space-y-4 text-sm text-slate-700">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-emerald-600 mt-1 font-bold"></i>
+                            <span>Dedicated hospitality revenue manager & commercial strategist</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-emerald-600 mt-1 font-bold"></i>
+                            <span>Weekly Executive Owner Report — every Friday by 8 AM EST</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-emerald-600 mt-1 font-bold"></i>
+                            <span>PMS & OTA extranet rate distribution & inventory management</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-emerald-600 mt-1 font-bold"></i>
+                            <span>Monthly commercial strategy call with key stakeholders</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-emerald-600 mt-1 font-bold"></i>
+                            <span>Urgent escalation alerts for critical reviews or rate anomalies</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-emerald-600 mt-1 font-bold"></i>
+                            <span>Month-to-month terms — cancel anytime with 30 days' written notice</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-check text-emerald-600 mt-1 font-bold"></i>
+                            <span>Zero onboarding fees, setup charges, or contract lock-in</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Separate Costs -->
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-600 flex items-center justify-center text-lg font-bold">
+                            <i class="fa-solid fa-circle-info"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-slate-900">Direct Third-Party / Separate Costs</h3>
+                    </div>
+                    <ul class="space-y-4 text-sm text-slate-600">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-slate-400 mt-1 font-bold"></i>
+                            <span>OTA channel commissions (paid directly to Booking.com, Expedia, etc.)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-slate-400 mt-1 font-bold"></i>
+                            <span>Brand franchise fees or loyalty program assessments</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-slate-400 mt-1 font-bold"></i>
+                            <span>Hotel PMS or Channel Manager software license subscriptions</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-slate-400 mt-1 font-bold"></i>
+                            <span>Paid OTA sponsored placements or Google Hotel Ads budgets</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-slate-400 mt-1 font-bold"></i>
+                            <span>Physical property renovations or hardware expenses</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-xmark text-slate-400 mt-1 font-bold"></i>
+                            <span>Legal, accounting, or tax filing services</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FREQUENTLY ASKED QUESTIONS (ACCORDION) -->
+    <section class="py-24 bg-slate-50 relative border-b border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-xs font-extrabold tracking-widest uppercase text-gold-600 bg-gold-500/10 px-3.5 py-1.5 rounded-full border border-gold-500/20 inline-block mb-3">
+                    Got Questions?
+                </span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+                <p class="text-slate-600 text-base">
+                    Everything you need to know about our pricing, terms, onboarding timeline, and cancellation policy.
+                </p>
+            </div>
+
+            <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+
+                <!-- FAQ 1 -->
+                <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm transition-colors">
+                    <button type="button" class="w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none faq-btn" onclick="toggleFaq(this)">
+                        <span class="font-serif text-lg font-bold text-slate-900">Is there any setup or onboarding fee?</span>
+                        <i class="fa-solid fa-chevron-down text-gold-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-slate-600 text-sm leading-relaxed faq-content">
+                        No. There are zero setup fees, onboarding charges, or upfront setup deposits. You pay only the flat agreed monthly service fee, and you can cancel at any time with 30 days' written notice.
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm transition-colors">
+                    <button type="button" class="w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none faq-btn" onclick="toggleFaq(this)">
+                        <span class="font-serif text-lg font-bold text-slate-900">How is Revenue Essential & Full Service pricing calculated?</span>
+                        <i class="fa-solid fa-chevron-down text-gold-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-slate-600 text-sm leading-relaxed faq-content">
+                        We build a tailored monthly proposal after evaluating your property size (room count band), brand requirements, market complexity, reporting cadence, and sales outreach targets. A 40-room economy hotel and a 180-room full-service resort require different staffing allocation, so they receive separate, fair proposals.
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm transition-colors">
+                    <button type="button" class="w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none faq-btn" onclick="toggleFaq(this)">
+                        <span class="font-serif text-lg font-bold text-slate-900">Why might another hotel have a different RevenueLab proposal?</span>
+                        <i class="fa-solid fa-chevron-down text-gold-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-slate-600 text-sm leading-relaxed faq-content">
+                        Every engagement reflects individualized scope — including room count, local market dynamics, corporate sales intensity, and historical performance. Client agreements are tailored specifically to each property's commercial goals.
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm transition-colors">
+                    <button type="button" class="w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none faq-btn" onclick="toggleFaq(this)">
+                        <span class="font-serif text-lg font-bold text-slate-900">Can I add or adjust services later?</span>
+                        <i class="fa-solid fa-chevron-down text-gold-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-slate-600 text-sm leading-relaxed faq-content">
+                        Yes! Many clients start with Review Response ($99/mo) or Revenue Essential, and add Commercial Sales outreach or OTA optimization as they scale. You can expand or adjust services anytime with 30 days' notice.
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm transition-colors">
+                    <button type="button" class="w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none faq-btn" onclick="toggleFaq(this)">
+                        <span class="font-serif text-lg font-bold text-slate-900">Do you offer multi-property portfolio discounts?</span>
+                        <i class="fa-solid fa-chevron-down text-gold-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-slate-600 text-sm leading-relaxed faq-content">
+                        Yes. For owners, management companies, or franchise groups operating 3 or more properties, we offer custom portfolio rate structures. Mention your portfolio size during your strategy call.
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm transition-colors">
+                    <button type="button" class="w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none faq-btn" onclick="toggleFaq(this)">
+                        <span class="font-serif text-lg font-bold text-slate-900">How quickly can we get started?</span>
+                        <i class="fa-solid fa-chevron-down text-gold-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-slate-600 text-sm leading-relaxed faq-content">
+                        Typically within 7 business days of agreement. We gather your PMS credentials, OTA extranet logins, and brand portal access, conduct an initial comp set audit, and launch daily rate oversight immediately.
+                    </div>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm transition-colors">
+                    <button type="button" class="w-full p-6 text-left flex justify-between items-center gap-4 focus:outline-none faq-btn" onclick="toggleFaq(this)">
+                        <span class="font-serif text-lg font-bold text-slate-900">What is your cancellation policy?</span>
+                        <i class="fa-solid fa-chevron-down text-gold-600 transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden px-6 pb-6 text-slate-600 text-sm leading-relaxed faq-content">
+                        Cancel anytime with 30 days' simple written notice. There are no cancellation penalties, early termination fees, or multi-year locks. We believe performance and trust keep clients month-to-month — that's why 91% of our clients remain long-term partners.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FINAL ACTION HERO BANNER (Slate Navy Theme Accent) -->
+    <section class="py-20 lg:py-28 bg-slate-900 text-white relative overflow-hidden">
+        <!-- Ambient Glow -->
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-gold-500/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center" data-aos="fade-up">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800 border border-gold-500/30 text-gold-400 text-xs font-semibold uppercase tracking-wider mb-6">
+                <span>Get An Exact Quote</span>
+            </div>
+
+            <h2 class="font-serif text-3xl sm:text-5xl font-bold text-white mb-6 leading-tight">
+                In 30 Minutes, We’ll Show You Exactly Where Your Hotel Is Leaving Revenue on the Table.
+            </h2>
+
+            <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+                Tell us about your property — room count, brand, market, and current setup — and we’ll provide an exact monthly quote with zero obligation.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-10">
+                <button onclick="openConsultationModal()" class="w-full sm:w-auto gold-bg-gradient text-slate-950 font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-0.5 text-base flex items-center justify-center gap-3">
+                    <span>Request Free Performance Audit</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <a href="tel:+14702882717" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold text-base transition-colors flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone text-gold-400"></i>
+                    <span>Call +1 (470) 288-2717</span>
+                </a>
+            </div>
+
+            <div class="flex flex-wrap justify-center items-center gap-6 text-xs text-slate-400 font-medium">
+                <span><i class="fa-solid fa-shield-check text-gold-400 mr-1.5"></i> Month-to-Month Terms</span>
+                <span><i class="fa-solid fa-ban text-gold-400 mr-1.5"></i> Zero Setup Fee</span>
+                <span><i class="fa-solid fa-bolt text-gold-400 mr-1.5"></i> Live in ~7 Days</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXECUTIVE FOOTER (Standard Site Footer) -->
+    <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+                <!-- Brand Info -->
+                <div class="space-y-4">
+                    <a href="index.html" class="flex items-center gap-3">
+                        <img src="assets/images/logo-mark.png" alt="RevenueLab Logo" class="h-10 w-auto object-contain">
+                        <span class="font-extrabold text-2xl text-white">Revenue<span class="text-gold-400">Lab</span></span>
+                    </a>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Data-driven hotel revenue management, commercial sales outreach, and online review management for economy, midscale, and independent properties across 28 states.
+                    </p>
+                    <div class="text-xs text-slate-400">
+                        <p class="font-semibold text-slate-200">Global Strategy HQ:</p>
+                        <p>Marietta, GA (Operating Nationwide)</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div>
+                    <h5 class="font-serif text-white font-bold text-base mb-4 border-b border-slate-800 pb-2">Quick Navigation</h5>
+                    <ul class="space-y-2.5 text-xs">
+                        <li><a href="index.html" class="hover:text-gold-400 transition-colors">Home</a></li>
+                        <li><a href="services.html" class="hover:text-gold-400 transition-colors">Services & Solutions</a></li>
+                        <li><a href="revenue-strategy.html" class="hover:text-gold-400 transition-colors">Revenue Strategy</a></li>
+                        <li><a href="pricing.html" class="text-gold-400 font-bold hover:underline">Pricing & Plans</a></li>
+                        <li><a href="portfolio.html" class="hover:text-gold-400 transition-colors">Portfolio & Results</a></li>
+                        <li><a href="about.html" class="hover:text-gold-400 transition-colors">About RevenueLab</a></li>
+                        <li><a href="contact.html" class="hover:text-gold-400 transition-colors">Contact Advisory</a></li>
+                    </ul>
+                </div>
+
+                <!-- Supported Brands -->
+                <div>
+                    <h5 class="font-serif text-white font-bold text-base mb-4 border-b border-slate-800 pb-2">Supported Franchises</h5>
+                    <ul class="space-y-2 text-xs text-slate-400">
+                        <li><i class="fa-solid fa-angle-right text-gold-400 text-[10px] mr-1.5"></i> Marriott International</li>
+                        <li><i class="fa-solid fa-angle-right text-gold-400 text-[10px] mr-1.5"></i> Hilton Worldwide</li>
+                        <li><i class="fa-solid fa-angle-right text-gold-400 text-[10px] mr-1.5"></i> Hyatt Hotels & Resorts</li>
+                        <li><i class="fa-solid fa-angle-right text-gold-400 text-[10px] mr-1.5"></i> IHG Hotels & Resorts</li>
+                        <li><i class="fa-solid fa-angle-right text-gold-400 text-[10px] mr-1.5"></i> Wyndham Hotel Group</li>
+                        <li><i class="fa-solid fa-angle-right text-gold-400 text-[10px] mr-1.5"></i> Choice Hotels International</li>
+                        <li><i class="fa-solid fa-angle-right text-gold-400 text-[10px] mr-1.5"></i> Best Western Hotels</li>
+                    </ul>
+                </div>
+
+                <!-- Contact & Legal -->
+                <div>
+                    <h5 class="font-serif text-white font-bold text-base mb-4 border-b border-slate-800 pb-2">Direct Contact</h5>
+                    <ul class="space-y-3 text-xs">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-phone text-gold-400 mt-0.5"></i>
+                            <a href="tel:+14702882717" class="hover:text-gold-400 transition-colors">+1 (470) 288-2717</a>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-envelope text-gold-400 mt-0.5"></i>
+                            <a href="mailto:sales@myrevenuelab.com" class="hover:text-gold-400 transition-colors">sales@myrevenuelab.com</a>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-location-dot text-gold-400 mt-0.5"></i>
+                            <span>Marietta, GA 30067, USA</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 pt-4 border-t border-slate-800">
+                        <button onclick="openConsultationModal()" class="w-full text-xs font-bold gold-bg-gradient text-slate-950 py-2.5 px-4 rounded-lg hover:shadow-md transition-all">
+                            Request Free Strategy Audit
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Legal Bar -->
+            <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                <div>
+                    © 2026 RevenueLab Advisory LLC. All rights reserved. Professional Performance Commitment.
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="contact.html" class="hover:text-slate-400 transition-colors">Privacy Policy</a>
+                    <a href="contact.html" class="hover:text-slate-400 transition-colors">Terms of Service</a>
+                    <a href="contact.html" class="hover:text-slate-400 transition-colors">Performance Commitment</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LEAD CONSULTATION MODAL -->
+    <div id="consultation-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-slate-950/70 backdrop-blur-md p-4 overflow-y-auto">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl my-8">
+            <button onclick="closeConsultationModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl p-2 focus:outline-none" aria-label="Close modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-12 h-12 rounded-full bg-gold-500/20 text-gold-400 flex items-center justify-center text-xl font-bold mx-auto mb-3 border border-gold-500/30">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3 class="font-serif text-2xl font-bold text-white mb-1">Get Your Exact Monthly Quote</h3>
+                <p class="text-slate-400 text-xs">Zero obligation • Tailored room-count scope • Response in 24 hours</p>
+            </div>
+
+            <form id="pricing-lead-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Full Name *</label>
+                    <input type="text" required placeholder="e.g. Vishal Thakkar" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-gold-400">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Work Email *</label>
+                        <input type="email" required placeholder="name@hotel.com" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-gold-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Phone Number *</label>
+                        <input type="tel" required placeholder="+1 (470) 288-2717" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-gold-400">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Property Name *</label>
+                        <input type="text" required placeholder="e.g. Best Western Inn" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-gold-400">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Total Room Count *</label>
+                        <select required class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                            <option value="">Select Room Count Band</option>
+                            <option value="1-49">1 - 49 Rooms</option>
+                            <option value="50-99">50 - 99 Rooms</option>
+                            <option value="100-149">100 - 149 Rooms</option>
+                            <option value="150+">150+ Rooms / Portfolio</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Service Plan Interest</label>
+                    <select class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-gold-400">
+                        <option value="Revenue Essential">Revenue Essential (Daily Optimization)</option>
+                        <option value="Revenue + Sales">Revenue + Commercial Sales (Full Service)</option>
+                        <option value="Review Response">Review Response Only ($99/mo)</option>
+                        <option value="OTA Addon">OTA & Channel Optimization Add-On</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="w-full py-3 px-6 gold-bg-gradient text-slate-950 font-bold rounded-lg hover:shadow-lg transition-all text-sm mt-2">
+                    Submit Audit Request →
+                </button>
+            </form>
+            <div id="form-success" class="hidden text-center py-6">
+                <i class="fa-solid fa-circle-check text-4xl text-emerald-400 mb-3"></i>
+                <h4 class="font-serif text-xl font-bold text-white mb-2">Audit Request Received!</h4>
+                <p class="text-slate-400 text-xs">Our senior strategist will analyze your property and reach out within 24 hours.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING CONSULTATION BUTTON -->
+    <button id="open-consultation-btn" onclick="openConsultationModal()" class="fixed bottom-6 right-6 z-40 gold-bg-gradient text-slate-950 p-4 rounded-full shadow-lg hover:scale-110 transition-all duration-300 flex items-center justify-center group" aria-label="Open Audit Modal">
+        <i class="fa-solid fa-calculator text-xl group-hover:rotate-12 transition-transform"></i>
+    </button>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // Initialize Smooth Scroll Safely
+        let lenis;
+        try {
+            if (typeof Lenis !== 'undefined') {
+                lenis = new Lenis({
+                    duration: 1.2,
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                    smoothWheel: true,
+                    smoothTouch: false
+                });
+                function raf(time) {
+                    if (lenis) lenis.raf(time);
+                    requestAnimationFrame(raf);
+                }
+                requestAnimationFrame(raf);
+                lenis.on('scroll', () => {
+                    if (typeof AOS !== 'undefined') AOS.refresh();
+                });
+            }
+        } catch (e) {
+            console.warn('Lenis smooth scroll fallback:', e.message);
+        }
+
+        // Initialize AOS
+        if (typeof AOS !== 'undefined') {
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 60
+            });
+        }
+
+        // Mobile Menu Drawer Toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Accordion FAQ Toggle Logic
+        function toggleFaq(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            const isHidden = content.classList.contains('hidden');
+
+            document.querySelectorAll('.faq-content').forEach(el => el.classList.add('hidden'));
+            document.querySelectorAll('.faq-btn i').forEach(el => el.classList.remove('rotate-180'));
+
+            if (isHidden) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180');
+            }
+        }
+
+        // Consultation Modal Functions
+        function openConsultationModal() {
+            const modal = document.getElementById('consultation-modal');
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+                if (typeof lenis !== 'undefined' && lenis && lenis.stop) lenis.stop();
+            }
+        }
+        function closeConsultationModal() {
+            const modal = document.getElementById('consultation-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+                if (typeof lenis !== 'undefined' && lenis && lenis.start) lenis.start();
+            }
+        }
+
+        // Form Submit Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('pricing-lead-form');
+            const success = document.getElementById('form-success');
+            if (form && success) {
+                form.classList.add('hidden');
+                success.classList.remove('hidden');
+                setTimeout(() => {
+                    closeConsultationModal();
+                    form.reset();
+                    form.classList.remove('hidden');
+                    success.classList.add('hidden');
+                }, 3500);
+            }
+        }
+    </script>
+
+    <!-- Mobile Menu Drawer Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('mobile-toggle-btn') || document.getElementById('mobile-toggle') || document.getElementById('mobile-menu-btn');
+            const drawer = document.getElementById('mobile-drawer') || document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-toggle-icon') || document.getElementById('menu-icon');
+
+            if (btn && drawer) {
+                btn.onclick = function(e) {
+                    if (e) e.preventDefault();
+                    const isHidden = drawer.classList.contains('hidden');
+                    if (isHidden) {
+                        drawer.classList.remove('hidden');
+                        if (icon) {
+                            icon.classList.remove('fa-bars');
+                            icon.classList.add('fa-xmark');
+                        }
+                    } else {
+                        drawer.classList.add('hidden');
+                        if (icon) {
+                            icon.classList.remove('fa-xmark');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                };
+            }
+        });
+    </script>
+
+</body>
+
+</html>

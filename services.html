@@ -2,13 +2,21 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | RevenueLab — Global Hotel Revenue Engineering & Yield Science</title>
-    <link rel="icon" type="image/png" href="images/logo-transparent.png">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description"
+        content="Explore RevenueLab's full spectrum of hotel revenue engineering services, dynamic yield pricing, OTA distribution management, and CompSet market analytics.">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
+    <!-- Executive Google Fonts: Plus Jakarta Sans & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
     <!-- Lenis Smooth Scroll CSS -->
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
@@ -38,41 +46,507 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        gold: {
+                            400: '#E5C158',
+                            500: '#C5A059',
+                            600: '#B08D48',
+                            700: '#8E6F2B',
+                        },
+                        navy: {
+                            950: '#060A12',
+                            900: '#0F172A',
+                            800: '#1E293B',
+                        }
+                    },
+                    boxShadow: {
+                        'soft-2xl': '0 25px 60px -15px rgba(15, 23, 42, 0.08)',
+                        'gold-glow': '0 10px 30px -5px rgba(197, 160, 89, 0.35)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            overflow-x: clip;
+            scroll-behavior: smooth;
+        }
+
+        body, p, a, span, li, button, input, select, textarea {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        body {
+            background-color: #FFFFFF;
+            color: #0F172A;
+            overflow-x: clip;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .text-gradient-gold {
+            background: linear-gradient(135deg, #B48811 0%, #D4AF37 50%, #9A7209 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-gradient-gold {
+            background: linear-gradient(135deg, #C5A059 0%, #B08D48 100%);
+        }
+
+        /* Complete Header Fixes - Protecting layout from Bootstrap overrides */
+        #main-header {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+        }
+
+        #main-header nav.hidden.lg\:flex {
+            display: none !important;
+        }
+
+        @media (min-width: 1024px) {
+            #main-header nav.hidden.lg\:flex {
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                justify-content: flex-start !important;
+                gap: 1.75rem !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+        }
+
+        .dropdown-wrapper:hover .dropdown-menu {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: translateY(0) !important;
+        }
+
+        .dropdown-menu {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            transform: translateY(10px) !important;
+            transition: all 0.2s ease-in-out !important;
+        }
+
+        #main-header a {
+            text-decoration: none !important;
+        }
+
+        #main-header .nav-link {
+            display: inline-block !important;
+            padding: 0.25rem 0 !important;
+            margin: 0 !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            font-weight: 700 !important;
+            font-size: 0.875rem !important; /* text-sm */
+            color: #334155 !important; /* text-slate-700 */
+            text-decoration: none !important;
+            background: transparent !important;
+            box-shadow: none !important;
+            border: none !important;
+            position: relative !important;
+        }
+
+        #main-header .nav-link:hover,
+        #main-header .nav-link.active {
+            color: #0f172a !important; /* text-slate-900 */
+        }
+
+        #main-header .nav-link::after {
+            content: '' !important;
+            position: absolute !important;
+            width: 0 !important;
+            height: 2px !important;
+            bottom: -4px !important;
+            left: 0 !important;
+            background-color: #C5A059 !important;
+            transition: width 0.3s ease !important;
+        }
+
+        #main-header .nav-link:hover::after,
+        #main-header .nav-link.active::after {
+            width: 100% !important;
+        }
+
+        /* Unified Color System Overrides matching Home Page (index.html) */
+        .hero-badge-pill {
+            background-color: rgba(197, 160, 89, 0.15) !important;
+            color: #E5C158 !important;
+            border: 1px solid rgba(197, 160, 89, 0.3) !important;
+            font-weight: 700 !important;
+            border-radius: 9999px !important;
+            padding: 0.35rem 1rem !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 0.5rem !important;
+        }
+
+        .hero-gradient-text {
+            background: linear-gradient(135deg, #B48811 0%, #D4AF37 50%, #9A7209 100%) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+        }
+
+        .hero-btn-main, .gold-btn, .btn.gold-btn {
+            background-color: #C5A059 !important;
+            background-image: linear-gradient(135deg, #C5A059 0%, #B08D48 100%) !important;
+            color: #0F172A !important;
+            font-weight: 800 !important;
+            border-radius: 9999px !important;
+            border: none !important;
+            box-shadow: 0 10px 30px -5px rgba(197, 160, 89, 0.35) !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .hero-btn-main:hover, .gold-btn:hover, .btn.gold-btn:hover {
+            background-color: #E5C158 !important;
+            background-image: linear-gradient(135deg, #E5C158 0%, #C5A059 100%) !important;
+            color: #0F172A !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 12px 35px -5px rgba(197, 160, 89, 0.5) !important;
+        }
+
+        .hero-btn-secondary {
+            background-color: rgba(15, 23, 42, 0.85) !important;
+            color: #FFFFFF !important;
+            border: 1px solid rgba(255, 255, 255, 0.25) !important;
+            font-weight: 800 !important;
+            border-radius: 9999px !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
+            transition: all 0.3s ease !important;
+        }
+
+        .hero-btn-secondary:hover {
+            background-color: #1E293B !important;
+            color: #E5C158 !important;
+            border-color: #C5A059 !important;
+        }
+
+        .global-presence-strip {
+            background-color: #0F172A !important;
+            color: #FFFFFF !important;
+            border-top: 1px solid #1E293B !important;
+            border-bottom: 1px solid #1E293B !important;
+        }
+
+        .global-presence-strip h2 {
+            color: #E5C158 !important;
+            font-family: 'Playfair Display', serif !important;
+            font-weight: 800 !important;
+        }
+
+        .global-presence-strip p {
+            color: #94A3B8 !important;
+        }
+
+        .service-reference-box {
+            background: #FFFFFF !important;
+            border: 1px solid #E2E8F0 !important;
+            border-radius: 1.5rem !important;
+            padding: 2.25rem 1.75rem !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.05) !important;
+        }
+
+        .service-reference-box:hover {
+            transform: translateY(-6px) !important;
+            border-color: #C5A059 !important;
+            box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.12) !important;
+        }
+
+        .service-reference-box i {
+            color: #C5A059 !important;
+            font-size: 2.25rem !important;
+            margin-bottom: 1.25rem !important;
+        }
+
+        .service-reference-box h4 {
+            color: #0F172A !important;
+            font-weight: 800 !important;
+            margin-bottom: 0.5rem !important;
+        }
+
+        .service-reference-box p {
+            color: #64748B !important;
+            font-size: 0.875rem !important;
+        }
+
+        .performance-box {
+            background: linear-gradient(135deg, #060A12 0%, #0F172A 100%) !important;
+            border: 1px solid #1E293B !important;
+            border-radius: 2rem !important;
+            padding: 3rem 2.5rem !important;
+            box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25) !important;
+        }
+
+        .map-filter-btn {
+            background-color: #FFFFFF !important;
+            color: #334155 !important;
+            border: 1px solid #E2E8F0 !important;
+            border-radius: 9999px !important;
+            padding: 0.5rem 1.25rem !important;
+            font-weight: 700 !important;
+            font-size: 0.8125rem !important;
+            transition: all 0.2s ease !important;
+        }
+
+        .map-filter-btn.active, .map-filter-btn:hover {
+            background-color: #C5A059 !important;
+            color: #0F172A !important;
+            border-color: #C5A059 !important;
+            box-shadow: 0 4px 14px rgba(197, 160, 89, 0.35) !important;
+        }
+
+        .text-teal, .brand-teal, .text-primary {
+            color: #059669 !important;
+        }
+
+        /* Complete Footer & Modal Fixes - Protecting typography from Bootstrap overrides */
+        footer {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            background-color: #020617 !important; /* bg-slate-950 */
+            color: #94a3b8 !important; /* text-slate-400 */
+        }
+
+        footer h4 {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            font-size: 0.75rem !important; /* text-xs */
+            font-weight: 800 !important; /* font-extrabold */
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
+            color: #ffffff !important;
+            margin-top: 0 !important;
+            margin-bottom: 1rem !important;
+            line-height: 1.2 !important;
+        }
+
+        footer a {
+            color: #94a3b8 !important;
+            text-decoration: none !important;
+            font-size: 0.75rem !important;
+            transition: color 0.2s ease !important;
+        }
+
+        footer a:hover {
+            color: #E5C158 !important; /* gold-400 */
+        }
+
+        footer ul {
+            list-style: none !important;
+            padding-left: 0 !important;
+            margin-bottom: 0 !important;
+        }
+
+        footer li {
+            margin-bottom: 0.625rem !important;
+            font-size: 0.75rem !important;
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+        }
+
+        footer p {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            color: #94a3b8 !important;
+            font-size: 0.75rem !important;
+            line-height: 1.625 !important;
+            margin-bottom: 0 !important;
+        }
+
+        #consultation-modal {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+        }
+
+        #consultation-modal h3 {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
+            font-weight: 800 !important;
+            color: #0f172a !important;
+            margin: 0 !important;
+        }
+    
+        html, body {
+            overflow-x: hidden !important;
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+
+        #main-header {
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+    </style>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-        <div class="container">
-            <a href="index.html" class="navbar-brand custom-logo-area">
-                <img src="images/logo-transparent.png" alt="RevenueLab" class="custom-logo logo-light">
-                <img src="images/logo-dark.png" alt="RevenueLab" class="custom-logo logo-dark">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                data-bs-toggle="collapse" data-bs-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="oi oi-menu"></span> Menu
-            </button>
-
-            <div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav ml-auto align-items-center">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
-                    <li class="nav-item active"><a href="services.html" class="nav-link">Services</a></li>
-                    <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li class="nav-item ml-lg-3">
-                        <a href="javascript:void(0)" class="btn gold-btn btn-sm py-2 px-3 text-white"
-                            data-toggle="modal" data-target="#consultationModal" data-bs-toggle="modal"
-                            data-bs-target="#consultationModal">Growth Audit</a>
-                    </li>
-                </ul>
+    <!-- Combined Sticky Header Container (Pins Both Top Bar & Nav on Scroll) -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <header class="fixed top-0 left-0 right-0 z-50 w-full shadow-md transition-all duration-300 bg-white" id="main-header">
+        <!-- Top Announcement Bar -->
+        <div class="bg-slate-900 text-slate-300 py-2 px-4 text-xs font-semibold tracking-wide border-b border-slate-800">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-1.5">
+                <div class="flex items-center gap-2 sm:gap-4 flex-wrap justify-center">
+                    <span class="inline-flex items-center gap-1.5 text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/20 text-[11px] sm:text-xs">
+                        <i class="fa-solid fa-shield-halved text-xs"></i> 100% Performance Commitment
+                    </span>
+                    <span class="hidden sm:inline text-slate-400 text-xs">No Revenue Lift = No Consultancy Fee</span>
+                </div>
+                <div class="hidden sm:flex items-center gap-4 lg:gap-6 text-slate-400 text-xs">
+                    <a href="tel:+18005550199" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-phone text-amber-400"></i> +1 (800) 555-0199
+                    </a>
+                    <a href="mailto:sales@myrevenuelab.com" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-envelope text-amber-400"></i> sales@myrevenuelab.com
+                    </a>
+                    <span class="hidden lg:inline text-slate-500">| Marietta, GA & Austin, TX</span>
+                </div>
             </div>
         </div>
-    </nav>
-    <!-- END nav -->
 
-    <section class="home-slider owl-carousel">
+        <!-- Main Navigation Bar -->
+        <div class="bg-white/95 backdrop-blur-md border-b border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+                <!-- Brand Logo (Solid Dark Slate RevenueLab Text + Green Subtitle) -->
+                <a href="index.html" class="flex items-center gap-3 group shrink-0">
+                    <img src="assets/images/logo-mark.png" alt="RevenueLab Growth Arrow" class="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105 duration-300">
+                    <div>
+                        <span class="font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 block leading-none">RevenueLab</span>
+                        <span class="text-[9px] sm:text-[10px] font-extrabold tracking-[0.22em] uppercase text-emerald-600 block mt-1">The Science of Revenue</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden lg:flex items-center gap-4 xl:gap-7 text-sm font-bold text-slate-700 whitespace-nowrap">
+                    <a href="index.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Home</a>
+                    <a href="revenue-strategy.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Revenue Strategy</a>
+                    <a href="services.html" class="nav-link py-1 whitespace-nowrap text-amber-600 font-extrabold">Services</a>
+                    <a href="pricing.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Pricing & Plans</a>
+                    
+                    <!-- Resources Dropdown -->
+                    <div class="relative dropdown-wrapper py-6">
+                        <a href="resources.html" class="nav-link py-1 whitespace-nowrap flex items-center gap-1 hover:text-amber-600 transition-colors">
+                            Resources <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                        </a>
+                        <div class="dropdown-menu absolute top-full left-0 w-80 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 z-50 text-left font-normal">
+                            <a href="resources.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-cubes"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">Resource Hub</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">All 12 free tools, playbooks & calculators</div>
+                                </div>
+                            </a>
+                            <a href="roi-calculator.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-calculator"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">ROI & RevPAR Calculator</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">Project potential revenue upside</div>
+                                </div>
+                            </a>
+                            <a href="sample-report.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-file-contract"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">Sample Friday Executive Briefing</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">Preview actual client weekly deliverable</div>
+                                </div>
+                            </a>
+                            <a href="how-it-works.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-route"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">How It Works</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">7-Day onboarding & operating model</div>
+                                </div>
+                            </a>
+                            <a href="glossary.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-book-bookmark"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">Hotel Yield Glossary</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">A–Z definitions of key revenue metrics</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="about.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">About Us</a>
+                    <a href="portfolio.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Portfolio</a>
+                    <a href="contact.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Action CTA Button & Mobile Toggle -->
+                <div class="flex items-center gap-4 shrink-0">
+                    <a href="contact.html" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-semibold text-sm text-slate-950 bg-amber-500 hover:bg-amber-600 shadow-md shadow-amber-500/20 transition-all whitespace-nowrap">
+                        Free Yield Audit
+                    </a>
+
+                    <button id="mobile-toggle-btn" class="lg:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation Menu">
+                        <i class="fa-solid fa-bars text-xl" id="mobile-toggle-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Drawer Navigation -->
+            <div id="mobile-drawer" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4 shadow-xl max-h-[85vh] overflow-y-auto">
+                <a href="index.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Home</a>
+                <a href="revenue-strategy.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Revenue Strategy</a>
+                <a href="services.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Services</a>
+                <a href="pricing.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Pricing & Plans</a>
+                
+                <div class="border-b border-slate-100 py-3">
+                    <div class="font-bold text-amber-600 text-sm mb-2 flex items-center justify-between">
+                        <span>Resources & Tools Ecosystem</span>
+                        <i class="fa-solid fa-angle-down text-xs"></i>
+                    </div>
+                    <div class="pl-3 space-y-2 text-sm font-medium text-slate-700">
+                        <a href="resources.html" class="block py-1 hover:text-amber-600">All Resources Hub</a>
+                        <a href="roi-calculator.html" class="block py-1 hover:text-amber-600">ROI & RevPAR Calculator</a>
+                        <a href="sample-report.html" class="block py-1 hover:text-amber-600">Sample Friday Executive Report</a>
+                        <a href="how-it-works.html" class="block py-1 hover:text-amber-600">How It Works (7-Day Onboarding)</a>
+                        <a href="glossary.html" class="block py-1 hover:text-amber-600">Hotel Revenue Glossary</a>
+                    </div>
+                </div>
+
+                <a href="about.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">About Us</a>
+                <a href="portfolio.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Portfolio & Case Studies</a>
+                <a href="contact.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Contact</a>
+                <a href="contact.html" class="block w-full text-center py-3 rounded-xl bg-amber-500 text-slate-950 font-bold text-sm mt-4 shadow-md">
+                    Free Yield Audit
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="home-slider owl-carousel" style="margin-top: 136px;">
         <div class="slider-item" style="background-image:url(images/new-banner2.jpg);">
             <div class="overlay"></div>
             <div class="container">
@@ -129,7 +603,7 @@
                                     data-bs-target="#consultationModal">
                                     <i class="fas fa-shield-alt me-2"></i> Schedule Partner Audit
                                 </a>
-                                <a href="portfolio-projects.html" class="btn hero-btn-secondary">
+                                <a href="portfolio.html" class="btn hero-btn-secondary">
                                     View Track Record <i class="fas fa-arrow-right ms-2"></i>
                                 </a>
                             </div>
@@ -157,7 +631,7 @@
                                 conversion, and 24/7 dedicated yield specialists.
                             </p>
                             <div class="d-flex flex-wrap justify-content-center gap-3 pt-2">
-                                <a href="portfolio-projects.html" class="btn hero-btn-main">
+                                <a href="portfolio.html" class="btn hero-btn-main">
                                     <i class="fas fa-folder-open me-2"></i> View Case Studies
                                 </a>
                                 <a href="contact.html" class="btn hero-btn-secondary">
@@ -418,127 +892,153 @@
         </div>
     </section>
 
-    <!-- FOOTER SECTION START -->
-    <footer class="ftco-footer ftco-bg-dark ftco-section">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <div class="ftco-footer-widget">
-                        <h2 class="ftco-heading-2 mb-3">
-                            <img src="images/logo-transparent.png" alt="RevenueLab" style="height: 65px;">
-                        </h2>
-                        <p class="text-white-50 small">Hospitality Revenue Optimization, Sales Transformation &
-                            Distribution Strategy Consulting.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-4 mb-4 mb-md-0">
-                    <div class="ftco-footer-widget ml-md-5">
-                        <h2 class="ftco-heading-2">Quick Links</h2>
-                        <ul class="list-unstyled">
-                            <li><a href="index.html" class="py-2 d-block text-white-50">Home</a></li>
-                            <li><a href="about.html" class="py-2 d-block text-white-50">About Us</a></li>
-                            <li><a href="services.html" class="py-2 d-block text-white-50">Services</a></li>
-                            <li><a href="portfolio-projects.html" class="py-2 d-block text-white-50">Portfolio</a></li>
-                            <li><a href="contact.html" class="py-2 d-block text-white-50">Contact Us</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="ftco-footer-widget">
-                        <h2 class="ftco-heading-2">Contact Us</h2>
-                        <div class="block-23 mb-3">
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><span class="icon icon-map-marker text-teal me-2"></span><span
-                                        class="text text-white-50">2170 Delk Rd SE, Marietta, GA 30067, USA</span></li>
-                                <li class="mb-2"><a href="tel:+14702882717"><span
-                                            class="icon icon-phone text-teal me-2"></span><span
-                                            class="text text-white-50">+1 (470) 288-2717</span></a></li>
-                                <li class="mb-2"><a href="mailto:sales@myrevenuelab.com"><span
-                                            class="icon icon-envelope text-teal me-2"></span><span
-                                            class="text text-white-50">sales@myrevenuelab.com</span></a></li>
-                                <li><a href="mailto:hemalcmehta@yahoo.com"><span
-                                            class="icon icon-envelope text-teal me-2"></span><span
-                                            class="text text-white-50">hemalcmehta@yahoo.com</span></a></li>
-                            </ul>
+    <!-- Modern Executive Footer -->
+    <footer class="bg-slate-950 text-slate-400 text-xs border-t border-slate-800 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <img src="assets/images/logo-mark.png" alt="RevenueLab Growth Arrow" class="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-110 duration-300">
+                        <div>
+                            <span class="font-extrabold text-xl sm:text-2xl tracking-tight text-white block leading-none">RevenueLab</span>
+                            <span class="text-[9px] sm:text-[10px] font-extrabold tracking-[0.22em] uppercase text-emerald-400 block mt-1">The Science of Revenue</span>
                         </div>
-                    </div>
+                    </a>
+                    <p class="text-slate-400 leading-relaxed text-xs">
+                        Premier hotel revenue engineering, dynamic yield pricing, and OTA distribution consulting headquarters in Marietta, Georgia.
+                    </p>
                 </div>
+
+                <!-- Col 2: Navigation -->
+                <div>
+                    <h4 class="font-extrabold text-white uppercase tracking-wider text-xs mb-4">Quick Navigation</h4>
+                    <ul class="space-y-2.5 font-medium">
+                        <li><a href="index.html" class="hover:text-gold-400 transition-colors">Home</a></li>
+                        <li><a href="revenue-strategy.html" class="hover:text-gold-400 transition-colors">Revenue Strategy</a></li>
+                        <li><a href="services.html" class="text-gold-400 font-extrabold transition-colors">Services</a></li>
+                        <li><a href="about.html" class="hover:text-gold-400 transition-colors">About Us</a></li>
+                        <li><a href="portfolio.html" class="hover:text-gold-400 transition-colors">Case Studies</a></li>
+                        <li><a href="contact.html" class="hover:text-gold-400 transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Revenue Services -->
+                <div>
+                    <h4 class="font-extrabold text-white uppercase tracking-wider text-xs mb-4">Services</h4>
+                    <ul class="space-y-2.5 font-medium">
+                        <li><a href="services.html" class="hover:text-gold-400 transition-colors">Dynamic Room Pricing</a></li>
+                        <li><a href="services.html" class="hover:text-gold-400 transition-colors">OTA Channel Management</a></li>
+                        <li><a href="services.html" class="hover:text-gold-400 transition-colors">CompSet Market Intelligence</a></li>
+                        <li><a href="services.html" class="hover:text-gold-400 transition-colors">PMS & RMS Tech Audits</a></li>
+                        <li><a href="services.html" class="hover:text-gold-400 transition-colors">Group Rate Strategy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Corporate Headquarters -->
+                <div>
+                    <h4 class="font-extrabold text-white uppercase tracking-wider text-xs mb-4">Headquarters</h4>
+                    <ul class="space-y-3 font-medium">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-location-dot text-gold-500 mt-0.5"></i>
+                            <span>2170 Delk Rd SE, Marietta, GA 30067, USA</span>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-phone text-gold-500"></i>
+                            <a href="tel:+14702882717" class="hover:text-gold-400">+1 (470) 288-2717</a>
+                        </li>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-envelope text-gold-500"></i>
+                            <a href="mailto:sales@myrevenuelab.com" class="hover:text-gold-400">sales@myrevenuelab.com</a>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
 
-            <div class="row border-top pt-4 border-secondary text-center">
-                <div class="col-md-12">
-                    <p class="mb-0 text-white-50 small">
-                        Copyright &copy;
-                        <script>document.write(new Date().getFullYear());</script> RevenueLab | All Rights Reserved
-                    </p>
+            <!-- Footer Bottom Bar -->
+            <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500">
+                <div>
+                    &copy; 2026 RevenueLab LLC. All Rights Reserved. Risk-Free Commercial Model.
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="hover:text-gold-400 transition-colors"><i class="fa-brands fa-linkedin text-base"></i></a>
+                    <a href="#" class="hover:text-gold-400 transition-colors"><i class="fa-brands fa-twitter text-base"></i></a>
+                    <a href="#" class="hover:text-gold-400 transition-colors"><i class="fa-brands fa-facebook text-base"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Consultation Modal -->
-    <div class="modal fade" id="consultationModal" tabindex="-1" aria-labelledby="consultationModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-fullscreen-sm-down">
-            <div class="modal-content border-0 shadow-lg rounded-5-desktop">
-                <div class="modal-header border-0 pt-4 px-4 px-md-5 pb-0">
-                    <h2 class="h4 fw-normal mb-0">Contact <span class="text-teal italic">Us</span></h2>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body p-4 p-md-5">
-                    <p class="text-muted small mb-4">Fill out the form below and we'll get back to you shortly.</p>
-                    <form method="post" action="https://enquiry.touchmediaads.com/email.php" class="row g-3 sendMail">
-                        <div class="col-md-6">
-                            <input type="text" name="name" class="form-control custom-input" placeholder="Full Name*"
-                                vali="yes">
-                        </div>
-                        <div class="col-md-6">
-                            <input type="tel" name="phone" class="form-control custom-input" placeholder="Phone Number*"
-                                vali="yes">
-                        </div>
-                        <div class="col-md-6">
-                            <input type="email" name="email" class="form-control custom-input"
-                                placeholder="Email Address*" vali="yes">
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" name="company" class="form-control custom-input"
-                                placeholder="Company / Hotel Name">
-                        </div>
-                        <div class="col-12">
-                            <select name="service" class="form-select custom-input" vali="yes">
-                                <option value="" selected disabled>Select Inquiry Type*</option>
-                                <option>Hotel Sales</option>
-                                <option>Digital Marketing</option>
-                                <option>B2B Partnerships</option>
-                                <option>Lead Generation</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div class="col-12">
-                            <textarea name="message" class="form-control custom-input" rows="4"
-                                placeholder="Enter Your Message Here" vali="yes"></textarea>
-                        </div>
-                        <div class="col-12 respHere">
-                            <div class="success" style="color:green;"></div>
-                            <div class="errorrr" style="color:red;"></div>
-                        </div>
-                        <div class="col-12 pt-2">
-                            <button type="submit" class="gold-btn w-100 rounded-pill py-3 px-4">Contact Us</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <!-- Desktop Fixed Floating Contact Us Button -->
+    <div class="fixed bottom-8 right-8 z-40 hidden md:block">
+        <button id="open-consultation-btn" class="px-6 py-3.5 rounded-full bg-gold-500 hover:bg-gold-400 text-slate-950 font-extrabold text-xs uppercase tracking-wider shadow-gold-glow border border-gold-400 flex items-center gap-2 transform hover:-translate-y-1 transition-all duration-300">
+            <i class="fa-solid fa-headset text-sm"></i> Contact Us
+        </button>
     </div>
 
-    <!-- DESKTOP FIXED CONTACT BUTTON -->
-    <div class="desktop-contact-fixed d-none d-md-block">
-        <a href="javascript:void(0)" data-toggle="modal" data-target="#consultationModal" data-bs-toggle="modal"
-            data-bs-target="#consultationModal">Contact Us</a>
+    <!-- Consultation Lead Modal (White Card Mode with Green Branding Accents) -->
+    <div id="consultation-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/80 backdrop-blur-md p-4 overflow-y-auto">
+        <div class="relative w-full max-w-xl bg-white text-slate-900 rounded-3xl shadow-2xl border border-slate-200 overflow-hidden my-8" data-aos="zoom-in">
+            <!-- Modal Header -->
+            <div class="bg-slate-50 px-8 py-6 border-b border-slate-100 flex items-center justify-between">
+                <div>
+                    <span class="text-[10px] font-extrabold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200 inline-block mb-1">
+                        Zero Financial Risk
+                    </span>
+                    <h3 class="text-xl font-extrabold text-slate-900">Schedule Your Free Revenue Audit</h3>
+                </div>
+                <button id="close-consultation-btn" type="button" class="w-10 h-10 rounded-full bg-slate-200/60 hover:bg-slate-200 text-slate-500 hover:text-slate-900 flex items-center justify-center transition-colors">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Modal Form Body -->
+            <form action="https://enquiry.touchmediaads.com/email.php" method="POST" class="p-8 space-y-4">
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Full Name *</label>
+                    <input type="text" name="name" required placeholder="e.g. John Smith" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-emerald-500 focus:bg-white transition-all">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Phone Number *</label>
+                        <input type="tel" name="phone" required placeholder="+1 (555) 000-0000" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-emerald-500 focus:bg-white transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Email Address *</label>
+                        <input type="email" name="email" required placeholder="john@hotelgroup.com" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-emerald-500 focus:bg-white transition-all">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Hotel Property / Company Name</label>
+                    <input type="text" name="company" placeholder="e.g. Grand Vista Resort & Spa (120 Keys)" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-emerald-500 focus:bg-white transition-all">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Primary Inquiry Type</label>
+                    <select name="service" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-emerald-500 focus:bg-white transition-all">
+                        <option value="Full Revenue Management Oversight">Full Revenue Management Oversight</option>
+                        <option value="OTA Commission & Distribution Audit">OTA Commission & Distribution Audit</option>
+                        <option value="CompSet Positioning Strategy">CompSet Positioning Strategy</option>
+                        <option value="RMS / PMS Tech Integration">RMS / PMS Tech Integration</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Message / Current Challenges</label>
+                    <textarea name="message" rows="3" placeholder="Tell us about your property key count, current RMS system, or target RevPAR goals..." class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 text-slate-900 text-sm focus:outline-none focus:border-emerald-500 focus:bg-white transition-all"></textarea>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-white font-extrabold text-xs uppercase tracking-wider shadow-lg shadow-emerald-500/30 transition-all">
+                        Submit Audit Request <i class="fa-solid fa-paper-plane ml-2"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <!-- loader -->
@@ -583,6 +1083,54 @@
         }
     </script>
     <script src="js/hospitality-map.js"></script>
+    <script>
+        // Mobile Menu Drawer Toggle
+        const mobileToggle = document.getElementById('mobile-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileToggle && mobileMenu) {
+            mobileToggle.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Modal Open / Close Logic
+        const modal = document.getElementById('consultation-modal');
+        const openBtn = document.getElementById('open-consultation-btn');
+        const closeBtn = document.getElementById('close-consultation-btn');
+        const modalTriggers = document.querySelectorAll('.open-consultation-trigger, [data-target="#consultationModal"], [data-bs-target="#consultationModal"]');
+
+        function showModal() {
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            }
+        }
+
+        function hideModal() {
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        if (openBtn) openBtn.addEventListener('click', showModal);
+        if (closeBtn) closeBtn.addEventListener('click', hideModal);
+
+        modalTriggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                showModal();
+            });
+        });
+
+        if (modal) {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    hideModal();
+                }
+            });
+        }
+    </script>
     <script src="js/main.js"></script>
     <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
     <script>
@@ -595,6 +1143,36 @@
             }
         } catch (e) { console.warn('Lenis smooth scroll unavailable:', e.message); }
     </script>
+
+    <!-- Mobile Menu Drawer Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('mobile-toggle-btn') || document.getElementById('mobile-toggle') || document.getElementById('mobile-menu-btn');
+            const drawer = document.getElementById('mobile-drawer') || document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-toggle-icon') || document.getElementById('menu-icon');
+
+            if (btn && drawer) {
+                btn.onclick = function(e) {
+                    if (e) e.preventDefault();
+                    const isHidden = drawer.classList.contains('hidden');
+                    if (isHidden) {
+                        drawer.classList.remove('hidden');
+                        if (icon) {
+                            icon.classList.remove('fa-bars');
+                            icon.classList.add('fa-xmark');
+                        }
+                    } else {
+                        drawer.classList.add('hidden');
+                        if (icon) {
+                            icon.classList.remove('fa-xmark');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                };
+            }
+        });
+    </script>
+
 </body>
 
 </html>

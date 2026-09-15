@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Revenue Management & Yield Science Glossary | RevenueLab</title>
+  <meta name="description" content="Searchable A–Z hotel revenue management dictionary. Clear formulas, strategic definitions, and practical examples for RevPAR, ADR, Comp Set, RGI, Displacement, and Parity.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Lenis CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#D4AF37',
+              'gold-hover': '#B89628',
+              dark: '#0F172A',
+              navy: '#1E293B',
+              slate: '#334155',
+              light: '#F8FAFC'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #0F172A;
+      background-color: #FFFFFF;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3, .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    .dropdown-wrapper:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .dropdown-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.2s ease-in-out;
+    }
+  
+        html, body {
+            overflow-x: hidden !important;
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+
+        #main-header {
+            max-width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+    </style>
+</head>
+<body class="bg-white text-slate-900 antialiased selection:bg-amber-100 selection:text-amber-900">
+
+  <!-- Sticky Combined Header -->
+  <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
+    <header class="fixed top-0 left-0 right-0 z-50 w-full shadow-md transition-all duration-300 bg-white" id="main-header">
+        <!-- Top Announcement Bar -->
+        <div class="bg-slate-900 text-slate-300 py-2 px-4 text-xs font-semibold tracking-wide border-b border-slate-800">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-1.5">
+                <div class="flex items-center gap-2 sm:gap-4 flex-wrap justify-center">
+                    <span class="inline-flex items-center gap-1.5 text-amber-400 bg-amber-500/10 px-2.5 py-0.5 rounded-full border border-amber-500/20 text-[11px] sm:text-xs">
+                        <i class="fa-solid fa-shield-halved text-xs"></i> 100% Performance Commitment
+                    </span>
+                    <span class="hidden sm:inline text-slate-400 text-xs">No Revenue Lift = No Consultancy Fee</span>
+                </div>
+                <div class="hidden sm:flex items-center gap-4 lg:gap-6 text-slate-400 text-xs">
+                    <a href="tel:+18005550199" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-phone text-amber-400"></i> +1 (800) 555-0199
+                    </a>
+                    <a href="mailto:sales@myrevenuelab.com" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-envelope text-amber-400"></i> sales@myrevenuelab.com
+                    </a>
+                    <span class="hidden lg:inline text-slate-500">| Marietta, GA & Austin, TX</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation Bar -->
+        <div class="bg-white/95 backdrop-blur-md border-b border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+                <!-- Brand Logo (Solid Dark Slate RevenueLab Text + Green Subtitle) -->
+                <a href="index.html" class="flex items-center gap-3 group shrink-0">
+                    <img src="assets/images/logo-mark.png" alt="RevenueLab Growth Arrow" class="h-10 sm:h-11 w-auto object-contain transition-transform group-hover:scale-105 duration-300">
+                    <div>
+                        <span class="font-extrabold text-xl sm:text-2xl tracking-tight text-slate-900 block leading-none">RevenueLab</span>
+                        <span class="text-[9px] sm:text-[10px] font-extrabold tracking-[0.22em] uppercase text-emerald-600 block mt-1">The Science of Revenue</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden lg:flex items-center gap-4 xl:gap-7 text-sm font-bold text-slate-700 whitespace-nowrap">
+                    <a href="index.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Home</a>
+                    <a href="revenue-strategy.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Revenue Strategy</a>
+                    <a href="services.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Services</a>
+                    <a href="pricing.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Pricing & Plans</a>
+                    
+                    <!-- Resources Dropdown -->
+                    <div class="relative dropdown-wrapper py-6">
+                        <a href="resources.html" class="nav-link py-1 whitespace-nowrap flex items-center gap-1 text-amber-600 font-extrabold">
+                            Resources <i class="fa-solid fa-chevron-down text-[10px]"></i>
+                        </a>
+                        <div class="dropdown-menu absolute top-full left-0 w-80 bg-white rounded-2xl shadow-2xl border border-slate-100 p-3 z-50 text-left font-normal">
+                            <a href="resources.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-cubes"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">Resource Hub</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">All 12 free tools, playbooks & calculators</div>
+                                </div>
+                            </a>
+                            <a href="roi-calculator.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-calculator"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">ROI & RevPAR Calculator</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">Project potential revenue upside</div>
+                                </div>
+                            </a>
+                            <a href="sample-report.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-amber-100 text-amber-800 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-file-contract"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">Sample Friday Executive Briefing</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">Preview actual client weekly deliverable</div>
+                                </div>
+                            </a>
+                            <a href="how-it-works.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-route"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">How It Works</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">7-Day onboarding & operating model</div>
+                                </div>
+                            </a>
+                            <a href="glossary.html" class="flex items-start gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                                <div class="w-9 h-9 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 font-bold text-sm">
+                                    <i class="fa-solid fa-book-bookmark"></i>
+                                </div>
+                                <div>
+                                    <div class="text-slate-900 font-semibold text-sm">Hotel Yield Glossary</div>
+                                    <div class="text-slate-500 text-xs mt-0.5">A–Z definitions of key revenue metrics</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="about.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">About Us</a>
+                    <a href="portfolio.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Portfolio</a>
+                    <a href="contact.html" class="nav-link py-1 whitespace-nowrap hover:text-amber-600 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Action CTA Button & Mobile Toggle -->
+                <div class="flex items-center gap-4 shrink-0">
+                    <a href="contact.html" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-xl font-semibold text-sm text-slate-950 bg-amber-500 hover:bg-amber-600 shadow-md shadow-amber-500/20 transition-all whitespace-nowrap">
+                        Free Yield Audit
+                    </a>
+
+                    <button id="mobile-toggle-btn" class="lg:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 focus:outline-none" aria-label="Toggle Navigation Menu">
+                        <i class="fa-solid fa-bars text-xl" id="mobile-toggle-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Drawer Navigation -->
+            <div id="mobile-drawer" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4 shadow-xl max-h-[85vh] overflow-y-auto">
+                <a href="index.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Home</a>
+                <a href="revenue-strategy.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Revenue Strategy</a>
+                <a href="services.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Services</a>
+                <a href="pricing.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Pricing & Plans</a>
+                
+                <div class="border-b border-slate-100 py-3">
+                    <div class="font-bold text-amber-600 text-sm mb-2 flex items-center justify-between">
+                        <span>Resources & Tools Ecosystem</span>
+                        <i class="fa-solid fa-angle-down text-xs"></i>
+                    </div>
+                    <div class="pl-3 space-y-2 text-sm font-medium text-slate-700">
+                        <a href="resources.html" class="block py-1 hover:text-amber-600">All Resources Hub</a>
+                        <a href="roi-calculator.html" class="block py-1 hover:text-amber-600">ROI & RevPAR Calculator</a>
+                        <a href="sample-report.html" class="block py-1 hover:text-amber-600">Sample Friday Executive Report</a>
+                        <a href="how-it-works.html" class="block py-1 hover:text-amber-600">How It Works (7-Day Onboarding)</a>
+                        <a href="glossary.html" class="block py-1 hover:text-amber-600">Hotel Revenue Glossary</a>
+                    </div>
+                </div>
+
+                <a href="about.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">About Us</a>
+                <a href="portfolio.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Portfolio & Case Studies</a>
+                <a href="contact.html" class="block font-semibold text-slate-800 text-base py-2 border-b border-slate-100">Contact</a>
+                <a href="contact.html" class="block w-full text-center py-3 rounded-xl bg-amber-500 text-slate-950 font-bold text-sm mt-4 shadow-md">
+                    Free Yield Audit
+                </a>
+            </div>
+        </div>
+    </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-36 sm:pt-40 lg:pt-44 pb-16 bg-slate-50 border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-100 border border-purple-300/60 text-purple-900 text-xs font-bold uppercase tracking-wider mb-6">
+        <i class="fa-solid fa-book-bookmark text-purple-600"></i> Open-Access Reference Dictionary
+      </div>
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 font-serif max-w-4xl mx-auto leading-tight">
+        Hotel Yield & Revenue <span class="text-amber-600">Glossary</span>
+      </h1>
+      <p class="mt-6 text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto font-normal leading-relaxed">
+        Master every key acronym, formula, and strategic metric used by top hotel revenue managers worldwide.
+      </p>
+
+      <!-- Instant Search Bar -->
+      <div class="mt-10 max-w-2xl mx-auto relative">
+        <div class="relative">
+          <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-lg"></i>
+          <input type="text" id="glossary-search" placeholder="Search terms (e.g. RevPAR, ADR, RGI, Displacement, Parity)..." class="w-full pl-12 pr-4 py-4 rounded-2xl border border-slate-300 bg-white text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 shadow-lg text-base">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Glossary Main Grid Section -->
+  <section class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Letter Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-2 mb-12" id="letter-filters">
+        <button class="letter-btn active px-3.5 py-1.5 rounded-lg bg-slate-900 text-white font-semibold text-xs transition-colors" data-letter="ALL">All</button>
+        <button class="letter-btn px-3.5 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold text-xs transition-colors" data-letter="A">A</button>
+        <button class="letter-btn px-3.5 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold text-xs transition-colors" data-letter="B">B</button>
+        <button class="letter-btn px-3.5 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold text-xs transition-colors" data-letter="C">C</button>
+        <button class="letter-btn px-3.5 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold text-xs transition-colors" data-letter="D">D</button>
+        <button class="letter-btn px-3.5 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold text-xs transition-colors" data-letter="F">F</button>
+        <button class="letter-btn px-3.5 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold text-xs transition-colors" data-letter="L">L</button>
+        <button class="letter-btn px-3.5 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold text-xs transition-colors" data-letter="M">M</button>
+        <button class="letter-btn px-3.5 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold text-xs transition-colors" data-letter="N">N</button>
+        <button class="letter-btn px-3.5 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold text-xs transition-colors" data-letter="O">O</button>
+        <button class="letter-btn px-3.5 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold text-xs transition-colors" data-letter="P">P</button>
+        <button class="letter-btn px-3.5 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold text-xs transition-colors" data-letter="R">R</button>
+        <button class="letter-btn px-3.5 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold text-xs transition-colors" data-letter="U">U</button>
+      </div>
+
+      <!-- Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="glossary-grid">
+        
+        <!-- ADR -->
+        <div class="term-card p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-all" data-name="ADR Average Daily Rate" data-letter="A">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-2xl font-bold text-slate-900 font-serif">ADR (Average Daily Rate)</h3>
+            <span class="px-2.5 py-1 rounded bg-amber-100 text-amber-900 text-xs font-bold uppercase">Core Metric</span>
+          </div>
+          <div class="text-xs text-amber-700 font-mono font-semibold mb-3">Formula: Total Room Revenue / Paid Rooms Sold</div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            The average rental income generated per occupied room on a given day. ADR measures room pricing strength excluding complimentary rooms and unallocated food & beverage revenue.
+          </p>
+          <div class="mt-4 p-3 rounded-xl bg-white border border-slate-200 text-xs text-slate-500">
+            <strong>Example:</strong> If your hotel generates $20,000 from 100 occupied rooms, your ADR is $200.00.
+          </div>
+        </div>
+
+        <!-- ARI -->
+        <div class="term-card p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-all" data-name="ARI Average Rate Index" data-letter="A">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-2xl font-bold text-slate-900 font-serif">ARI (Average Rate Index)</h3>
+            <span class="px-2.5 py-1 rounded bg-blue-100 text-blue-900 text-xs font-bold uppercase">Comp Set Index</span>
+          </div>
+          <div class="text-xs text-blue-700 font-mono font-semibold mb-3">Formula: (Your Hotel ADR / Comp Set Average ADR) * 100</div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Measures your hotel’s ADR performance relative to your competitive set. An ARI above 100 indicates your property commands a premium rate compared to your competitors.
+          </p>
+        </div>
+
+        <!-- BAR -->
+        <div class="term-card p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-all" data-name="BAR Best Available Rate" data-letter="B">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-2xl font-bold text-slate-900 font-serif">BAR (Best Available Rate)</h3>
+            <span class="px-2.5 py-1 rounded bg-emerald-100 text-emerald-900 text-xs font-bold uppercase">Pricing Term</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            The lowest non-restricted rate available to the general public for a specific room type on a given date. Serves as the anchor benchmark from which discounted (corporate/group) or premium rates are derived.
+          </p>
+        </div>
+
+        <!-- Booking Window -->
+        <div class="term-card p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-all" data-name="Booking Window Lead Time" data-letter="B">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-2xl font-bold text-slate-900 font-serif">Booking Window (Lead Time)</h3>
+            <span class="px-2.5 py-1 rounded bg-slate-200 text-slate-800 text-xs font-bold uppercase">Demand Pattern</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            The timeframe between when a guest makes a reservation and their actual check-in date. Analyzing lead time curves prevents premature rate discounting during prime booking windows.
+          </p>
+        </div>
+
+        <!-- Channel Mix -->
+        <div class="term-card p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-all" data-name="Channel Mix Distribution OTAs Direct GDS" data-letter="C">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-2xl font-bold text-slate-900 font-serif">Channel Mix</h3>
+            <span class="px-2.5 py-1 rounded bg-purple-100 text-purple-900 text-xs font-bold uppercase">Distribution</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            The percentage breakdown of bookings originating from various distribution channels (Brand Direct, OTAs like Booking/Expedia, Wholesalers, GDS, and Phone).
+          </p>
+        </div>
+
+        <!-- Comp Set -->
+        <div class="term-card p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-all" data-name="Comp Set Competitive Set Benchmark" data-letter="C">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-2xl font-bold text-slate-900 font-serif">Comp Set (Competitive Set)</h3>
+            <span class="px-2.5 py-1 rounded bg-amber-100 text-amber-900 text-xs font-bold uppercase">Benchmarking</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            A curated group of 4 to 6 local peer hotels that compete directly for the same target guests based on location, star rating, amenities, price tier, and room count.
+          </p>
+        </div>
+
+        <!-- CTA / CTD -->
+        <div class="term-card p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-all" data-name="CTA CTD Closed to Arrival Closed to Departure Minimum Length Stay" data-letter="C">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-2xl font-bold text-slate-900 font-serif">CTA / CTD (Closed to Arrival / Departure)</h3>
+            <span class="px-2.5 py-1 rounded bg-red-100 text-red-900 text-xs font-bold uppercase">Restriction</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Yield management restrictions that block check-ins (CTA) or check-outs (CTD) on high-demand peak event dates to protect multi-night stays and eliminate shoulder-date vacancy.
+          </p>
+        </div>
+
+        <!-- Displacement Analysis -->
+        <div class="term-card p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-all" data-name="Displacement Analysis Group vs Transient Revenue Optimization" data-letter="D">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-2xl font-bold text-slate-900 font-serif">Displacement Analysis</h3>
+            <span class="px-2.5 py-1 rounded bg-emerald-100 text-emerald-900 text-xs font-bold uppercase">Strategy Tool</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            A mathematical calculation comparing the total profit potential of accepting a low-rate group booking versus rejecting it to sell higher-ADR transient rooms to individual guests.
+          </p>
+        </div>
+
+        <!-- Fenced Rates -->
+        <div class="term-card p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-all" data-name="Fenced Rates Rate Fences Non refundable Advance Purchase" data-letter="F">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-2xl font-bold text-slate-900 font-serif">Fenced Rates (Rate Fences)</h3>
+            <span class="px-2.5 py-1 rounded bg-slate-200 text-slate-800 text-xs font-bold uppercase">Pricing Tool</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Specific conditions (non-refundable prepay, 14-day advance purchase, loyalty membership) attached to discounted rates to prevent high-paying business travelers from booking discounted leisure rates.
+          </p>
+        </div>
+
+        <!-- MPI -->
+        <div class="term-card p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-all" data-name="MPI Market Penetration Index Occupancy Share" data-letter="M">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-2xl font-bold text-slate-900 font-serif">MPI (Market Penetration Index)</h3>
+            <span class="px-2.5 py-1 rounded bg-blue-100 text-blue-900 text-xs font-bold uppercase">Comp Set Index</span>
+          </div>
+          <div class="text-xs text-blue-700 font-mono font-semibold mb-3">Formula: (Your Hotel Occupancy / Comp Set Average Occupancy) * 100</div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Measures whether your property is capturing its fair share of total market room night demand compared to your competitors.
+          </p>
+        </div>
+
+        <!-- Net RevPAR -->
+        <div class="term-card p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-all" data-name="Net RevPAR NRevPAR Distribution Cost Net Profit" data-letter="N">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-2xl font-bold text-slate-900 font-serif">Net RevPAR (NRevPAR)</h3>
+            <span class="px-2.5 py-1 rounded bg-amber-100 text-amber-900 text-xs font-bold uppercase">Profit Metric</span>
+          </div>
+          <div class="text-xs text-amber-700 font-mono font-semibold mb-3">Formula: (Room Revenue - Distribution Costs) / Total Available Rooms</div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Similar to standard RevPAR, but deducts OTA commissions, booking transaction fees, and distribution expenses to reveal true net profit per available key.
+          </p>
+        </div>
+
+        <!-- Occupancy (OCC) -->
+        <div class="term-card p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-all" data-name="Occupancy OCC Percentage Available Rooms" data-letter="O">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-2xl font-bold text-slate-900 font-serif">Occupancy (OCC)</h3>
+            <span class="px-2.5 py-1 rounded bg-slate-200 text-slate-800 text-xs font-bold uppercase">Core Metric</span>
+          </div>
+          <div class="text-xs text-slate-700 font-mono font-semibold mb-3">Formula: (Rooms Sold / Total Available Rooms) * 100</div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            The percentage of total available rooms filled over a given night or date range.
+          </p>
+        </div>
+
+        <!-- Rate Parity -->
+        <div class="term-card p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-all" data-name="Rate Parity Parity OTA Agreement Direct Rate" data-letter="P">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-2xl font-bold text-slate-900 font-serif">Rate Parity</h3>
+            <span class="px-2.5 py-1 rounded bg-purple-100 text-purple-900 text-xs font-bold uppercase">Distribution</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Maintaining consistent public rates across all online channels (Direct Website, Booking.com, Expedia, Google Hotel Ads). Prevents OTA penalties while leveraging member rates for direct conversion.
+          </p>
+        </div>
+
+        <!-- RevPAR -->
+        <div class="term-card p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-all" data-name="RevPAR Revenue Per Available Room" data-letter="R">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-2xl font-bold text-slate-900 font-serif">RevPAR (Revenue Per Available Room)</h3>
+            <span class="px-2.5 py-1 rounded bg-amber-100 text-amber-900 text-xs font-bold uppercase">Gold Standard</span>
+          </div>
+          <div class="text-xs text-amber-700 font-mono font-semibold mb-3">Formula: ADR * Occupancy %  OR  Total Room Revenue / Total Available Rooms</div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            The single most important performance metric in hotel revenue management, balancing both occupancy percentage and price rate simultaneously.
+          </p>
+        </div>
+
+        <!-- RGI -->
+        <div class="term-card p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-all" data-name="RGI RevPAR Index Revenue Generator Index Fair Share" data-letter="R">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-2xl font-bold text-slate-900 font-serif">RGI (Revenue Generator Index / RevPAR Index)</h3>
+            <span class="px-2.5 py-1 rounded bg-amber-100 text-amber-900 text-xs font-bold uppercase">Comp Set Gold</span>
+          </div>
+          <div class="text-xs text-amber-700 font-mono font-semibold mb-3">Formula: (Your Hotel RevPAR / Comp Set Average RevPAR) * 100</div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Evaluates your hotel’s overall financial yield relative to its comp set. An RGI above 100 proves your property is outperforming its fair market share.
+          </p>
+        </div>
+
+        <!-- Unconstrained Demand -->
+        <div class="term-card p-8 rounded-2xl bg-slate-50 border border-slate-200 hover:border-amber-400 transition-all" data-name="Unconstrained Demand Maximum Potential Sell Out" data-letter="U">
+          <div class="flex justify-between items-start mb-3">
+            <h3 class="text-2xl font-bold text-slate-900 font-serif">Unconstrained Demand</h3>
+            <span class="px-2.5 py-1 rounded bg-emerald-100 text-emerald-900 text-xs font-bold uppercase">Yield Science</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            The total room demand that could be sold if your hotel had unlimited physical room capacity. Identifying unconstrained demand during major events allows aggressive rate hikes.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-16 bg-slate-900 text-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <h2 class="text-3xl sm:text-4xl font-bold font-serif max-w-2xl mx-auto">Ready to turn these yield formulas into net profit?</h2>
+      <p class="mt-4 text-slate-300 text-base max-w-xl mx-auto">Our dedicated revenue directors execute these exact strategies for your property daily.</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="contact.html" class="px-8 py-4 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-base transition-all shadow-xl shadow-amber-500/20">
+          Request Free Hotel Audit
+        </a>
+        <a href="roi-calculator.html" class="px-8 py-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-base transition-all border border-slate-700">
+          Calculate RevPAR Lift
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <a href="index.html" class="flex items-center gap-2 mb-4">
+            <div class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-bold flex items-center justify-center">R</div>
+            <span class="font-serif text-xl font-bold text-white">Revenue<span class="text-amber-500">Lab</span></span>
+          </a>
+          <p class="text-slate-400 text-xs leading-relaxed">Dedicated revenue management engineering for boutique, independent, and branded hotels worldwide.</p>
+        </div>
+        <div>
+          <div class="font-semibold text-white mb-3">Quick Links</div>
+          <ul class="space-y-2 text-xs">
+            <li><a href="index.html" class="hover:text-amber-400 transition-colors">Home</a></li>
+            <li><a href="about.html" class="hover:text-amber-400 transition-colors">About Us</a></li>
+            <li><a href="services.html" class="hover:text-amber-400 transition-colors">Services</a></li>
+            <li><a href="pricing.html" class="hover:text-amber-400 transition-colors">Pricing Plans</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-semibold text-white mb-3">Resources Ecosystem</div>
+          <ul class="space-y-2 text-xs">
+            <li><a href="resources.html" class="hover:text-amber-400 transition-colors">Free Resources Hub</a></li>
+            <li><a href="roi-calculator.html" class="hover:text-amber-400 transition-colors">RevPAR ROI Calculator</a></li>
+            <li><a href="sample-report.html" class="hover:text-amber-400 transition-colors">Sample Executive Briefing</a></li>
+            <li><a href="how-it-works.html" class="hover:text-amber-400 transition-colors">How It Works</a></li>
+            <li><a href="glossary.html" class="text-amber-400 font-semibold">Yield Glossary</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-semibold text-white mb-3">Contact</div>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><i class="fa-solid fa-phone text-amber-400 mr-1.5"></i> +1 (800) 555-0199</li>
+            <li><i class="fa-solid fa-envelope text-amber-400 mr-1.5"></i> hello@myrevenuelab.com</li>
+            <li><i class="fa-solid fa-location-dot text-amber-400 mr-1.5"></i> Miami, FL & Austin, TX</li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
+        <div>&copy; 2026 RevenueLab Inc. All rights reserved.</div>
+        <div class="flex gap-4 mt-2 sm:mt-0">
+          <a href="#" class="hover:text-slate-400">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-400">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search & Filter JS Script & Lenis Init -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Lenis Smooth Scroll
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothTouch: false
+      });
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+
+      // Mobile Drawer Toggle
+      const mobileBtn = document.getElementById('mobile-toggle-btn');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      const mobileIcon = document.getElementById('mobile-toggle-icon');
+
+      if (mobileBtn && mobileDrawer) {
+        mobileBtn.addEventListener('click', () => {
+          const isOpen = !mobileDrawer.classList.contains('hidden');
+          if (isOpen) {
+            mobileDrawer.classList.add('hidden');
+            mobileIcon.classList.remove('fa-xmark');
+            mobileIcon.classList.add('fa-bars');
+          } else {
+            mobileDrawer.classList.remove('hidden');
+            mobileIcon.classList.remove('fa-bars');
+            mobileIcon.classList.add('fa-xmark');
+          }
+        });
+      }
+
+      // Search & Letter Filtering
+      const searchInput = document.getElementById('glossary-search');
+      const letterBtns = document.querySelectorAll('.letter-btn');
+      const cards = document.querySelectorAll('.term-card');
+
+      let currentLetter = 'ALL';
+      let currentQuery = '';
+
+      function filterCards() {
+        cards.forEach(card => {
+          const name = card.getAttribute('data-name').toLowerCase();
+          const letter = card.getAttribute('data-letter');
+          
+          const matchesLetter = (currentLetter === 'ALL' || letter === currentLetter);
+          const matchesSearch = (currentQuery === '' || name.includes(currentQuery.toLowerCase()));
+
+          if (matchesLetter && matchesSearch) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      }
+
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          currentQuery = e.target.value.trim();
+          filterCards();
+        });
+      }
+
+      letterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          letterBtns.forEach(b => {
+            b.classList.remove('bg-slate-900', 'text-white');
+            b.classList.add('bg-slate-100', 'text-slate-700');
+          });
+          btn.classList.remove('bg-slate-100', 'text-slate-700');
+          btn.classList.add('bg-slate-900', 'text-white');
+
+          currentLetter = btn.getAttribute('data-letter');
+          filterCards();
+        });
+      });
+    });
+  </script>
+
+    <!-- Mobile Menu Drawer Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('mobile-toggle-btn') || document.getElementById('mobile-toggle') || document.getElementById('mobile-menu-btn');
+            const drawer = document.getElementById('mobile-drawer') || document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-toggle-icon') || document.getElementById('menu-icon');
+
+            if (btn && drawer) {
+                btn.onclick = function(e) {
+                    if (e) e.preventDefault();
+                    const isHidden = drawer.classList.contains('hidden');
+                    if (isHidden) {
+                        drawer.classList.remove('hidden');
+                        if (icon) {
+                            icon.classList.remove('fa-bars');
+                            icon.classList.add('fa-xmark');
+                        }
+                    } else {
+                        drawer.classList.add('hidden');
+                        if (icon) {
+                            icon.classList.remove('fa-xmark');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                };
+            }
+        });
+    </script>
+
+</body>
+</html>
