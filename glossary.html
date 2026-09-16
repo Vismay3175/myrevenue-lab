@@ -77,11 +77,13 @@
         }
 
     </style>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body class="bg-white text-slate-900 antialiased selection:bg-amber-100 selection:text-amber-900">
 
   <!-- Sticky Combined Header -->
   <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
     <!-- Combined Sticky Header Container -->
     <!-- Combined Sticky Header Container -->
     <!-- Combined Sticky Header Container -->
@@ -98,8 +100,8 @@
                     <span class="hidden sm:inline text-slate-400 text-xs">No Revenue Lift = No Consultancy Fee</span>
                 </div>
                 <div class="hidden sm:flex items-center gap-4 lg:gap-6 text-slate-400 text-xs">
-                    <a href="tel:+18005550199" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
-                        <i class="fa-solid fa-phone text-amber-400"></i> +1 (800) 555-0199
+                    <a href="tel:+14702882717" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-phone text-amber-400"></i> +1 (470) 288-2717
                     </a>
                     <a href="mailto:sales@myrevenuelab.com" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
                         <i class="fa-solid fa-envelope text-amber-400"></i> sales@myrevenuelab.com
@@ -548,25 +550,7 @@
       }
       requestAnimationFrame(raf);
 
-      // Mobile Drawer Toggle
-      const mobileBtn = document.getElementById('mobile-toggle-btn');
-      const mobileDrawer = document.getElementById('mobile-drawer');
-      const mobileIcon = document.getElementById('mobile-toggle-icon');
-
-      if (mobileBtn && mobileDrawer) {
-        mobileBtn.addEventListener('click', () => {
-          const isOpen = !mobileDrawer.classList.contains('hidden');
-          if (isOpen) {
-            mobileDrawer.classList.add('hidden');
-            mobileIcon.classList.remove('fa-xmark');
-            mobileIcon.classList.add('fa-bars');
-          } else {
-            mobileDrawer.classList.remove('hidden');
-            mobileIcon.classList.remove('fa-bars');
-            mobileIcon.classList.add('fa-xmark');
-          }
-        });
-      }
+      
 
       // Search & Letter Filtering
       const searchInput = document.getElementById('glossary-search');
@@ -615,34 +599,53 @@
     });
   </script>
 
-    <!-- Mobile Menu Drawer Toggle Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const btn = document.getElementById('mobile-toggle-btn') || document.getElementById('mobile-toggle') || document.getElementById('mobile-menu-btn');
-            const drawer = document.getElementById('mobile-drawer') || document.getElementById('mobile-menu');
-            const icon = document.getElementById('mobile-toggle-icon') || document.getElementById('menu-icon');
+    
 
-            if (btn && drawer) {
-                btn.onclick = function(e) {
-                    if (e) e.preventDefault();
-                    const isHidden = drawer.classList.contains('hidden');
-                    if (isHidden) {
-                        drawer.classList.remove('hidden');
-                        if (icon) {
-                            icon.classList.remove('fa-bars');
-                            icon.classList.add('fa-xmark');
-                        }
-                    } else {
-                        drawer.classList.add('hidden');
-                        if (icon) {
-                            icon.classList.remove('fa-xmark');
-                            icon.classList.add('fa-bars');
-                        }
+
+<!-- Consolidated Mobile Menu Drawer Toggle Script -->
+<script>
+(function() {
+    function initMobileMenu() {
+        const btn = document.getElementById('mobile-toggle-btn') || document.getElementById('mobile-toggle') || document.getElementById('mobile-menu-btn');
+        const drawer = document.getElementById('mobile-drawer') || document.getElementById('mobile-menu');
+        const icon = document.getElementById('mobile-toggle-icon') || document.getElementById('menu-icon');
+
+        if (btn && drawer) {
+            // Remove inline handlers or duplicate listeners
+            btn.onclick = null;
+            const newBtn = btn.cloneNode(true);
+            btn.parentNode.replaceChild(newBtn, btn);
+
+            const newIcon = document.getElementById('mobile-toggle-icon') || document.getElementById('menu-icon') || newBtn.querySelector('i');
+
+            newBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const isHidden = drawer.classList.contains('hidden');
+                if (isHidden) {
+                    drawer.classList.remove('hidden');
+                    if (newIcon) {
+                        newIcon.classList.remove('fa-bars');
+                        newIcon.classList.add('fa-xmark');
                     }
-                };
-            }
-        });
-    </script>
+                } else {
+                    drawer.classList.add('hidden');
+                    if (newIcon) {
+                        newIcon.classList.remove('fa-xmark');
+                        newIcon.classList.add('fa-bars');
+                    }
+                }
+            });
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMobileMenu);
+    } else {
+        initMobileMenu();
+    }
+})();
+</script>
 
 </body>
 </html>

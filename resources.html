@@ -95,6 +95,7 @@
     <!-- Combined Sticky Header Container -->
     <!-- Combined Sticky Header Container -->
     <!-- Combined Sticky Header Container -->
+    <!-- Combined Sticky Header Container -->
     <header class="fixed top-0 left-0 right-0 z-50 w-full shadow-md transition-all duration-300 bg-white" id="main-header">
         <!-- Top Announcement Bar -->
         <div class="bg-slate-900 text-slate-300 py-2 px-4 text-xs font-semibold tracking-wide border-b border-slate-800">
@@ -106,8 +107,8 @@
                     <span class="hidden sm:inline text-slate-400 text-xs">No Revenue Lift = No Consultancy Fee</span>
                 </div>
                 <div class="hidden sm:flex items-center gap-4 lg:gap-6 text-slate-400 text-xs">
-                    <a href="tel:+18005550199" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
-                        <i class="fa-solid fa-phone text-amber-400"></i> +1 (800) 555-0199
+                    <a href="tel:+14702882717" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
+                        <i class="fa-solid fa-phone text-amber-400"></i> +1 (470) 288-2717
                     </a>
                     <a href="mailto:sales@myrevenuelab.com" class="hover:text-amber-400 transition-colors flex items-center gap-1.5">
                         <i class="fa-solid fa-envelope text-amber-400"></i> sales@myrevenuelab.com
@@ -619,7 +620,7 @@
             <form id="lead-form" onsubmit="handleFormSubmit(event)" class="space-y-4">
                 <div>
                     <label class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1">Full Name *</label>
-                    <input type="text" required placeholder="e.g. Vishal Thakkar" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-gold-400">
+                    <input type="text" required placeholder="e.g. Hemal Mehta" class="w-full bg-slate-950 border border-slate-800 rounded-lg px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-gold-400">
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
@@ -734,34 +735,53 @@
         }
     </script>
 
-    <!-- Mobile Menu Drawer Toggle Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const btn = document.getElementById('mobile-toggle-btn') || document.getElementById('mobile-toggle') || document.getElementById('mobile-menu-btn');
-            const drawer = document.getElementById('mobile-drawer') || document.getElementById('mobile-menu');
-            const icon = document.getElementById('mobile-toggle-icon') || document.getElementById('menu-icon');
+    
 
-            if (btn && drawer) {
-                btn.onclick = function(e) {
-                    if (e) e.preventDefault();
-                    const isHidden = drawer.classList.contains('hidden');
-                    if (isHidden) {
-                        drawer.classList.remove('hidden');
-                        if (icon) {
-                            icon.classList.remove('fa-bars');
-                            icon.classList.add('fa-xmark');
-                        }
-                    } else {
-                        drawer.classList.add('hidden');
-                        if (icon) {
-                            icon.classList.remove('fa-xmark');
-                            icon.classList.add('fa-bars');
-                        }
+
+<!-- Consolidated Mobile Menu Drawer Toggle Script -->
+<script>
+(function() {
+    function initMobileMenu() {
+        const btn = document.getElementById('mobile-toggle-btn') || document.getElementById('mobile-toggle') || document.getElementById('mobile-menu-btn');
+        const drawer = document.getElementById('mobile-drawer') || document.getElementById('mobile-menu');
+        const icon = document.getElementById('mobile-toggle-icon') || document.getElementById('menu-icon');
+
+        if (btn && drawer) {
+            // Remove inline handlers or duplicate listeners
+            btn.onclick = null;
+            const newBtn = btn.cloneNode(true);
+            btn.parentNode.replaceChild(newBtn, btn);
+
+            const newIcon = document.getElementById('mobile-toggle-icon') || document.getElementById('menu-icon') || newBtn.querySelector('i');
+
+            newBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const isHidden = drawer.classList.contains('hidden');
+                if (isHidden) {
+                    drawer.classList.remove('hidden');
+                    if (newIcon) {
+                        newIcon.classList.remove('fa-bars');
+                        newIcon.classList.add('fa-xmark');
                     }
-                };
-            }
-        });
-    </script>
+                } else {
+                    drawer.classList.add('hidden');
+                    if (newIcon) {
+                        newIcon.classList.remove('fa-xmark');
+                        newIcon.classList.add('fa-bars');
+                    }
+                }
+            });
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMobileMenu);
+    } else {
+        initMobileMenu();
+    }
+})();
+</script>
 
 </body>
 

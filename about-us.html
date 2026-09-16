@@ -348,6 +348,52 @@
             });
         }
     </script>
+
+<!-- Consolidated Mobile Menu Drawer Toggle Script -->
+<script>
+(function() {
+    function initMobileMenu() {
+        const btn = document.getElementById('mobile-toggle-btn') || document.getElementById('mobile-toggle') || document.getElementById('mobile-menu-btn');
+        const drawer = document.getElementById('mobile-drawer') || document.getElementById('mobile-menu');
+        const icon = document.getElementById('mobile-toggle-icon') || document.getElementById('menu-icon');
+
+        if (btn && drawer) {
+            // Remove inline handlers or duplicate listeners
+            btn.onclick = null;
+            const newBtn = btn.cloneNode(true);
+            btn.parentNode.replaceChild(newBtn, btn);
+
+            const newIcon = document.getElementById('mobile-toggle-icon') || document.getElementById('menu-icon') || newBtn.querySelector('i');
+
+            newBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                const isHidden = drawer.classList.contains('hidden');
+                if (isHidden) {
+                    drawer.classList.remove('hidden');
+                    if (newIcon) {
+                        newIcon.classList.remove('fa-bars');
+                        newIcon.classList.add('fa-xmark');
+                    }
+                } else {
+                    drawer.classList.add('hidden');
+                    if (newIcon) {
+                        newIcon.classList.remove('fa-xmark');
+                        newIcon.classList.add('fa-bars');
+                    }
+                }
+            });
+        }
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initMobileMenu);
+    } else {
+        initMobileMenu();
+    }
+})();
+</script>
+
 </body>
 
 </html>
