@@ -1,0 +1,16 @@
+# Cloudflare Pages 301 Redirects - Enforce Clean URLs (No .html)
+/index.html               /                   301
+/about.html               /about              301
+/about-us.html            /about              301
+/services.html            /services           301
+/contact.html             /contact            301
+/contact-us.html          /contact            301
+/pricing.html             /pricing            301
+/how-it-works.html        /how-it-works       301
+/portfolio.html           /portfolio          301
+/portfolio-projects.html  /portfolio          301
+/revenue-strategy.html   /revenue-strategy   301
+/resources.html           /resources          301
+/glossary.html            /glossary           301
+/roi-calculator.html      /roi-calculator     301
+/sample-report.html       /sample-report      301
