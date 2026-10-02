@@ -106,9 +106,17 @@
             background: linear-gradient(135deg, #C5A059 0%, #B08D48 100%);
         }
 
-        /* Complete Header Fixes - Protecting layout from Bootstrap overrides */
+        /* Complete Header Fixes - Protecting header z-index over map elements */
         #main-header {
             font-family: 'Plus Jakarta Sans', sans-serif !important;
+            z-index: 99999 !important;
+            position: fixed !important;
+        }
+
+        .interactive-map-wrapper, #leaflet-presence-map {
+            position: relative !important;
+            z-index: 1 !important;
+            isolation: isolate !important;
         }
 
         #main-header nav.hidden.lg\:flex {

@@ -187,11 +187,13 @@
         }
 
         /* Leaflet Map Custom Container */
-        #leaflet-presence-map {
+        .interactive-map-wrapper, #leaflet-presence-map {
             height: 520px;
             width: 100%;
             border-radius: 1.5rem;
-            z-index: 10;
+            position: relative !important;
+            z-index: 1 !important;
+            isolation: isolate !important;
         }
 
         .leaflet-popup-content-wrapper {
@@ -243,6 +245,8 @@
         #main-header {
             max-width: 100% !important;
             box-sizing: border-box !important;
+            z-index: 99999 !important;
+            position: fixed !important;
         }
 
     </style>
