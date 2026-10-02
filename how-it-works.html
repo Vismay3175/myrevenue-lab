@@ -50,8 +50,8 @@
       background-color: #FFFFFF;
       -webkit-font-smoothing: antialiased;
     }
-    h1, h2, h3, .font-serif {
-      font-family: 'Playfair Display', serif;
+    h1, h2, h3, h4, h5, h6, .font-serif, h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
+      font-family: 'Playfair Display', serif !important;
     }
     .dropdown-wrapper:hover .dropdown-menu {
       opacity: 1;
@@ -424,53 +424,83 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-        <div>
-          <a href="/" class="flex items-center gap-2 mb-4">
-            <div class="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 font-bold flex items-center justify-center">R</div>
-            <span class="font-serif text-xl font-bold text-white">Revenue<span class="text-amber-500">Lab</span></span>
-          </a>
-          <p class="text-slate-400 text-xs leading-relaxed">Dedicated revenue management engineering for boutique, independent, and branded hotels worldwide.</p>
-        </div>
-        <div>
-          <div class="font-semibold text-white mb-3">Quick Links</div>
-          <ul class="space-y-2 text-xs">
-            <li><a href="/" class="hover:text-amber-400 transition-colors">Home</a></li>
-            <li><a href="about" class="hover:text-amber-400 transition-colors">About Us</a></li>
-            <li><a href="services" class="hover:text-amber-400 transition-colors">Services</a></li>
-            <li><a href="pricing" class="hover:text-amber-400 transition-colors">Pricing Plans</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="font-semibold text-white mb-3">Resources Ecosystem</div>
-          <ul class="space-y-2 text-xs">
-            <li><a href="resources" class="hover:text-amber-400 transition-colors">Free Resources Hub</a></li>
-            <li><a href="roi-calculator" class="hover:text-amber-400 transition-colors">RevPAR ROI Calculator</a></li>
-            <li><a href="sample-report" class="hover:text-amber-400 transition-colors">Sample Executive Briefing</a></li>
-            <li><a href="how-it-works" class="text-amber-400 font-semibold">How It Works</a></li>
-            <li><a href="glossary" class="hover:text-amber-400 transition-colors">Yield Glossary</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="font-semibold text-white mb-3">Contact</div>
-          <ul class="space-y-2 text-xs text-slate-400">
-            <li><i class="fa-solid fa-phone text-amber-400 mr-1.5"></i> +1 (800) 555-0199</li>
-            <li><i class="fa-solid fa-envelope text-amber-400 mr-1.5"></i> info@myrevenuelab.com</li>
-            <li><i class="fa-solid fa-location-dot text-amber-400 mr-1.5"></i> Miami, FL & Austin, TX</li>
-          </ul>
-        </div>
+  <!-- Comprehensive Footer -->
+  <footer class="bg-slate-950 text-slate-400 text-xs border-t border-slate-800 py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+              
+              <!-- Col 1: Brand Info -->
+              <div class="space-y-4">
+                  <a href="/" class="flex items-center gap-3 group">
+                      <img src="assets/images/logo-mark.png" alt="RevenueLab Growth Arrow" class="h-11 sm:h-12 w-auto object-contain transition-transform group-hover:scale-110 duration-300">
+                      <div>
+                          <span class="font-extrabold text-xl sm:text-2xl tracking-tight text-white block leading-none">RevenueLab</span>
+                          <span class="text-[9px] sm:text-[10px] font-extrabold tracking-[0.22em] uppercase text-emerald-400 block mt-1">The Science of Revenue</span>
+                      </div>
+                  </a>
+                  <p class="text-slate-400 leading-relaxed text-xs">
+                      Premier hotel revenue engineering, dynamic yield pricing, and OTA distribution consulting headquarters in Atlanta, Georgia.
+                  </p>
+              </div>
+
+              <!-- Col 2: Navigation -->
+              <div>
+                  <h4 class="font-extrabold text-white uppercase tracking-wider text-xs mb-4">Quick Navigation</h4>
+                  <ul class="space-y-2.5 font-medium">
+                      <li><a href="/" class="hover:text-gold-400 transition-colors">Home</a></li>
+                      <li><a href="revenue-strategy" class="hover:text-gold-400 transition-colors">Revenue Strategy</a></li>
+                      <li><a href="services" class="hover:text-gold-400 transition-colors">Services</a></li>
+                      <li><a href="about" class="hover:text-gold-400 transition-colors">About Us</a></li>
+                      <li><a href="portfolio" class="hover:text-gold-400 transition-colors">Case Studies</a></li>
+                      <li><a href="contact" class="hover:text-gold-400 transition-colors">Contact Us</a></li>
+                  </ul>
+              </div>
+
+              <!-- Col 3: Revenue Services -->
+              <div>
+                  <h4 class="font-extrabold text-white uppercase tracking-wider text-xs mb-4">Services</h4>
+                  <ul class="space-y-2.5 font-medium">
+                      <li><a href="services" class="hover:text-gold-400 transition-colors">Dynamic Room Pricing</a></li>
+                      <li><a href="services" class="hover:text-gold-400 transition-colors">OTA Channel Management</a></li>
+                      <li><a href="services" class="hover:text-gold-400 transition-colors">CompSet Market Intelligence</a></li>
+                      <li><a href="services" class="hover:text-gold-400 transition-colors">PMS & RMS Tech Audits</a></li>
+                      <li><a href="services" class="hover:text-gold-400 transition-colors">Group Rate Strategy</a></li>
+                  </ul>
+              </div>
+
+              <!-- Col 4: Corporate Headquarters -->
+              <div>
+                  <h4 class="font-extrabold text-white uppercase tracking-wider text-xs mb-4">Headquarters</h4>
+                  <ul class="space-y-3 font-medium">
+                      <li class="flex items-start gap-2.5">
+                          <i class="fa-solid fa-location-dot text-gold-500 mt-0.5"></i>
+                          <span>Atlanta, GA, USA</span>
+                      </li>
+                      <li class="flex items-center gap-2.5">
+                          <i class="fa-solid fa-phone text-gold-500"></i>
+                          <a href="tel:+14702882717" class="hover:text-gold-400">+1 (470) 288-2717</a>
+                      </li>
+                      <li class="flex items-center gap-2.5">
+                          <i class="fa-solid fa-envelope text-gold-500"></i>
+                          <a href="mailto:info@myrevenuelab.com" class="hover:text-gold-400">info@myrevenuelab.com</a>
+                      </li>
+                  </ul>
+              </div>
+
+          </div>
+
+          <!-- Footer Bottom Bar -->
+          <div class="pt-8 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500">
+              <div>
+                  &copy; 2026 RevenueLab LLC. All Rights Reserved. Risk-Free Commercial Model.
+              </div>
+              <div class="flex gap-6">
+                  <a href="#" class="hover:text-gold-400 transition-colors"><i class="fa-brands fa-linkedin text-base"></i></a>
+                  <a href="#" class="hover:text-gold-400 transition-colors"><i class="fa-brands fa-twitter text-base"></i></a>
+                  <a href="#" class="hover:text-gold-400 transition-colors"><i class="fa-brands fa-facebook text-base"></i></a>
+              </div>
+          </div>
       </div>
-      <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-500">
-        <div>&copy; 2026 RevenueLab Inc. All rights reserved.</div>
-        <div class="flex gap-4 mt-2 sm:mt-0">
-          <a href="#" class="hover:text-slate-400">Privacy Policy</a>
-          <a href="#" class="hover:text-slate-400">Terms of Service</a>
-        </div>
-      </div>
-    </div>
   </footer>
 
   <!-- Mobile Drawer Toggle Script & Lenis Init -->
