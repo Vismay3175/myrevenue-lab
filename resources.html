@@ -42,11 +42,21 @@
     </script>
 
     <style>
-        body, p, a, span, li, button, input, select, textarea {
+        /* Unified Executive Typography System */
+        body, p, a, li, button, input, select, textarea, label, td, th {
             font-family: 'Plus Jakarta Sans', sans-serif !important;
         }
-        h1, h2, h3, h4, h5, h6, .font-serif {
-            font-family: 'Playfair Display', serif;
+
+        /* Headings & Title Elements (including spans/divs inside headings) */
+        h1, h2, h3, h4, h5, h6, .font-serif,
+        h1 *, h2 *, h3 *, h4 *, h5 *, h6 *,
+        .font-serif *, .heading-section h2 {
+            font-family: 'Playfair Display', serif !important;
+        }
+
+        /* Sans-Serif Overrides (Pills, Badges, Nav Links, Buttons) */
+        .font-sans, .font-sans *, .hero-badge-pill, .hero-badge-pill * {
+            font-family: 'Plus Jakarta Sans', sans-serif !important;
         }
 
         .gold-gradient-text {
